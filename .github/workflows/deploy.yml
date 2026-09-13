@@ -1,0 +1,23 @@
+name: Deploy Chaleur et Couleur to VPS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via rsync over SSH
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          ARGS: "-az --delete --exclude='.git*' --exclude='.github/' --exclude='.env' --exclude='.env.*'"
+          SOURCE: "./"
+          TARGET: "/var/www/chaleuretcouleur.fr"
