@@ -210,6 +210,40 @@ body {
   color: var(--warm-brown);
 }
 
+.galerie_categorie {
+  margin-bottom: 50px;
+}
+
+.galerie_categorie_titre {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--warm-brown);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--seafoam);
+}
+
+.galerie_item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.galerie_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galerie_item img:hover {
+  transform: scale(1.05);
+}
+
 /* Lien "Mentions légales" dans le footer */
 .footer_section a {
   color: var(--seafoam) !important;
