@@ -20,7 +20,7 @@ function initGalerieModal() {
   const nextBtn = modal.querySelector('.galerie-modal-next');
 
   let currentPhotos = [];
-  let currentLegende = '';
+  let currentLegendes = [];
   let currentIndex = 0;
 
   function showCurrent() {
@@ -28,13 +28,14 @@ function initGalerieModal() {
     const hasMultiple = currentPhotos.length > 1;
     prevBtn.style.display = hasMultiple ? 'flex' : 'none';
     nextBtn.style.display = hasMultiple ? 'flex' : 'none';
-    modalLegende.textContent = currentLegende;
-    modalLegende.style.display = currentLegende ? 'block' : 'none';
+    const legende = currentLegendes[currentIndex] || '';
+    modalLegende.textContent = legende;
+    modalLegende.style.display = legende ? 'block' : 'none';
   }
 
   function openModal(photo) {
     currentPhotos = JSON.parse(photo.dataset.photos || '[]');
-    currentLegende = photo.dataset.legende || '';
+    currentLegendes = JSON.parse(photo.dataset.legendes || '[]');
     currentIndex = 0;
     showCurrent();
     modal.classList.add('show');

@@ -19,6 +19,46 @@ function gal_is_image($file, $allowedExt) {
     return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowedExt, true);
 }
 
+// Légendes par image : une ligne "#01 Ma phrase" dans legende.txt correspond à
+// l'image dont le nom commence par 01 (ex. "01 - Fraises.png"). Si le fichier ne
+// contient aucune ligne préfixée par #, son contenu s'applique à toutes les photos.
+function gal_parse_legendes($legendePath, $images) {
+    $captions = array_fill(0, count($images), '');
+    if (!is_file($legendePath)) return $captions;
+
+    $numberToIndex = [];
+    foreach ($images as $i => $file) {
+        if (preg_match('/^0*(\d+)/', $file, $m)) {
+            $numberToIndex[(int) $m[1]] = $i;
+        }
+    }
+
+    $hasNumberedLine = false;
+    $plainLines = [];
+
+    $lines = preg_split('/\r\n|\r|\n/', file_get_contents($legendePath));
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '') continue;
+
+        if (preg_match('/^#0*(\d+)\s*(.*)$/', $line, $m)) {
+            $hasNumberedLine = true;
+            $num = (int) $m[1];
+            if (isset($numberToIndex[$num])) {
+                $captions[$numberToIndex[$num]] = trim($m[2]);
+            }
+        } else {
+            $plainLines[] = $line;
+        }
+    }
+
+    if (!$hasNumberedLine && !empty($plainLines)) {
+        $captions = array_fill(0, count($images), implode(' ', $plainLines));
+    }
+
+    return $captions;
+}
+
 if (is_dir($galerieDir)) {
     $categoryFolders = array_filter(scandir($galerieDir), function ($entry) use ($galerieDir) {
         return $entry !== '.' && $entry !== '..' && is_dir($galerieDir . '/' . $entry);
@@ -46,24 +86,21 @@ if (is_dir($galerieDir)) {
                 }
                 natcasesort($images);
                 if (empty($images)) continue;
+                $images = array_values($images);
 
-                $legende = '';
-                $legendePath = $entryPath . '/legende.txt';
-                if (is_file($legendePath)) {
-                    $legende = trim(file_get_contents($legendePath));
-                }
+                $legendes = gal_parse_legendes($entryPath . '/legende.txt', $images);
 
                 $oeuvres[] = [
                     'photos' => array_map(function ($file) use ($categoryName, $entry) {
                         return 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry) . '/' . rawurlencode($file);
-                    }, array_values($images)),
-                    'legende' => $legende,
+                    }, $images),
+                    'legendes' => $legendes,
                 ];
             } elseif (gal_is_image($entry, $allowedExt)) {
                 // Photo posée directement dans la catégorie : œuvre à une seule image
                 $oeuvres[] = [
                     'photos' => ['images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry)],
-                    'legende' => '',
+                    'legendes' => [''],
                 ];
             }
         }
@@ -108,14 +145,15 @@ if (is_dir($galerieDir)) {
           <h2 class="galerie_categorie_titre"><?= htmlspecialchars($categoryName) ?></h2>
           <div class="galerie_grid">
             <?php foreach ($oeuvres as $oeuvre): ?>
+              <?php $firstLegende = $oeuvre['legendes'][0] ?? ''; ?>
               <div class="galerie_item">
                 <img
                   src="<?= htmlspecialchars($oeuvre['photos'][0]) ?>"
-                  alt="<?= htmlspecialchars($oeuvre['legende'] !== '' ? $oeuvre['legende'] : $categoryName) ?>"
+                  alt="<?= htmlspecialchars($firstLegende !== '' ? $firstLegende : $categoryName) ?>"
                   loading="lazy"
                   class="galerie_photo"
                   data-photos="<?= htmlspecialchars(json_encode($oeuvre['photos']), ENT_QUOTES) ?>"
-                  data-legende="<?= htmlspecialchars($oeuvre['legende']) ?>"
+                  data-legendes="<?= htmlspecialchars(json_encode($oeuvre['legendes']), ENT_QUOTES) ?>"
                 >
               </div>
             <?php endforeach; ?>
