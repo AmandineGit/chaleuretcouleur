@@ -17,6 +17,14 @@ $navLinks = [
   <title><?= htmlspecialchars($pageTitle) ?></title>
   <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <meta name="theme-color" content="#FBF7F0" />
+
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.css" />
 
@@ -37,8 +45,11 @@ $navLinks = [
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand brand-text" href="index.php">
-            Chaleur <span>et</span> Couleur
+          <a class="navbar-brand brand-logo-test" href="index.php">
+            <img src="images/Logo-CC-v1-web.png" alt="Chaleur et Couleur">
+            <span class="brand-text">
+              <span class="brand-chaleur">Chaleur</span> <span class="brand-et">et</span> <span class="brand-couleur">Couleur</span>
+            </span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -52,7 +63,7 @@ $navLinks = [
               <ul class="navbar-nav">
                 <?php foreach ($navLinks as $key => $link): ?>
                 <li class="nav-item">
-                  <a class="nav-link<?= $currentPage === $key ? ' active' : '' ?>" href="<?= $link['href'] ?>"><?= $link['label'] ?></a>
+                  <a class="nav-link nav-link-<?= $key ?><?= $currentPage === $key ? ' active' : '' ?>" href="<?= $link['href'] ?>"><?= $link['label'] ?></a>
                 </li>
                 <?php endforeach; ?>
               </ul>
