@@ -35,20 +35,13 @@ include __DIR__ . '/partials/header.php';
         <div class="cartes_lignes">
           <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="#FFC145">
-                <path d="M12 3 2 11h3v9a1 1 0 0 0 1 1h5v-6h2v6h5a1 1 0 0 0 1-1v-9h3L12 3Z"/>
-              </svg>
+              <img src="images/Icones/domicile-jaune.png" alt="">
             </div>
             <p class="carte_ligne_label">Les personnes qui souhaitent ou doivent rester à domicile</p>
           </div>
           <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#4CC9A0">
-                <circle cx="7.5" cy="6" r="2.3"/>
-                <path d="M3.5 20v-3.5a4 4 0 0 1 8 0V20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1Z"/>
-                <circle cx="17" cy="9.5" r="1.8"/>
-                <path d="M13.8 20v-2.8a3.2 3.2 0 0 1 6.4 0V20a1 1 0 0 1-1 1h-4.4a1 1 0 0 1-1-1Z"/>
-              </svg>
+              <img src="images/Icones/PourTous-vert.png" alt="">
             </div>
             <p class="carte_ligne_label">Tous âges</p>
           </div>
@@ -66,32 +59,36 @@ include __DIR__ . '/partials/header.php';
 
         <div class="bulles_row">
           <div class="bulle_douce">
-            <div class="bulle_douce_icone bulle_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#4CC9A0">
-                <rect x="9" y="11" width="12" height="8" rx="4"/>
-                <rect x="3" y="5" width="13" height="9" rx="4"/>
-              </svg>
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/Lien-partage-corail.png" alt="">
             </div>
             <p class="bulle_douce_label">Besoin de partage</p>
           </div>
           <div class="bulle_douce">
-            <div class="bulle_douce_icone bulle_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFC145" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 13c1 4 4 6 9 6s8-2 9-6"/>
-                <path d="M3 13c1-2 3-3 5-2"/>
-                <path d="M21 13c-1-2-3-3-5-2"/>
-                <circle cx="12" cy="10.5" r="1.5" fill="#FFC145" stroke="none"/>
-              </svg>
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/bien-etre-corail.png" alt="">
             </div>
             <p class="bulle_douce_label">Envie d'un temps pour soi</p>
           </div>
           <div class="bulle_douce">
-            <div class="bulle_douce_icone bulle_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#4CC9A0">
+            <div class="bulle_douce_icone">
+              <svg viewBox="0 0 24 24" fill="#FF7A5C">
                 <path d="M4 16.5 15 5.5l3.5 3.5L7.5 20H4v-3.5Z"/>
               </svg>
             </div>
             <p class="bulle_douce_label">Envie de créer</p>
+          </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/solitude-ennui-corail.png" alt="">
+            </div>
+            <p class="bulle_douce_label">Isolement, période d'ennui</p>
+          </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/estime-grandir-confiance-corail.png" alt="">
+            </div>
+            <p class="bulle_douce_label">Prendre sa place, estime de soi</p>
           </div>
         </div>
 
@@ -131,18 +128,7 @@ include __DIR__ . '/partials/header.php';
           </div>
           <div class="carte_douce carte_douce--compact">
             <div class="carte_douce_icone carte_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
-                <rect x="3" y="4" width="18" height="17" rx="2.5"/>
-                <rect x="3" y="4" width="18" height="6" rx="2.5" fill="#4CC9A0"/>
-                <rect x="3" y="7.5" width="18" height="2.5" fill="#4CC9A0"/>
-                <rect x="7" y="2" width="2.2" height="5" rx="1.1" fill="#4CC9A0"/>
-                <rect x="14.8" y="2" width="2.2" height="5" rx="1.1" fill="#4CC9A0"/>
-                <circle cx="7.5" cy="14.5" r="1.8" fill="#4CC9A0"/>
-                <circle cx="12" cy="14.5" r="1.8" fill="#4CC9A0"/>
-                <circle cx="16.5" cy="14.5" r="1.8" fill="#4CC9A0"/>
-                <circle cx="9.5" cy="18.5" r="1.8" fill="#4CC9A0"/>
-                <circle cx="14.5" cy="18.5" r="1.8" fill="#4CC9A0"/>
-              </svg>
+              <img src="images/Icones/ponctuelRegulier-blanc.png" alt="">
             </div>
             <p class="carte_douce_label">Ponctuel ou régulier</p>
           </div>

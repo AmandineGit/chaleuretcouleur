@@ -678,9 +678,11 @@ body.page-galerie .who_section h1 {
   margin: 0 auto 15px auto;
 }
 
-.carte_douce_icone svg {
+.carte_douce_icone svg,
+.carte_douce_icone img {
   width: 34px;
   height: 34px;
+  object-fit: contain;
 }
 
 .carte_douce_icone--jaune {
@@ -712,7 +714,8 @@ body.page-galerie .who_section h1 {
   margin-bottom: 10px;
 }
 
-.carte_douce--compact .carte_douce_icone svg {
+.carte_douce--compact .carte_douce_icone svg,
+.carte_douce--compact .carte_douce_icone img {
   width: 26px;
   height: 26px;
 }
@@ -786,7 +789,8 @@ body.page-galerie .who_section h1 {
   flex-shrink: 0;
 }
 
-.bulle_douce_icone svg {
+.bulle_douce_icone svg,
+.bulle_douce_icone img {
   width: 36px;
   height: 36px;
 }
@@ -832,7 +836,8 @@ body.page-galerie .who_section h1 {
   background-color: transparent;
 }
 
-.carte_ligne .carte_douce_icone svg {
+.carte_ligne .carte_douce_icone svg,
+.carte_ligne .carte_douce_icone img {
   width: 38px;
   height: 38px;
 }
