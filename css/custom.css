@@ -696,29 +696,56 @@ body.page-galerie .who_section h1 {
 }
 
 /* Grandes illustrations couleur (ex. Matériel fourni, Techniques variées) :
-   pas de badge rond, juste l'image en grand format */
+   pas de badge rond, juste l'image en grand format, cadre carré */
 .carte_douce_icone--grande {
   background-color: transparent;
-  width: 360px;
-  height: 360px;
+  width: 180px;
+  height: 180px;
   max-width: 100%;
 }
 
 .carte_douce_icone--grande img {
-  width: 360px;
-  height: 360px;
+  width: 180px;
+  height: 180px;
   max-width: 100%;
   object-fit: contain;
 }
 
 /* Rangée dédiée aux grandes illustrations (Matériel fourni, Techniques variées) */
 .cartes_row--grandes {
-  gap: 40px;
+  gap: 30px;
 }
 
 .cartes_row--grandes .carte_douce {
-  flex: 0 1 400px;
-  max-width: 400px;
+  flex: 0 1 220px;
+  max-width: 220px;
+}
+
+.carte_douce--carre {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icônes plates, sans badge rond : couleur transférée sur toute la vignette */
+.carte_douce_icone--plat {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.carte_douce--fond-jaune {
+  background-color: #FFC145;
+}
+
+.carte_douce--fond-vert {
+  background-color: #4CC9A0;
+}
+
+.carte_douce--fond-jaune .carte_douce_label,
+.carte_douce--fond-vert .carte_douce_label {
+  color: #ffffff;
 }
 
 .carte_douce_label {

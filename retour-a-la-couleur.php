@@ -103,8 +103,8 @@ include __DIR__ . '/partials/header.php';
         <h3 class="mt-5">Comment ça se déroule ?</h3>
 
         <div class="cartes_row cartes_row--compact">
-          <div class="carte_douce carte_douce--compact">
-            <div class="carte_douce_icone carte_douce_icone--jaune">
+          <div class="carte_douce carte_douce--compact carte_douce--fond-jaune">
+            <div class="carte_douce_icone carte_douce_icone--plat">
               <svg viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="8.5" fill="#ffffff"/>
                 <path d="M12 7.5V12l3.2 2" stroke="#FFC145" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -112,8 +112,8 @@ include __DIR__ . '/partials/header.php';
             </div>
             <p class="carte_douce_label">De 1h à 2h</p>
           </div>
-          <div class="carte_douce carte_douce--compact">
-            <div class="carte_douce_icone carte_douce_icone--vert">
+          <div class="carte_douce carte_douce--compact carte_douce--fond-vert">
+            <div class="carte_douce_icone carte_douce_icone--plat">
               <img src="images/Icones/ponctuelRegulier-blanc.png" alt="">
             </div>
             <p class="carte_douce_label">Ponctuel ou régulier</p>
@@ -121,13 +121,13 @@ include __DIR__ . '/partials/header.php';
         </div>
 
         <div class="cartes_row cartes_row--grandes">
-          <div class="carte_douce">
+          <div class="carte_douce carte_douce--carre">
             <div class="carte_douce_icone carte_douce_icone--grande">
               <img src="images/Icones/Materiels1.png" alt="">
             </div>
             <p class="carte_douce_label">Matériel fourni</p>
           </div>
-          <div class="carte_douce">
+          <div class="carte_douce carte_douce--carre">
             <div class="carte_douce_icone carte_douce_icone--grande">
               <img src="images/Icones/TechVariees.png" alt="">
             </div>
