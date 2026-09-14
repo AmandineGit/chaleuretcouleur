@@ -143,6 +143,24 @@ body {
   margin-bottom: 8px;
 }
 
+/* --------------------------------------------------------------------------
+   GALERIE
+-------------------------------------------------------------------------- */
+.galerie_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.galerie_empty {
+  grid-column: 1 / -1;
+  background-color: #ffffff;
+  border: 1px dashed var(--seafoam);
+  border-radius: 8px;
+  padding: 50px 30px;
+  color: var(--warm-brown);
+}
+
 /* Lien "Mentions légales" dans le footer */
 .footer_section a {
   color: var(--seafoam) !important;
