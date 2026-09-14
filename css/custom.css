@@ -230,6 +230,8 @@ body {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 6px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .galerie_item img {
