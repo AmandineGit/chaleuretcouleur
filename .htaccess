@@ -1,0 +1,5 @@
+DirectoryIndex index.php index.html
+
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.php[\s?] [NC]
+RewriteRule ^index\.php$ / [R=301,L]

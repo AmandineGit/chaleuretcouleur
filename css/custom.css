@@ -1,0 +1,366 @@
+.navbar-nav::before {
+  content: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE D'ACCUEIL : SECTION Work (projets) 
+-------------------------------------------------------------------------- */
+/* --- Alignement du titre --- */
+.work_section .heading_container {
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE D'ACCUEIL : SECTION WHO 
+-------------------------------------------------------------------------- */
+/* --- Fond gris sur la section who --- */
+.who_section {
+  background-color: #E9EEF0;
+  padding: 60px 0;
+}
+
+.who_section .container {
+  background: transparent;
+  max-width: 1140px;
+}
+
+.who_section .heading_container {
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE D'ACCUEIL : SECTION CLIENT Témoignages
+-------------------------------------------------------------------------- */
+/* --- Fond gris sur la section Client --- */
+.client_section {
+  background-color: #E9EEF0;
+  padding: 60px 0;
+}
+
+.client_section .container {
+  background: transparent; 
+  max-width: 1140px;
+} 
+
+/* --- Carte centrale blanche dans la section clients --- */
+.client_section .owl-carousel .center .box {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Les autres cartes gardent leur fond gris clair */
+.client_section .owl-carousel .box {
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+/* Section témoignages : flèches centrées */
+.client_section .carousel-wrap {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.client_section .owl-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER : bouton "Contactez-nous" + harmonisation visuelle
+-------------------------------------------------------------------------- */
+
+/* Forcer le style bouton orange pour le lien du footer */
+.info_section .btn_on-hover {
+  display: inline-block !important;
+  background-color: #FE9E4C !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px 25px !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease, transform 0.2s ease !important;
+}
+
+.info_section .btn_on-hover:hover {
+  background-color: #ff7b00 !important;
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* Alignement à gauche du bloc newsletter */
+.info_section .detail-box {
+  text-align: left;
+}
+
+/* Alignement et lisibilité du texte dans le footer */
+.info_section h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Espacement pour le bouton */
+.info_section .btn_on-hover {
+  margin-bottom: 20px;
+}
+
+/* Espacement pour la social box */
+.info_section .social_box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 65px;
+}
+
+.info_section .social_box a {
+  display: inline-block;
+}
+
+.info_section .social_box a img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(100%);
+  transition: all 0.3s ease;
+}
+.info_section .social_box a img:hover {
+  filter: brightness(150%);
+}
+
+
+/* --------------------------------------------------------------------------
+   PAGE PROJETS : Bloc portfolio réutilisable (image à gauche, texte à droite)
+-------------------------------------------------------------------------- */
+.portfolio-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 10px 0 40px 0;
+  width: 100%;
+}
+
+.opensource-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opensource-image img {
+  width: auto;
+  max-width: 200px;
+  height: auto;
+}
+
+.opensource-text {
+  flex: 0 0 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.opensource-text p {
+  margin: 0 0 15px 0;
+  margin-top: 0 !important;
+}
+
+/* Liste avec flèches */
+.opensource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opensource-list li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.opensource-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #FE9E4C;
+  font-weight: bold;
+}
+
+/* Style citation réutilisable */
+.citation {
+  color: #24343C;
+  font-style: italic;
+}
+
+/* Espacement entre le titre H2 et le texte dans la page projets */
+.work_section .heading_container p {
+  margin-top: 35px;
+}
+
+/* H3 dans portfolio_container : centré sur desktop */
+.portfolio_container h3 {
+  text-align: center;
+}
+
+/* Variante du bloc portfolio avec texte plus large (60%) et image réduite (30%) */
+.portfolio-block-wide .opensource-image {
+  flex: 0 0 30%;
+}
+
+.portfolio-block-wide .opensource-text {
+  flex: 0 0 60%;
+}
+
+/* Animation pour l'image LogoSYB (lien cliquable) */
+.portfolio-block-wide .opensource-image a {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  animation: pulseAttention 2s ease-in-out infinite;
+}
+
+.portfolio-block-wide .opensource-image a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(254, 158, 76, 0.4);
+}
+
+.portfolio-block-wide .opensource-image a:hover img {
+  filter: brightness(1.1);
+}
+
+.portfolio-block-wide .opensource-image img {
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Keyframes pour l'animation d'attention */
+@keyframes pulseAttention {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(254, 158, 76, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(254, 158, 76, 0.6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+  RESPONSIVE : <768px
+-------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* H3 dans portfolio_container : aligné à gauche sur mobile */
+  .portfolio_container h3 {
+    text-align: left;
+  }
+
+  /* Centrage du bloc "Se renseigner" sur mobile */
+  .info_section .detail-box {
+    text-align: center !important;
+  }
+
+  .info_section .social_box {
+    justify-content: center !important;
+    padding-left: 0 !important;
+  }
+
+  /* Réduction de l'image projet2.png de moitié sur mobile */
+  .work_section .img-box img {
+    width: 50% !important;
+    height: auto !important;
+  }
+
+  /* Réorganisation de la section projets : image en haut sur mobile */
+  .work_section .row {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+
+  /* Espace entre l'image et le titre sur mobile */
+  .work_section .img-box {
+    margin-bottom: 30px;
+  }
+
+  /* Bloc portfolio en colonne sur mobile (texte en haut, image en bas) */
+  .portfolio-block {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .opensource-image {
+    flex: 0 0 auto;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FORMULAIRE DE CONTACT : Style pour le select et textarea
+-------------------------------------------------------------------------- */
+
+/* Style pour le select (liste déroulante) */
+.contact_section .contact-form select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+}
+
+.contact_section .contact-form select:focus {
+  border-color: #FF4F5A;
+}
+
+.contact_section .contact-form select option {
+  color: #000;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* Style pour le textarea */
+.contact_section .contact-form textarea {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Open Sans', sans-serif;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact_section .contact-form textarea:focus {
+  border-color: #FF4F5A;
+}
+
+.contact_section .contact-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
