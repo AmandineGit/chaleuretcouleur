@@ -3,7 +3,7 @@ $pageTitle = "Médiation par la couleur – Ateliers collectifs en structure | C
 $pageDescription = "Médiation par la couleur : des temps collectifs en résidence senior ou en association, animés autour de la couleur. Modalités, organisation et contact pour les structures.";
 $canonicalUrl = "https://chaleuretcouleur.fr/mediation-par-la-couleur.php";
 $currentPage = "mediation";
-$bodyClass = "";
+$bodyClass = "page-mediation";
 include __DIR__ . '/partials/header.php';
 ?>
 

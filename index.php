@@ -12,7 +12,7 @@ include __DIR__ . '/partials/header.php';
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8 text-center">
-        <h1>La couleur comme prétexte pour venir, s'asseoir, et parler</h1>
+        <h1>La couleur comme prétexte pour venir, s'asseoir, et parler <span aria-hidden="true">🖌️🌈</span></h1>
         <p class="text-justify mt-4">
           Chaleur et Couleur est née d'un constat simple : beaucoup de personnes, chez
           elles ou en résidence, passent des journées entières sans visite ni échange.
@@ -59,7 +59,7 @@ include __DIR__ . '/partials/header.php';
             Des temps collectifs en résidence senior ou en association, pour créer du
             lien à plusieurs.
           </p>
-          <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--discret">En savoir plus</a>
+          <a href="mediation-par-la-couleur.php" class="btn_on-hover">En savoir plus</a>
         </div>
       </div>
     </div>

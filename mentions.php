@@ -17,7 +17,7 @@ include __DIR__ . '/partials/header.php';
         <p class="text-justify">
           Le présent site est la propriété d'Amandine Verstrepen (TVA Intracommunautaire : FR 0D 509 736 427), auto-entrepreneuse, inscrite au RCS de Chambéry sous le numéro 509 736 427.<br>
           Le siège est situé  au 169, route de la rouarde, 73140 St Michel-de-Maurienne.<br>
-          Vous pouvez nous contacter par voie d’email à <a href="mailto:amandine.verstrepen@gmail.com">amandine.verstrepen@gmail.com</a> ou par téléphone au 06 26 33 08 63.
+          Vous pouvez nous contacter par voie d’email à <a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a> ou par téléphone au 06 26 33 08 63.
         </p>
         <h4 class="h5 text-muted">Directeur de publication</h4>
         <p>

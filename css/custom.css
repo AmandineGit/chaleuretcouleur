@@ -1,8 +1,9 @@
 :root {
-  --honey: #E3A857;
-  --honey-dark: #C98A34;
-  --seafoam: #7FB8A6;
-  --seafoam-dark: #5FA08C;
+  --honey: #FF7A5C;
+  --honey-dark: #D9684E;
+  --seafoam: #4CC9A0;
+  --seafoam-dark: #41AB88;
+  --coral: #FFC145;
   --cream: #FBF7F0;
   --warm-brown: #4A4038;
 }
@@ -19,6 +20,19 @@ body {
   color: var(--warm-brown);
 }
 
+/* Test du logo dessiné à la main dans le header */
+.brand-logo-test {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.brand-logo-test img {
+  height: 100px;
+  width: auto;
+  margin-right: 12px;
+  display: block;
+}
+
 .brand-text {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -27,10 +41,31 @@ body {
   letter-spacing: 0.5px;
 }
 
-.brand-text span {
-  color: var(--honey);
+.brand-text .brand-chaleur {
+  color: #FFC145;
+}
+
+.brand-text .brand-et {
+  color: #FF7A5C;
   font-weight: 400;
   font-style: italic;
+}
+
+.brand-text .brand-couleur {
+  color: #4CC9A0;
+}
+
+/* Liens du menu : Retour à la couleur en jaune, Médiation en vert */
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-retour {
+  color: #FFC145;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-mediation {
+  color: #4CC9A0;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-galerie {
+  color: #FF7A5C;
 }
 
 /* --------------------------------------------------------------------------
@@ -82,12 +117,12 @@ body {
 }
 
 .teaser_section {
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .teaser_dominant {
-  background-color: var(--seafoam);
-  background: linear-gradient(135deg, var(--seafoam) 0%, var(--cream) 120%);
+  background-color: var(--coral);
+  background: linear-gradient(135deg, var(--coral) 0%, var(--cream) 120%);
 }
 
 .teaser_dominant h2 {
@@ -96,9 +131,17 @@ body {
   color: var(--warm-brown);
   font-size: 2rem;
   text-transform: none;
+  -webkit-text-stroke: 0.5px #ffffff;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
 }
 
 .teaser_discret {
+  background-color: var(--seafoam);
+  background: linear-gradient(135deg, var(--seafoam) 0%, var(--cream) 120%);
   opacity: 0.9;
 }
 
@@ -106,7 +149,13 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: var(--warm-brown);
-  font-size: 1.4rem;
+  font-size: 2rem;
+  -webkit-text-stroke: 0.5px #ffffff;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
 }
 
 .teaser_tagline {
@@ -183,6 +232,48 @@ body {
   padding: 60px 0;
 }
 
+/* Bandeau du haut en corail sur la page "Retour à la couleur" uniquement */
+body.page-retour .who_section {
+  background-color: var(--coral);
+  background: linear-gradient(135deg, var(--coral) 0%, var(--cream) 120%);
+}
+
+/* Bandeau du haut en vert d'eau (fondu bleu) sur la page "Médiation par la couleur" */
+body.page-mediation .who_section {
+  background-color: var(--seafoam);
+  background: linear-gradient(135deg, var(--seafoam) 0%, var(--cream) 120%);
+}
+
+/* Titres de page en corail (Retour à la couleur + Médiation), contour blanc */
+body.page-retour .who_section h1,
+body.page-mediation .who_section h1 {
+  font-weight: 700;
+  color: #FF7A5C;
+  -webkit-text-stroke: 0.5px #ffffff;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
+
+/* Bandeau du haut en corail sur la page Galerie, titre en vert avec contour blanc */
+body.page-galerie .who_section {
+  background-color: #FF7A5C;
+  background: linear-gradient(135deg, #FF7A5C 0%, var(--cream) 120%);
+}
+
+body.page-galerie .who_section h1 {
+  font-weight: 700;
+  color: #41AB88;
+  -webkit-text-stroke: 0.5px #ffffff;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
+
 .who_section .container {
   background: transparent;
   max-width: 1140px;
@@ -243,7 +334,7 @@ body {
 /* Forcer le style bouton orange pour le lien du footer */
 .info_section .btn_on-hover {
   display: inline-block !important;
-  background-color: #E3A857 !important;
+  background-color: #FF7A5C !important;
   color: #ffffff !important;
   border: none !important;
   padding: 10px 25px !important;
@@ -255,19 +346,19 @@ body {
 }
 
 .info_section .btn_on-hover:hover {
-  background-color: #C98A34 !important;
+  background-color: #D9684E !important;
   transform: translateY(-2px);
   color: #ffffff !important;
 }
 
 /* Alignement à gauche du bloc newsletter */
 .info_section .detail-box {
-  text-align: left;
+  text-align: center;
 }
 
 /* Alignement et lisibilité du texte dans le footer */
 .info_section h5 {
-  font-weight: 600;
+  font-weight: normal;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -281,22 +372,24 @@ body {
 .info_section .social_box {
   margin-top: 20px;
   display: flex;
-  justify-content: flex-start;
-  padding-left: 65px;
+  justify-content: center;
+  padding-left: 0;
 }
 
 .info_section .social_box a {
   display: inline-block;
 }
 
-.info_section .social_box a img {
-  width: 32px;
-  height: 32px;
+.info_section .social_box a img,
+.info_section .social_box a svg {
+  width: 96px;
+  height: 96px;
   filter: brightness(100%);
   transition: all 0.3s ease;
 }
-.info_section .social_box a img:hover {
-  filter: brightness(150%);
+.info_section .social_box a:hover img,
+.info_section .social_box a:hover svg {
+  filter: brightness(130%);
 }
 
 
@@ -342,7 +435,7 @@ body {
 }
 
 .contact_section .contact-form select:focus {
-  border-color: #7FB8A6;
+  border-color: #4CC9A0;
 }
 
 .contact_section .contact-form select option {
@@ -368,7 +461,7 @@ body {
 }
 
 .contact_section .contact-form textarea:focus {
-  border-color: #7FB8A6;
+  border-color: #4CC9A0;
 }
 
 .contact_section .contact-form textarea::placeholder {

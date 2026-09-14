@@ -53,7 +53,7 @@ body {
   top: 50%;
   width: 40px;
   height: 1px;
-  background-color: #E3A857;
+  background-color: #FF7A5C;
 }
 
 .heading_container h2::before {
@@ -291,7 +291,7 @@ a:focus {
 }
 
 .do_section .do_container .box:hover .img-box {
-  background-color:#E3A857;
+  background-color:#FF7A5C;
 }
 
 .do_section .do_container .arrow_bg::before {
@@ -456,7 +456,7 @@ a:focus {
   text-transform: none;
   font-size: 16px;
   font-weight: normal;
-  color: #E3A857;
+  color: #FF7A5C;
 }
 
 .client_section .box .detail-box img {
@@ -580,19 +580,19 @@ a:focus {
 }
 
 .contact_section .contact-form button {
-  border: 1px solid #E3A857;
+  border: 1px solid #FF7A5C;
   outline: none;
   padding: 12px 50px;
   text-transform: uppercase;
   margin-top: 25px;
-  background-color: #E3A857;
+  background-color: #FF7A5C;
   color: #fff;
   border-radius: 30px;
 }
 
 .contact_section .contact-form button:hover {
   background-color: transparent;
-  color: #E3A857;
+  color: #FF7A5C;
 }
 
 .contact_section .map_img-box {
@@ -676,8 +676,8 @@ a:focus {
 .info_section .info_form form button {
   display: inline-block;
   padding: 8px 30px;
-  background-color: #E3A857;
-  border: 1px solid #E3A857;
+  background-color: #FF7A5C;
+  border: 1px solid #FF7A5C;
   color: #ffffff;
   margin-top: 15px;
   text-transform: uppercase;
@@ -686,7 +686,7 @@ a:focus {
 
 .info_section .info_form form button:hover {
   background-color: transparent;
-  color: #E3A857;
+  color: #FF7A5C;
 }
 
 .info_section .info_form .social_box {

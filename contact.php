@@ -12,7 +12,7 @@ include __DIR__ . '/partials/header.php';
 
       <div class="heading_container">
         <h2>
-          Contactez-nous
+          Contactez-moi
         </h2>
       </div>
       <div class="">

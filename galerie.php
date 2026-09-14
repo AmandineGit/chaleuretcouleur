@@ -3,7 +3,7 @@ $pageTitle = "Galerie | Chaleur et Couleur";
 $pageDescription = "Galerie de Chaleur et Couleur : photos des temps partagés autour de la couleur, publiées avec l'accord des personnes concernées.";
 $canonicalUrl = "https://chaleuretcouleur.fr/galerie.php";
 $currentPage = "galerie";
-$bodyClass = "";
+$bodyClass = "page-galerie";
 include __DIR__ . '/partials/header.php';
 ?>
 
