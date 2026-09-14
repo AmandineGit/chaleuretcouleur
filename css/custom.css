@@ -758,7 +758,7 @@ body.page-galerie .who_section h1 {
 /* Variante compacte : pastilles plus petites (ex. "Comment ça se déroule") */
 .carte_douce--compact {
   flex-basis: 150px;
-  padding: 18px 15px;
+  padding: 10px 12px;
 }
 
 .carte_douce--compact .carte_douce_icone {
@@ -866,6 +866,29 @@ body.page-galerie .who_section h1 {
   .bulle_douce_icone img {
     width: 52px;
     height: 52px;
+  }
+
+  /* Tailles individuelles : +20% (Besoin de partage, Isolement) et +30% (Envie d'un temps pour soi) */
+  .bulle_douce_icone--plus20 {
+    width: 77px;
+    height: 77px;
+  }
+
+  .bulle_douce_icone--plus20 svg,
+  .bulle_douce_icone--plus20 img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .bulle_douce_icone--plus30 {
+    width: 83px;
+    height: 83px;
+  }
+
+  .bulle_douce_icone--plus30 svg,
+  .bulle_douce_icone--plus30 img {
+    width: 68px;
+    height: 68px;
   }
 }
 
