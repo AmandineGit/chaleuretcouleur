@@ -32,9 +32,18 @@ $navLinks = [
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet"/>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <?php
+    // Paramètre de version basé sur la date de modification du fichier, pour
+    // forcer le navigateur/l'hébergeur à recharger le CSS après chaque déploiement
+    // plutôt que de servir une version mise en cache.
+    $cssVersion = static function (string $file): string {
+        $path = __DIR__ . '/../' . $file;
+        return $file . '?v=' . (is_file($path) ? filemtime($path) : time());
+    };
+  ?>
+  <link rel="stylesheet" href="<?= $cssVersion('css/style.css') ?>" />
+  <link rel="stylesheet" href="<?= $cssVersion('css/custom.css') ?>" />
+  <link rel="stylesheet" href="<?= $cssVersion('css/responsive.css') ?>" />
 
   <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
 </head>
