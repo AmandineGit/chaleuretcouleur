@@ -40,8 +40,16 @@ include __DIR__ . '/partials/header.php';
             <p class="carte_ligne_label">Les personnes qui souhaitent ou doivent rester à domicile</p>
           </div>
           <div class="carte_ligne">
-            <div class="carte_douce_icone carte_douce_icone--vert">
-              <img src="images/Icones/PourTous-vert.png" alt="">
+            <div class="carte_ligne_icones">
+              <div class="carte_douce_icone carte_douce_icone--vert">
+                <img src="images/Icones/PourTous-vert.png" alt="">
+              </div>
+              <div class="carte_douce_icone carte_douce_icone--vert">
+                <img src="images/Icones/senior-vert.png" alt="">
+              </div>
+              <div class="carte_douce_icone carte_douce_icone--vert">
+                <img src="images/Icones/PourTous-groupes-vert.png" alt="">
+              </div>
             </div>
             <p class="carte_ligne_label">Tous âges</p>
           </div>

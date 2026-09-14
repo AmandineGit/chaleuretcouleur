@@ -856,6 +856,12 @@ body.page-galerie .who_section h1 {
   height: 38px;
 }
 
+.carte_ligne_icones {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .carte_ligne_label {
   margin: 0;
   color: var(--warm-brown);
