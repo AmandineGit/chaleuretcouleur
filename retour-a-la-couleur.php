@@ -51,7 +51,7 @@ include __DIR__ . '/partials/header.php';
                 <img src="images/Icones/PourTous-groupes-vert.png" alt="">
               </div>
             </div>
-            <p class="carte_ligne_label">Tous âges</p>
+            <p class="carte_ligne_label">Adolescents, adultes, séniors</p>
           </div>
         </div>
 
