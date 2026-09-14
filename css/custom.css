@@ -745,7 +745,7 @@ body.page-galerie .who_section h1 {
 
 .carte_douce--fond-jaune .carte_douce_label,
 .carte_douce--fond-vert .carte_douce_label {
-  color: #ffffff;
+  color: var(--warm-brown);
 }
 
 .carte_douce_label {
@@ -758,13 +758,13 @@ body.page-galerie .who_section h1 {
 /* Variante compacte : pastilles plus petites (ex. "Comment ça se déroule") */
 .carte_douce--compact {
   flex-basis: 150px;
-  padding: 10px 12px;
+  padding: 4px 8px;
 }
 
 .carte_douce--compact .carte_douce_icone {
   width: 184px;
   height: 184px;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .carte_douce--compact .carte_douce_icone svg,
@@ -774,7 +774,7 @@ body.page-galerie .who_section h1 {
 }
 
 .carte_douce--compact .carte_douce_label {
-  font-size: 0.9rem;
+  font-size: 1.08rem;
 }
 
 @media (max-width: 768px) {
@@ -868,7 +868,7 @@ body.page-galerie .who_section h1 {
     height: 52px;
   }
 
-  /* Tailles individuelles : +20% (Besoin de partage, Isolement) et +30% (Envie d'un temps pour soi) */
+  /* Tailles individuelles (desktop uniquement) */
   .bulle_douce_icone--plus20 {
     width: 77px;
     height: 77px;
@@ -880,15 +880,28 @@ body.page-galerie .who_section h1 {
     height: 62px;
   }
 
+  /* Envie d'un temps pour soi : -20% par rapport à la taille précédente (100px/82px) */
   .bulle_douce_icone--plus30 {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   .bulle_douce_icone--plus30 svg,
   .bulle_douce_icone--plus30 img {
-    width: 82px;
-    height: 82px;
+    width: 66px;
+    height: 66px;
+  }
+
+  /* Besoin de partage : -15% par rapport à la taille précédente (77px/62px) */
+  .bulle_douce_icone--partage {
+    width: 65px;
+    height: 65px;
+  }
+
+  .bulle_douce_icone--partage svg,
+  .bulle_douce_icone--partage img {
+    width: 53px;
+    height: 53px;
   }
 }
 
@@ -914,22 +927,22 @@ body.page-galerie .who_section h1 {
   gap: 20px;
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 15px 25px;
+  padding: 6px 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .carte_ligne .carte_douce_icone {
   margin: 0;
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   background-color: transparent;
 }
 
 .carte_ligne .carte_douce_icone svg,
 .carte_ligne .carte_douce_icone img {
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
 }
 
 .carte_ligne_icones {
@@ -942,6 +955,7 @@ body.page-galerie .who_section h1 {
   margin: 0;
   color: var(--warm-brown);
   font-weight: 600;
+  font-size: 1.2rem;
   text-align: left;
 }
 
@@ -951,6 +965,12 @@ body.page-galerie .who_section h1 {
     text-align: center;
     padding: 20px;
   }
+}
+
+/* Texte courant de la page agrandi de 10% (titres non concernés, ils ont
+   leur propre taille définie plus haut ou héritée du gabarit) */
+.page-retour p {
+  font-size: 1.1rem;
 }
 
 

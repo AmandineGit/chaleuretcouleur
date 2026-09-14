@@ -67,7 +67,7 @@ include __DIR__ . '/partials/header.php';
 
         <div class="bulles_row">
           <div class="bulle_douce">
-            <div class="bulle_douce_icone bulle_douce_icone--plus20">
+            <div class="bulle_douce_icone bulle_douce_icone--partage">
               <img src="images/Icones/Lien-partage-blanc.png" alt="">
             </div>
             <p class="bulle_douce_label">Besoin de partage</p>
@@ -181,7 +181,8 @@ include __DIR__ . '/partials/header.php';
           convenir, si vous le souhaitez, d'une première visite.
         </p>
         <p class="text-justify">
-          Le plus simple est d'échanger par téléphone ou via le formulaire de contact.
+          Le plus simple est d'échanger par téléphone, par email
+          (contact@chaleuretcouleur.fr) ou via le formulaire de contact.
         </p>
         <div class="text-center mt-4">
           <a href="contact.php" class="btn_on-hover">Prendre contact</a>
