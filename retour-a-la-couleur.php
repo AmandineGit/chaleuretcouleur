@@ -32,17 +32,17 @@ include __DIR__ . '/partials/header.php';
 
         <h3>Pour qui ?</h3>
 
-        <div class="cartes_row">
-          <div class="carte_douce">
+        <div class="cartes_lignes">
+          <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--jaune">
               <svg viewBox="0 0 24 24" fill="#ffffff">
                 <path d="M12 3 2 11h3v9a1 1 0 0 0 1 1h5v-6h2v6h5a1 1 0 0 0 1-1v-9h3L12 3Z"/>
                 <path d="M12 14.6c.5-.7 1.6-1.1 2.3-.5.8.6.8 1.7 0 2.4L12 18.5l-2.3-2c-.8-.7-.8-1.8 0-2.4.7-.6 1.8-.2 2.3.5Z" fill="#FFC145"/>
               </svg>
             </div>
-            <p class="carte_douce_label">Les personnes qui souhaitent ou doivent rester à domicile</p>
+            <p class="carte_ligne_label">Les personnes qui souhaitent ou doivent rester à domicile</p>
           </div>
-          <div class="carte_douce">
+          <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--vert">
               <svg viewBox="0 0 24 24" fill="#ffffff">
                 <circle cx="7.5" cy="6" r="2.3"/>
@@ -51,13 +51,13 @@ include __DIR__ . '/partials/header.php';
                 <path d="M13.8 20v-2.8a3.2 3.2 0 0 1 6.4 0V20a1 1 0 0 1-1 1h-4.4a1 1 0 0 1-1-1Z"/>
               </svg>
             </div>
-            <p class="carte_douce_label">Tous âges</p>
+            <p class="carte_ligne_label">Tous âges</p>
           </div>
         </div>
 
         <p class="text-justify">
-          Pour les personnes isolées, de tous âges, qui souhaitent recevoir des visites
-          à domicile, ponctuelles ou régulières, sans pression particulière.
+          Pour les personnes isolées, de tous âges, qui souhaitent partager un moment
+          de création à domicile, sans pression particulière.
         </p>
         <p class="text-justify">
           J'interviens à domicile sur Bourg-Saint-Maurice et la Tarentaise.
@@ -112,8 +112,10 @@ include __DIR__ . '/partials/header.php';
           <div class="carte_douce carte_douce--compact">
             <div class="carte_douce_icone carte_douce_icone--vert">
               <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 8V6a5 5 0 0 1 10 0v2" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="4" y="8" width="16" height="12" rx="2" fill="#ffffff"/>
+                <rect x="6" y="13" width="12" height="8" rx="1.5" fill="#ffffff"/>
+                <rect x="8" y="10" width="8" height="3" rx="1" fill="#ffffff"/>
+                <path d="M9 6l7 7" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+                <circle cx="9" cy="6" r="1.8" fill="#FFC145"/>
               </svg>
             </div>
             <p class="carte_douce_label">Matériel fourni</p>
@@ -132,10 +134,16 @@ include __DIR__ . '/partials/header.php';
           <div class="carte_douce carte_douce--compact">
             <div class="carte_douce_icone carte_douce_icone--vert">
               <svg viewBox="0 0 24 24" fill="#ffffff">
-                <rect x="4" y="5" width="16" height="15" rx="2"/>
-                <rect x="4" y="5" width="16" height="4" fill="#4CC9A0"/>
-                <rect x="7.5" y="3" width="1.6" height="4" rx="0.8" fill="#4CC9A0"/>
-                <rect x="14.9" y="3" width="1.6" height="4" rx="0.8" fill="#4CC9A0"/>
+                <rect x="3" y="4" width="18" height="17" rx="2.5"/>
+                <rect x="3" y="4" width="18" height="6" rx="2.5" fill="#4CC9A0"/>
+                <rect x="3" y="7.5" width="18" height="2.5" fill="#4CC9A0"/>
+                <rect x="7" y="2" width="2.2" height="5" rx="1.1" fill="#4CC9A0"/>
+                <rect x="14.8" y="2" width="2.2" height="5" rx="1.1" fill="#4CC9A0"/>
+                <circle cx="7.5" cy="14.5" r="1.8" fill="#4CC9A0"/>
+                <circle cx="12" cy="14.5" r="1.8" fill="#4CC9A0"/>
+                <circle cx="16.5" cy="14.5" r="1.8" fill="#4CC9A0"/>
+                <circle cx="9.5" cy="18.5" r="1.8" fill="#4CC9A0"/>
+                <circle cx="14.5" cy="18.5" r="1.8" fill="#4CC9A0"/>
               </svg>
             </div>
             <p class="carte_douce_label">Ponctuel ou régulier</p>
