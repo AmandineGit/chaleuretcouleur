@@ -110,7 +110,7 @@ include __DIR__ . '/partials/header.php';
                 <path d="M12 7.5V12l3.2 2" stroke="#FFC145" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <p class="carte_douce_label">De 1h à 2h</p>
+            <p class="carte_douce_label">Durée : 1h à 2h</p>
           </div>
           <div class="carte_douce carte_douce--compact carte_douce--fond-vert">
             <div class="carte_douce_icone carte_douce_icone--plat">

@@ -762,15 +762,15 @@ body.page-galerie .who_section h1 {
 }
 
 .carte_douce--compact .carte_douce_icone {
-  width: 46px;
-  height: 46px;
+  width: 92px;
+  height: 92px;
   margin-bottom: 10px;
 }
 
 .carte_douce--compact .carte_douce_icone svg,
 .carte_douce--compact .carte_douce_icone img {
-  width: 26px;
-  height: 26px;
+  width: 52px;
+  height: 52px;
 }
 
 .carte_douce--compact .carte_douce_label {
