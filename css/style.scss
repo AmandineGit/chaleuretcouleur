@@ -1,6 +1,6 @@
 $black: #000000;
 $white: #ffffff;
-$primary1:#FE9E4C;
+$primary1:#E3A857;
 
 @mixin main-font {
   font-family: "Poppins", sans-serif;
@@ -95,7 +95,7 @@ body {
 /*header section*/
 .hero_area {
   height: 100vh;
-  background-color: #b5caee;
+  background-color: #FBF7F0;
   background-image: url(../images/hero-bg.jpg);
   background-size: cover;
 }
@@ -600,7 +600,7 @@ a:focus {
 
 // info section
 .info_section {
-  background-color: #232323;
+  background-color: #3A322B;
   color: $white;
   padding: 90px 0 45px 0;
 
@@ -689,7 +689,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #232323;
+  background-color: #3A322B;
   font-weight: 500;
   display: flex;
   justify-content: center;

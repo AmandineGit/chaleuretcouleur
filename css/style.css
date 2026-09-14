@@ -53,7 +53,7 @@ body {
   top: 50%;
   width: 40px;
   height: 1px;
-  background-color: #FE9E4C;
+  background-color: #E3A857;
 }
 
 .heading_container h2::before {
@@ -69,7 +69,7 @@ body {
 }
 
 .hero_area {
-  background-color: #b5caee;
+  background-color: #FBF7F0;
   height: auto; /* ou min-height: 100vh; si tu veux un peu d’espace */
 }
 
@@ -88,7 +88,7 @@ body {
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
-  background-color: #232323;
+  background-color: #3A322B;
 }
 
 .header_section .nav_container {
@@ -291,7 +291,7 @@ a:focus {
 }
 
 .do_section .do_container .box:hover .img-box {
-  background-color:#FE9E4C;
+  background-color:#E3A857;
 }
 
 .do_section .do_container .arrow_bg::before {
@@ -456,7 +456,7 @@ a:focus {
   text-transform: none;
   font-size: 16px;
   font-weight: normal;
-  color: #FE9E4C;
+  color: #E3A857;
 }
 
 .client_section .box .detail-box img {
@@ -580,19 +580,19 @@ a:focus {
 }
 
 .contact_section .contact-form button {
-  border: 1px solid #FE9E4C;
+  border: 1px solid #E3A857;
   outline: none;
   padding: 12px 50px;
   text-transform: uppercase;
   margin-top: 25px;
-  background-color: #FE9E4C;
+  background-color: #E3A857;
   color: #fff;
   border-radius: 30px;
 }
 
 .contact_section .contact-form button:hover {
   background-color: transparent;
-  color: #FE9E4C;
+  color: #E3A857;
 }
 
 .contact_section .map_img-box {
@@ -606,7 +606,7 @@ a:focus {
 
 /* end contact section */
 .info_section {
-  background-color: #232323;
+  background-color: #3A322B;
   color: #ffffff;
   padding: 90px 0 45px 0;
 }
@@ -676,8 +676,8 @@ a:focus {
 .info_section .info_form form button {
   display: inline-block;
   padding: 8px 30px;
-  background-color: #FE9E4C;
-  border: 1px solid #FE9E4C;
+  background-color: #E3A857;
+  border: 1px solid #E3A857;
   color: #ffffff;
   margin-top: 15px;
   text-transform: uppercase;
@@ -686,7 +686,7 @@ a:focus {
 
 .info_section .info_form form button:hover {
   background-color: transparent;
-  color: #FE9E4C;
+  color: #E3A857;
 }
 
 .info_section .info_form .social_box {
@@ -703,7 +703,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #232323;
+  background-color: #3A322B;
   font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;

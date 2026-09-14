@@ -1,5 +1,41 @@
+:root {
+  --honey: #E3A857;
+  --honey-dark: #C98A34;
+  --seafoam: #7FB8A6;
+  --seafoam-dark: #5FA08C;
+  --cream: #FBF7F0;
+  --warm-brown: #4A4038;
+}
+
 .navbar-nav::before {
   content: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   FOND ET LOGO TEXTE
+-------------------------------------------------------------------------- */
+body {
+  background-color: var(--cream);
+  color: var(--warm-brown);
+}
+
+.brand-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+}
+
+.brand-text span {
+  color: var(--honey);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Lien "Mentions légales" dans le footer */
+.footer_section a {
+  color: var(--seafoam) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -79,7 +115,7 @@
 /* Forcer le style bouton orange pour le lien du footer */
 .info_section .btn_on-hover {
   display: inline-block !important;
-  background-color: #FE9E4C !important;
+  background-color: #E3A857 !important;
   color: #ffffff !important;
   border: none !important;
   padding: 10px 25px !important;
@@ -91,7 +127,7 @@
 }
 
 .info_section .btn_on-hover:hover {
-  background-color: #ff7b00 !important;
+  background-color: #C98A34 !important;
   transform: translateY(-2px);
   color: #ffffff !important;
 }
@@ -191,7 +227,7 @@
   content: "→";
   position: absolute;
   left: 0;
-  color: #FE9E4C;
+  color: #E3A857;
   font-weight: bold;
 }
 
@@ -330,7 +366,7 @@
 }
 
 .contact_section .contact-form select:focus {
-  border-color: #FF4F5A;
+  border-color: #7FB8A6;
 }
 
 .contact_section .contact-form select option {
@@ -356,7 +392,7 @@
 }
 
 .contact_section .contact-form textarea:focus {
-  border-color: #FF4F5A;
+  border-color: #7FB8A6;
 }
 
 .contact_section .contact-form textarea::placeholder {
