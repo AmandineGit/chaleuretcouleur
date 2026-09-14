@@ -18,18 +18,18 @@ include __DIR__ . '/partials/header.php';
           il affaiblit le moral, la confiance et l'élan du quotidien.
         </p>
         <p class="text-justify">
-          Nous avons tous besoin d'échanger, de rire et de nous sentir utiles.
+          Les humains ont besoin d'échanger, de rire et de se sentir utiles.
         </p>
         <p class="text-justify">
-          Beaucoup de personnes passent des journées entières sans visite, ni activité
-          plaisante ni rencontre. La couleur n'est ici qu'un prétexte, mais un fil pour
-          tenir une heure de présence, d'attention et de conversation, sans rien attendre
-          de plus.
+          La création devient un prétexte pour se rencontrer et échanger. On reprend
+          contact avec soi et peut-être aussi avec les autres, à son rythme.
         </p>
         <p class="text-justify">
-          Pas de résultat à produire, pas de talent requis : juste un moment partagé, à
-          son rythme, où poser des couleurs sur une page devient une façon d'être
-          ensemble et de rompre la solitude du quotidien.
+          Une activité simple relance l'envie d'agir, sans objectif de performance.
+        </p>
+        <p class="text-justify">
+          Un moment partagé, à son rythme, où poser des couleurs sur une page devient une
+          façon d'être ensemble et de rompre la solitude du quotidien.
         </p>
       </div>
     </div>
@@ -45,7 +45,7 @@ include __DIR__ . '/partials/header.php';
         <div class="detail-box text-center">
           <h2>Retour à la couleur</h2>
           <p class="teaser_tagline">
-            Une présence à domicile, en tête-à-tête, pour les personnes isolées ou âgées.
+            Une présence à domicile, en tête-à-tête, pour les personnes de tous âges, isolées ou non.
           </p>
           <a href="retour-a-la-couleur.php" class="btn_on-hover">En savoir plus</a>
         </div>
@@ -63,8 +63,7 @@ include __DIR__ . '/partials/header.php';
         <div class="detail-box text-center">
           <h3>Médiation par la couleur</h3>
           <p class="teaser_tagline">
-            Des temps collectifs en résidence senior ou en association, pour créer du
-            lien à plusieurs.
+            Des temps collectifs pour créer du lien à plusieurs et trouver sa place en douceur.
           </p>
           <a href="mediation-par-la-couleur.php" class="btn_on-hover">En savoir plus</a>
         </div>

@@ -15,8 +15,9 @@ include __DIR__ . '/partials/header.php';
           <h1>Médiation par la couleur</h1>
         </div>
         <p class="text-justify">
-          Des temps collectifs animés autour de la couleur, en résidence senior ou en
-          association, pour créer du lien entre les personnes accueillies.
+          Des temps collectifs pour créer du lien à plusieurs, pour retrouver sa place,
+          pour permettre la rencontre, pour apaiser les tensions, pour faciliter la
+          cohésion et la complicité.
         </p>
       </div>
     </div>
@@ -31,8 +32,8 @@ include __DIR__ . '/partials/header.php';
         <div class="en_bref_box mb-5">
           <h3>En bref</h3>
           <ul>
-            <li><strong>Format :</strong> atelier collectif, 6 à 12 personnes</li>
-            <li><strong>Durée :</strong> 1h à 1h30 par séance</li>
+            <li><strong>Format :</strong> atelier collectif, 4 à 8 personnes</li>
+            <li><strong>Durée :</strong> 1h30 à 2h par séance</li>
             <li><strong>Fréquence :</strong> ponctuelle ou régulière, à convenir avec la structure</li>
             <li><strong>Matériel :</strong> fourni, aucune expérience requise pour les participants</li>
             <li><strong>Lieu :</strong> dans les locaux de la structure</li>
@@ -41,15 +42,15 @@ include __DIR__ . '/partials/header.php';
 
         <h3>Pour quelles structures</h3>
         <p class="text-justify">
-          Résidences seniors, EHPAD, foyers, associations de proximité — toute structure
+          Résidences seniors, foyers, associations de proximité — toute structure
           qui accueille des personnes isolées ou âgées et souhaite proposer un temps
           collectif simple à mettre en place.
         </p>
 
         <h3 class="mt-5">Modalités</h3>
         <ul>
-          <li>Groupes de 6 à 12 participants, adaptables aux capacités de chacun</li>
-          <li>Séances d'1h à 1h30, sur site</li>
+          <li>Groupes de 4 à 8 participants, adaptables aux capacités de chacun</li>
+          <li>Séances d'1h30 à 2h, sur site</li>
           <li>Matériel de couleur fourni, aucune compétence préalable nécessaire</li>
           <li>Formule ponctuelle (séance découverte) ou cycle régulier</li>
         </ul>
@@ -63,8 +64,8 @@ include __DIR__ . '/partials/header.php';
 
         <h3 class="mt-5">Contact</h3>
         <p class="text-justify">
-          Pour organiser une intervention, contactez-nous avec le nom de votre structure
-          et le nombre de personnes concerné — nous revenons vers vous rapidement.
+          Pour organiser une intervention, contactez-moi avec le nom de votre structure
+          et le nombre de personnes concerné — je reviens vers vous rapidement.
         </p>
         <div class="text-center mt-4">
           <a href="contact.php" class="btn_on-hover">Demander un devis</a>
