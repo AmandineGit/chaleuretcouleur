@@ -35,16 +35,15 @@ include __DIR__ . '/partials/header.php';
         <div class="cartes_lignes">
           <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
+              <svg viewBox="0 0 24 24" fill="#FFC145">
                 <path d="M12 3 2 11h3v9a1 1 0 0 0 1 1h5v-6h2v6h5a1 1 0 0 0 1-1v-9h3L12 3Z"/>
-                <path d="M12 14.6c.5-.7 1.6-1.1 2.3-.5.8.6.8 1.7 0 2.4L12 18.5l-2.3-2c-.8-.7-.8-1.8 0-2.4.7-.6 1.8-.2 2.3.5Z" fill="#FFC145"/>
               </svg>
             </div>
             <p class="carte_ligne_label">Les personnes qui souhaitent ou doivent rester à domicile</p>
           </div>
           <div class="carte_ligne">
             <div class="carte_douce_icone carte_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
+              <svg viewBox="0 0 24 24" fill="#4CC9A0">
                 <circle cx="7.5" cy="6" r="2.3"/>
                 <path d="M3.5 20v-3.5a4 4 0 0 1 8 0V20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1Z"/>
                 <circle cx="17" cy="9.5" r="1.8"/>
@@ -68,16 +67,16 @@ include __DIR__ . '/partials/header.php';
         <div class="bulles_row">
           <div class="bulle_douce">
             <div class="bulle_douce_icone bulle_douce_icone--vert">
-              <svg viewBox="0 0 24 24">
-                <rect x="9" y="11" width="12" height="8" rx="4" fill="#4CC9A0" stroke="#ffffff" stroke-width="1"/>
-                <rect x="3" y="5" width="13" height="9" rx="4" fill="#ffffff"/>
+              <svg viewBox="0 0 24 24" fill="#4CC9A0">
+                <rect x="9" y="11" width="12" height="8" rx="4"/>
+                <rect x="3" y="5" width="13" height="9" rx="4"/>
               </svg>
             </div>
             <p class="bulle_douce_label">Besoin de partage</p>
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone bulle_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFC145" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 13c1 4 4 6 9 6s8-2 9-6"/>
                 <path d="M3 13c1-2 3-3 5-2"/>
                 <path d="M21 13c-1-2-3-3-5-2"/>
@@ -88,9 +87,8 @@ include __DIR__ . '/partials/header.php';
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone bulle_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
+              <svg viewBox="0 0 24 24" fill="#4CC9A0">
                 <path d="M4 16.5 15 5.5l3.5 3.5L7.5 20H4v-3.5Z"/>
-                <path d="M13.5 7 17 10.5l1.8-1.8a1.5 1.5 0 0 0 0-2.1l-1.4-1.4a1.5 1.5 0 0 0-2.1 0L13.5 7Z" fill="#FFC145"/>
               </svg>
             </div>
             <p class="bulle_douce_label">Envie de créer</p>

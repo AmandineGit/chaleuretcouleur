@@ -778,9 +778,8 @@ body.page-galerie .who_section h1 {
 }
 
 .bulle_douce_icone {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -788,16 +787,8 @@ body.page-galerie .who_section h1 {
 }
 
 .bulle_douce_icone svg {
-  width: 26px;
-  height: 26px;
-}
-
-.bulle_douce_icone--jaune {
-  background-color: #FFC145;
-}
-
-.bulle_douce_icone--vert {
-  background-color: #4CC9A0;
+  width: 36px;
+  height: 36px;
 }
 
 .bulle_douce_label {
@@ -836,6 +827,14 @@ body.page-galerie .who_section h1 {
 .carte_ligne .carte_douce_icone {
   margin: 0;
   flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+}
+
+.carte_ligne .carte_douce_icone svg {
+  width: 38px;
+  height: 38px;
 }
 
 .carte_ligne_label {
