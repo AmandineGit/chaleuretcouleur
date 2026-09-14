@@ -96,6 +96,12 @@ include __DIR__ . '/partials/header.php';
             </div>
             <p class="bulle_douce_label">Estime de soi, trouver sa place</p>
           </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/Joie-mouvement-vie-blanc.png" alt="">
+            </div>
+            <p class="bulle_douce_label">Découvrir ou redécouvrir la couleur</p>
+          </div>
         </div>
 
         <h3 class="mt-5">Comment ça se déroule ?</h3>
