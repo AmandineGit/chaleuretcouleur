@@ -33,6 +33,88 @@ body {
   font-style: italic;
 }
 
+/* --------------------------------------------------------------------------
+   BOUTON "EN SAVOIR PLUS" / "CONTACTEZ-NOUS" (style de base, réutilisé partout)
+-------------------------------------------------------------------------- */
+.btn_on-hover {
+  display: inline-block;
+  background-color: var(--honey);
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn_on-hover:hover {
+  background-color: var(--honey-dark);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn_on-hover--discret {
+  background-color: transparent;
+  color: var(--seafoam-dark);
+  border: 1px solid var(--seafoam);
+}
+
+.btn_on-hover--discret:hover {
+  background-color: var(--seafoam);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   ACCUEIL : récit + teasers
+-------------------------------------------------------------------------- */
+.recit_section h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--warm-brown);
+  font-size: 2.2rem;
+}
+
+.recit_section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.teaser_section {
+  border-radius: 12px;
+}
+
+.teaser_dominant {
+  background-color: var(--seafoam);
+  background: linear-gradient(135deg, var(--seafoam) 0%, var(--cream) 120%);
+}
+
+.teaser_dominant h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--warm-brown);
+  font-size: 2rem;
+  text-transform: none;
+}
+
+.teaser_discret {
+  opacity: 0.9;
+}
+
+.teaser_discret h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--warm-brown);
+  font-size: 1.4rem;
+}
+
+.teaser_tagline {
+  font-size: 1.05rem;
+  margin: 15px auto 25px auto;
+  max-width: 560px;
+}
+
 /* Lien "Mentions légales" dans le footer */
 .footer_section a {
   color: var(--seafoam) !important;
@@ -173,133 +255,10 @@ body {
 
 
 /* --------------------------------------------------------------------------
-   PAGE PROJETS : Bloc portfolio réutilisable (image à gauche, texte à droite)
--------------------------------------------------------------------------- */
-.portfolio-block {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin: 10px 0 40px 0;
-  width: 100%;
-}
-
-.opensource-image {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.opensource-image img {
-  width: auto;
-  max-width: 200px;
-  height: auto;
-}
-
-.opensource-text {
-  flex: 0 0 33.33%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-}
-
-.opensource-text p {
-  margin: 0 0 15px 0;
-  margin-top: 0 !important;
-}
-
-/* Liste avec flèches */
-.opensource-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.opensource-list li {
-  padding-left: 20px;
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.opensource-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: #E3A857;
-  font-weight: bold;
-}
-
-/* Style citation réutilisable */
-.citation {
-  color: #24343C;
-  font-style: italic;
-}
-
-/* Espacement entre le titre H2 et le texte dans la page projets */
-.work_section .heading_container p {
-  margin-top: 35px;
-}
-
-/* H3 dans portfolio_container : centré sur desktop */
-.portfolio_container h3 {
-  text-align: center;
-}
-
-/* Variante du bloc portfolio avec texte plus large (60%) et image réduite (30%) */
-.portfolio-block-wide .opensource-image {
-  flex: 0 0 30%;
-}
-
-.portfolio-block-wide .opensource-text {
-  flex: 0 0 60%;
-}
-
-/* Animation pour l'image LogoSYB (lien cliquable) */
-.portfolio-block-wide .opensource-image a {
-  display: inline-block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
-  animation: pulseAttention 2s ease-in-out infinite;
-}
-
-.portfolio-block-wide .opensource-image a:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(254, 158, 76, 0.4);
-}
-
-.portfolio-block-wide .opensource-image a:hover img {
-  filter: brightness(1.1);
-}
-
-.portfolio-block-wide .opensource-image img {
-  transition: filter 0.3s ease;
-  cursor: pointer;
-}
-
-/* Keyframes pour l'animation d'attention */
-@keyframes pulseAttention {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(254, 158, 76, 0);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(254, 158, 76, 0.6);
-  }
-}
-
-/* --------------------------------------------------------------------------
   RESPONSIVE : <768px
 -------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
-
-  /* H3 dans portfolio_container : aligné à gauche sur mobile */
-  .portfolio_container h3 {
-    text-align: left;
-  }
 
   /* Centrage du bloc "Se renseigner" sur mobile */
   .info_section .detail-box {
@@ -309,35 +268,6 @@ body {
   .info_section .social_box {
     justify-content: center !important;
     padding-left: 0 !important;
-  }
-
-  /* Réduction de l'image projet2.png de moitié sur mobile */
-  .work_section .img-box img {
-    width: 50% !important;
-    height: auto !important;
-  }
-
-  /* Réorganisation de la section projets : image en haut sur mobile */
-  .work_section .row {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-  }
-
-  /* Espace entre l'image et le titre sur mobile */
-  .work_section .img-box {
-    margin-bottom: 30px;
-  }
-
-  /* Bloc portfolio en colonne sur mobile (texte en haut, image en bas) */
-  .portfolio-block {
-    flex-direction: column-reverse;
-    gap: 20px;
-  }
-
-  .opensource-image {
-    flex: 0 0 auto;
-    width: 50%;
-    margin: 0 auto;
   }
 }
 

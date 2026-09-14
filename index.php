@@ -1,286 +1,70 @@
 <?php
-$pageTitle = "Digital Pragma – Coaching et ateliers collectifs pour organisations";
-$pageDescription = "Digital Pragma accompagne entrepreneurs, dirigeants et équipes grâce au coaching individuel et à des ateliers collectifs : médiation créative, agilité, sensibilisation RGPD, cybersécurité, IA Act.";
-$canonicalUrl = "https://digital-pragma.fr/";
+$pageTitle = "Chaleur et Couleur – Présence et créativité contre l'isolement";
+$pageDescription = "Chaleur et Couleur accompagne les personnes isolées ou âgées par la couleur : des visites à domicile en tête-à-tête et des temps collectifs en résidence ou en association.";
+$canonicalUrl = "https://chaleuretcouleur.fr/";
 $currentPage = "accueil";
-$logoVariant = "corail";
 $bodyClass = "accueil";
 include __DIR__ . '/partials/header.php';
 ?>
 
-<!-- slider section -->
-<section class="slider_section position-relative">
+<!-- récit -->
+<section class="recit_section layout_padding">
   <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col">
-              <div class="detail-box">
-                <div>
-                  <h2>Un accompagnement humain et pragmatique</h2>
-                  <h1>Coaching & ateliers collectifs</h1>
-                  <p>
-                    Digital Pragma accompagne les organisations : les solutions <br>
-                    naissent chez vous, avec vous, pas dans un rapport.
-                  </p>
-                  <div>
-                    <a href="contact.php">Contactez-nous</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col">
-              <div class="detail-box">
-                <div>
-                  <h1>Coaching individuel</h1>
-                  <p>
-                    Pour entrepreneurs, dirigeants et managers en quête <br>
-                    de clarté, de recul et d'une posture plus juste.
-                  </p>
-                  <div>
-                    <a href="offres.php">Découvrir le coaching</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col">
-              <div class="detail-box">
-                <div>
-                  <h1>Ateliers collectifs</h1>
-                  <p>
-                  Médiation créative, ateliers agiles, sensibilisation RGPD, cybersécurité, IA Act.
-                  </p>
-                  <div>
-                    <a href="offres.php">Découvrir les ateliers</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div> <!-- /.carousel-inner -->
-      <!-- Contrôles gauche / droite -->
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Précédent</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Suivant</span>
-      </a>
-    </div> <!-- /#carouselExampleIndicators -->
-  </div> <!-- /.container -->
-</section>
-<!-- end slider section -->
-
-<!-- do section -->
-<section class="do_section layout_padding">
-  <div class="container">
-    <div class="heading_container">
-      <h2>Deux façons de vous accompagner</h2>
-      <p>
-        Un accompagnement individuel ou collectif, toujours construit avec les
-        personnes concernées.
-      </p>
-    </div>
-    <div class="do_container">
-      <div class="box arrow-start">
-        <div class="img-box">
-          <a href="offres.php" class="img-box"><img src="images/d-5.png" alt="Coaching individuel"></a>
-        </div>
-        <div class="detail-box">
-          <h6>Coaching individuel</h6>
-        </div>
-      </div>
-      <div class="box arrow-end">
-        <div class="img-box">
-          <a href="offres.php" class="img-box"><img src="images/d-2.png" alt="Ateliers collectifs"></a>
-        </div>
-        <div class="detail-box">
-          <h6>Ateliers collectifs</h6>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8 text-center">
+        <h1>La couleur comme prétexte pour venir, s'asseoir, et parler</h1>
+        <p class="text-justify mt-4">
+          Chaleur et Couleur est née d'un constat simple : beaucoup de personnes, chez
+          elles ou en résidence, passent des journées entières sans visite ni échange.
+          La couleur n'est ici qu'un prétexte — un fil pour tenir une heure de présence,
+          d'attention et de conversation, sans rien attendre de plus.
+        </p>
+        <p class="text-justify">
+          Pas de résultat à produire, pas de talent requis : juste un moment partagé, à
+          son rythme, où poser des couleurs sur une page devient une façon d'être
+          ensemble et de rompre la solitude du quotidien.
+        </p>
       </div>
     </div>
   </div>
 </section>
-<!-- end do section -->
+<!-- end récit -->
 
-<!-- who section -->
-<section class="who_section">
+<!-- teaser dominant : Retour à la couleur -->
+<section class="teaser_section teaser_dominant layout_padding">
   <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <div class="img-box">
-          <img src="images/AteliersV2.png"
-               alt="Illustration d'ateliers collectifs Digital Pragma">
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h2>Digital Pragma, c'est quoi ?</h2>
-          </div>
-          <p class="text-justify">
-            Un accompagnement humain et organisationnel pour les entrepreneurs,
-            dirigeants, managers et équipes qui veulent avancer.<br><br>
-            Nous ne livrons pas de diagnostic tout fait : le constat et les solutions
-            émergent des personnes elles-mêmes, salariés et managers, que nous aidons
-            à faire émerger et à structurer.<br><br>
-            Deux formats pour ça : le coaching individuel, pour cheminer à votre
-            rythme, et les ateliers collectifs — médiation créative, agilité,
-            sensibilisation RGPD, cybersécurité, IA Act — pour faire avancer une
-            équipe ensemble.<br><br>
-            Si vous avez un besoin en tête, ou souhaitez simplement en discuter
-            autour d’un café, en local ou en visio, contactez-nous !
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="detail-box text-center">
+          <h2>Retour à la couleur</h2>
+          <p class="teaser_tagline">
+            Une présence à domicile, en tête-à-tête, pour les personnes isolées ou âgées.
           </p>
-          <div class="text-center">
-            <a href="apropos.php" class="btn_on-hover">En savoir plus</a>
-          </div>
+          <a href="retour-a-la-couleur.php" class="btn_on-hover">En savoir plus</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- end who section -->
+<!-- end teaser dominant -->
 
-
-<!-- work section -->
-<section class="work_section layout_padding">
+<!-- teaser discret : Médiation par la couleur -->
+<section class="teaser_section teaser_discret layout_padding2">
   <div class="container">
-    <div class="row">
-      <div class="col-md-5 d-flex align-items-center">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h2>Se former en autonomie</h2>
-          </div>
-          <p class="text-justify">
-            En complément du coaching et des ateliers, retrouvez nos parcours de
-            sensibilisation en libre accès sur ShakeYourBrain, notre plateforme de
-            formation gratuite et ouverte à tous.<br><br>
-            Une ressource pour continuer à progresser à votre rythme, entre deux
-            séances d'accompagnement.
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="detail-box text-center">
+          <h3>Médiation par la couleur</h3>
+          <p class="teaser_tagline">
+            Des temps collectifs en résidence senior ou en association, pour créer du
+            lien à plusieurs.
           </p>
-          <div class="text-center">
-            <a href="ressources.php" class="btn_on-hover">En savoir plus</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="img-box">
-          <img src="images/Digital-Student.png" class="d-block mx-auto"
-               alt="Digital Pragma aide à atteindre vos objectifs">
+          <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--discret">En savoir plus</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- end work section -->
-
-
-<!-- client section -->
-<section class="client_section">
-  <div class="container">
-    <div class="heading_container">
-      <h2>Ce que disent nos clients</h2>
-    </div>
-    <div class="carousel-wrap">
-      <div class="owl-carousel">
-        <!-- témoignage 1 -->
-        <div class="item">
-          <div class="box">
-            <div class="detail-box">
-              <h5>
-                Gérard Némitz<br>
-                <span>- Consultant sénior SI -</span>
-              </h5>
-              <img src="images/quote.png" alt="">
-              <p class="text-justify">
-                J'ai croisé Amandine à 2 reprises dans des contextes de missions différents.
-                Elle a su à chaque fois prendre la mesure des missions et faire l'unanimité
-                en utilisant et en partageant toutes ses compétences.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- témoignage 2 -->
-        <div class="item">
-          <div class="box">
-            <div class="detail-box">
-              <h5>
-                Bernard Mikolajczak<br>
-                <span>- IT Service Relationship Manager Kingfisher plc -</span>
-              </h5>
-              <img src="images/quote.png" alt="">
-              <p class="text-justify">
-                Manager des process ITIL Change et Fournisseurs chez Kingfisher IT Services pendant 3 ans.
-                Amandine a parfaitement accompli sa mission : rigoureuse, tenace et disponible.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- témoignage 3 -->
-        <div class="item">
-          <div class="box">
-            <div class="detail-box">
-              <h5>
-                Peter Gerritsen<br>
-                <span>- Coach'sultant @ Pepper Group and Parthenus -</span>
-              </h5>
-              <img src="images/quote.png" alt="">
-              <p class="text-justify">
-                Excellente formatrice, pédagogue et innovante. Les clients et stagiaires
-                étaient toujours ravis de ses interventions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end client section -->
-
-
-<!-- target section -->
-<section class="target_section layout_padding2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <div class="detail-box">
-          <h2>700+</h2>
-          <h5>Missions réalisées</h5>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="detail-box">
-          <h2>Secteurs variés</h2>
-          <h5>Industrie, finance, commerce, tourisme, santé, éducation...</h5>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="detail-box">
-          <h2>100%</h2>
-          <h5>Clients satisfaits</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end target section -->
+<!-- end teaser discret -->
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
