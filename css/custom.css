@@ -244,6 +244,52 @@ body {
   transform: scale(1.05);
 }
 
+.galerie_item img {
+  cursor: zoom-in;
+}
+
+/* Modale d'affichage plein format de la galerie */
+.galerie-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.galerie-modal.show {
+  display: flex;
+}
+
+.galerie-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.galerie-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.galerie-modal-close:hover {
+  color: var(--honey);
+}
+
 /* Lien "Mentions légales" dans le footer */
 .footer_section a {
   color: var(--seafoam) !important;

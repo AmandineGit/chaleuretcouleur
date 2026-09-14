@@ -2,7 +2,45 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
+  initGalerieModal();
 });
+
+/**
+ * Modale d'affichage plein format pour la galerie
+ */
+function initGalerieModal() {
+  const modal = document.getElementById('galerieModal');
+  if (!modal) return; // La modale n'existe que sur la page galerie
+
+  const modalImg = document.getElementById('galerieModalImg');
+  const closeBtn = modal.querySelector('.galerie-modal-close');
+
+  function openModal(photo) {
+    modalImg.src = photo.src;
+    modalImg.alt = photo.alt;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.galerie_photo').forEach(photo => {
+    photo.addEventListener('click', () => openModal(photo));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+  });
+}
 
 /**
  * Gestion du formulaire de contact

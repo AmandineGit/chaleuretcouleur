@@ -70,7 +70,7 @@ if (is_dir($galerieDir)) {
             <?php foreach ($photos as $photo): ?>
               <?php $src = 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($photo); ?>
               <div class="galerie_item">
-                <img src="<?= $src ?>" alt="<?= htmlspecialchars($categoryName) ?>" loading="lazy">
+                <img src="<?= $src ?>" alt="<?= htmlspecialchars($categoryName) ?>" loading="lazy" class="galerie_photo">
               </div>
             <?php endforeach; ?>
           </div>
@@ -79,5 +79,11 @@ if (is_dir($galerieDir)) {
     <?php endif; ?>
   </div>
 </section>
+
+<!-- Modale d'affichage plein format -->
+<div id="galerieModal" class="galerie-modal">
+  <span class="galerie-modal-close">&times;</span>
+  <img id="galerieModalImg" src="" alt="">
+</div>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
