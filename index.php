@@ -14,10 +14,17 @@ include __DIR__ . '/partials/header.php';
       <div class="col-md-10 col-lg-8 text-center">
         <h1>La couleur comme prétexte pour venir, s'asseoir, et parler <span aria-hidden="true">🖌️🌈</span></h1>
         <p class="text-justify mt-4">
-          Chaleur et Couleur est née d'un constat simple : beaucoup de personnes, chez
-          elles ou en résidence, passent des journées entières sans visite ni échange.
-          La couleur n'est ici qu'un prétexte — un fil pour tenir une heure de présence,
-          d'attention et de conversation, sans rien attendre de plus.
+          Chaleur et Couleur est née d'un constat simple : quand l'isolement s'installe,
+          il affaiblit le moral, la confiance et l'élan du quotidien.
+        </p>
+        <p class="text-justify">
+          Nous avons tous besoin d'échanger, de rire et de nous sentir utiles.
+        </p>
+        <p class="text-justify">
+          Beaucoup de personnes passent des journées entières sans visite, ni activité
+          plaisante ni rencontre. La couleur n'est ici qu'un prétexte, mais un fil pour
+          tenir une heure de présence, d'attention et de conversation, sans rien attendre
+          de plus.
         </p>
         <p class="text-justify">
           Pas de résultat à produire, pas de talent requis : juste un moment partagé, à
