@@ -6,18 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Modale d'affichage plein format pour la galerie
+ * Modale d'affichage plein format pour la galerie, avec navigation
+ * en boucle entre les images d'une même œuvre (processus de création)
  */
 function initGalerieModal() {
   const modal = document.getElementById('galerieModal');
   if (!modal) return; // La modale n'existe que sur la page galerie
 
   const modalImg = document.getElementById('galerieModalImg');
+  const modalLegende = document.getElementById('galerieModalLegende');
   const closeBtn = modal.querySelector('.galerie-modal-close');
+  const prevBtn = modal.querySelector('.galerie-modal-prev');
+  const nextBtn = modal.querySelector('.galerie-modal-next');
+
+  let currentPhotos = [];
+  let currentLegende = '';
+  let currentIndex = 0;
+
+  function showCurrent() {
+    modalImg.src = currentPhotos[currentIndex];
+    const hasMultiple = currentPhotos.length > 1;
+    prevBtn.style.display = hasMultiple ? 'flex' : 'none';
+    nextBtn.style.display = hasMultiple ? 'flex' : 'none';
+    modalLegende.textContent = currentLegende;
+    modalLegende.style.display = currentLegende ? 'block' : 'none';
+  }
 
   function openModal(photo) {
-    modalImg.src = photo.src;
-    modalImg.alt = photo.alt;
+    currentPhotos = JSON.parse(photo.dataset.photos || '[]');
+    currentLegende = photo.dataset.legende || '';
+    currentIndex = 0;
+    showCurrent();
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
   }
@@ -27,18 +46,33 @@ function initGalerieModal() {
     document.body.style.overflow = '';
   }
 
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    showCurrent();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % currentPhotos.length;
+    showCurrent();
+  }
+
   document.querySelectorAll('.galerie_photo').forEach(photo => {
     photo.addEventListener('click', () => openModal(photo));
   });
 
   closeBtn.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    if (!modal.classList.contains('show')) return;
+    if (e.key === 'Escape') closeModal();
+    else if (e.key === 'ArrowLeft') showPrev();
+    else if (e.key === 'ArrowRight') showNext();
   });
 }
 

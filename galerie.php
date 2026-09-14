@@ -6,30 +6,70 @@ $currentPage = "galerie";
 $bodyClass = "page-galerie";
 include __DIR__ . '/partials/header.php';
 
-// Chaque sous-dossier de images/galerie/ est une catégorie affichée automatiquement.
-// Il suffit d'y déposer des photos (jpg/jpeg/png/webp) pour qu'elles apparaissent ici.
+// Structure de images/galerie/ :
+//   <catégorie>/<œuvre>/01-xxx.jpg, 02-xxx.jpg, ... + legende.txt (optionnel)
+//   <catégorie>/photo-seule.jpg  (une image posée directement = une "œuvre" à une seule photo)
+// La première image (ordre alphabétique, d'où l'intérêt des préfixes 01-, 02-...) sert de
+// vignette ; les suivantes défilent dans la modale avec les flèches, en boucle.
 $galerieDir = __DIR__ . '/images/galerie';
 $allowedExt = ['jpg', 'jpeg', 'png', 'webp'];
 $categories = [];
 
+function gal_is_image($file, $allowedExt) {
+    return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowedExt, true);
+}
+
 if (is_dir($galerieDir)) {
-    $entries = scandir($galerieDir);
-    $categoryFolders = array_filter($entries, function ($entry) use ($galerieDir) {
+    $categoryFolders = array_filter(scandir($galerieDir), function ($entry) use ($galerieDir) {
         return $entry !== '.' && $entry !== '..' && is_dir($galerieDir . '/' . $entry);
     });
     natcasesort($categoryFolders);
 
-    foreach ($categoryFolders as $folder) {
-        $photos = [];
-        foreach (scandir($galerieDir . '/' . $folder) as $file) {
-            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-            if (in_array($ext, $allowedExt, true)) {
-                $photos[] = $file;
+    foreach ($categoryFolders as $categoryName) {
+        $categoryPath = $galerieDir . '/' . $categoryName;
+        $oeuvres = [];
+
+        $entries = scandir($categoryPath);
+        natcasesort($entries);
+
+        foreach ($entries as $entry) {
+            if ($entry === '.' || $entry === '..') continue;
+            $entryPath = $categoryPath . '/' . $entry;
+
+            if (is_dir($entryPath)) {
+                // Dossier-œuvre : plusieurs images + légende optionnelle
+                $images = [];
+                foreach (scandir($entryPath) as $file) {
+                    if (gal_is_image($file, $allowedExt)) {
+                        $images[] = $file;
+                    }
+                }
+                natcasesort($images);
+                if (empty($images)) continue;
+
+                $legende = '';
+                $legendePath = $entryPath . '/legende.txt';
+                if (is_file($legendePath)) {
+                    $legende = trim(file_get_contents($legendePath));
+                }
+
+                $oeuvres[] = [
+                    'photos' => array_map(function ($file) use ($categoryName, $entry) {
+                        return 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry) . '/' . rawurlencode($file);
+                    }, array_values($images)),
+                    'legende' => $legende,
+                ];
+            } elseif (gal_is_image($entry, $allowedExt)) {
+                // Photo posée directement dans la catégorie : œuvre à une seule image
+                $oeuvres[] = [
+                    'photos' => ['images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry)],
+                    'legende' => '',
+                ];
             }
         }
-        natcasesort($photos);
-        if (!empty($photos)) {
-            $categories[$folder] = array_values($photos);
+
+        if (!empty($oeuvres)) {
+            $categories[$categoryName] = $oeuvres;
         }
     }
 }
@@ -63,14 +103,20 @@ if (is_dir($galerieDir)) {
         </div>
       </div>
     <?php else: ?>
-      <?php foreach ($categories as $categoryName => $photos): ?>
+      <?php foreach ($categories as $categoryName => $oeuvres): ?>
         <div class="galerie_categorie">
           <h2 class="galerie_categorie_titre"><?= htmlspecialchars($categoryName) ?></h2>
           <div class="galerie_grid">
-            <?php foreach ($photos as $photo): ?>
-              <?php $src = 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($photo); ?>
+            <?php foreach ($oeuvres as $oeuvre): ?>
               <div class="galerie_item">
-                <img src="<?= $src ?>" alt="<?= htmlspecialchars($categoryName) ?>" loading="lazy" class="galerie_photo">
+                <img
+                  src="<?= htmlspecialchars($oeuvre['photos'][0]) ?>"
+                  alt="<?= htmlspecialchars($oeuvre['legende'] !== '' ? $oeuvre['legende'] : $categoryName) ?>"
+                  loading="lazy"
+                  class="galerie_photo"
+                  data-photos="<?= htmlspecialchars(json_encode($oeuvre['photos']), ENT_QUOTES) ?>"
+                  data-legende="<?= htmlspecialchars($oeuvre['legende']) ?>"
+                >
               </div>
             <?php endforeach; ?>
           </div>
@@ -83,7 +129,12 @@ if (is_dir($galerieDir)) {
 <!-- Modale d'affichage plein format -->
 <div id="galerieModal" class="galerie-modal">
   <span class="galerie-modal-close">&times;</span>
-  <img id="galerieModalImg" src="" alt="">
+  <button class="galerie-modal-nav galerie-modal-prev" aria-label="Image précédente">&#8249;</button>
+  <button class="galerie-modal-nav galerie-modal-next" aria-label="Image suivante">&#8250;</button>
+  <div class="galerie-modal-content">
+    <img id="galerieModalImg" src="" alt="">
+    <p id="galerieModalLegende" class="galerie-modal-legende"></p>
+  </div>
 </div>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
