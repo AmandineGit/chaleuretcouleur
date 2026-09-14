@@ -679,18 +679,18 @@ body.page-galerie .who_section h1 {
 }
 
 .carte_douce_icone svg {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
 }
 
 .carte_douce_icone--jaune {
-  background-color: rgba(255, 193, 69, 0.18);
-  color: #C98A34;
+  background-color: #FFC145;
+  color: #ffffff;
 }
 
 .carte_douce_icone--vert {
-  background-color: rgba(76, 201, 160, 0.18);
-  color: #3BAE88;
+  background-color: #4CC9A0;
+  color: #ffffff;
 }
 
 .carte_douce_label {
@@ -713,8 +713,8 @@ body.page-galerie .who_section h1 {
 }
 
 .carte_douce--compact .carte_douce_icone svg {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
 }
 
 .carte_douce--compact .carte_douce_label {
