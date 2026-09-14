@@ -117,6 +117,19 @@ body {
   background-color: #3BAE88;
 }
 
+.btn_on-hover--corail {
+  background-color: #FF7A5C;
+}
+
+.btn_on-hover--corail:hover {
+  background-color: #E0603F;
+}
+
+.btn_on-hover--petit {
+  padding: 8px 24px;
+  font-size: 12.8px;
+}
+
 /* --------------------------------------------------------------------------
    ACCUEIL : récit + teasers
 -------------------------------------------------------------------------- */
@@ -416,6 +429,11 @@ body.page-mediation .who_section h1 {
      1px -1px 0 #ffffff,
     -1px  1px 0 #ffffff,
      1px  1px 0 #ffffff;
+}
+
+/* Titre agrandi de 10% (2.5rem -> 2.75rem) sur cette page uniquement */
+body.page-retour .who_section h1 {
+  font-size: 2.75rem;
 }
 
 /* Bandeau du haut en corail sur la page Galerie, titre en vert avec contour blanc */
@@ -755,33 +773,46 @@ body.page-galerie .who_section h1 {
   font-size: 1rem;
 }
 
-/* Variante compacte : pastilles plus petites (ex. "Comment ça se déroule") */
-.carte_douce--compact {
-  flex-basis: 150px;
-  padding: 4px 8px;
+@media (max-width: 768px) {
+  .carte_douce {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
-.carte_douce--compact .carte_douce_icone {
-  width: 184px;
-  height: 184px;
-  margin-bottom: 2px;
+/* Durée / Ponctuel ou régulier : même disposition et mêmes marges que les
+   bulles "Pourquoi" (pilule, icône à gauche du texte), contenu et couleurs
+   propres à ces deux vignettes conservés */
+.carte_douce--pilule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 40px;
+  padding: 6px 22px 6px 10px;
+  flex: 0 1 280px;
+  text-align: left;
 }
 
-.carte_douce--compact .carte_douce_icone svg,
-.carte_douce--compact .carte_douce_icone img {
-  width: 104px;
-  height: 104px;
+.carte_douce--pilule .carte_douce_icone {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
-.carte_douce--compact .carte_douce_label {
+.carte_douce--pilule .carte_douce_icone svg,
+.carte_douce--pilule .carte_douce_icone img {
+  width: 86px;
+  height: 86px;
+}
+
+.carte_douce--pilule .carte_douce_label {
   font-size: 1.08rem;
 }
 
 @media (max-width: 768px) {
-  .carte_douce,
-  .carte_douce--compact {
+  .carte_douce--pilule {
     flex: 1 1 100%;
-    max-width: 100%;
   }
 }
 
@@ -903,6 +934,18 @@ body.page-galerie .who_section h1 {
     width: 53px;
     height: 53px;
   }
+
+  /* Découvrir ou redécouvrir la couleur : +15% par rapport à la taille de base (64px/52px) */
+  .bulle_douce_icone--decouvrir {
+    width: 74px;
+    height: 74px;
+  }
+
+  .bulle_douce_icone--decouvrir svg,
+  .bulle_douce_icone--decouvrir img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -934,15 +977,15 @@ body.page-galerie .who_section h1 {
 .carte_ligne .carte_douce_icone {
   margin: 0;
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background-color: transparent;
 }
 
 .carte_ligne .carte_douce_icone svg,
 .carte_ligne .carte_douce_icone img {
-  width: 46px;
-  height: 46px;
+  width: 51px;
+  height: 51px;
 }
 
 .carte_ligne_icones {

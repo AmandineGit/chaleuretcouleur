@@ -67,6 +67,21 @@ include __DIR__ . '/partials/header.php';
 
         <div class="bulles_row">
           <div class="bulle_douce">
+            <div class="bulle_douce_icone bulle_douce_icone--decouvrir">
+              <img src="images/Icones/Joie-mouvement-vie-blanc.png" alt="">
+            </div>
+            <p class="bulle_douce_label">Découvrir ou redécouvrir la couleur</p>
+          </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone">
+              <img src="images/Icones/Pinceau-blanc.png" alt="">
+            </div>
+            <p class="bulle_douce_label">Envie de créer</p>
+          </div>
+        </div>
+
+        <div class="bulles_row">
+          <div class="bulle_douce">
             <div class="bulle_douce_icone bulle_douce_icone--partage">
               <img src="images/Icones/Lien-partage-blanc.png" alt="">
             </div>
@@ -78,12 +93,9 @@ include __DIR__ . '/partials/header.php';
             </div>
             <p class="bulle_douce_label">Envie d'un temps pour soi</p>
           </div>
-          <div class="bulle_douce">
-            <div class="bulle_douce_icone">
-              <img src="images/Icones/Pinceau-blanc.png" alt="">
-            </div>
-            <p class="bulle_douce_label">Envie de créer</p>
-          </div>
+        </div>
+
+        <div class="bulles_row">
           <div class="bulle_douce">
             <div class="bulle_douce_icone bulle_douce_icone--plus20">
               <img src="images/Icones/solitude-ennui-blanc.png" alt="">
@@ -96,27 +108,21 @@ include __DIR__ . '/partials/header.php';
             </div>
             <p class="bulle_douce_label">Estime de soi, trouver sa place</p>
           </div>
-          <div class="bulle_douce">
-            <div class="bulle_douce_icone">
-              <img src="images/Icones/Joie-mouvement-vie-blanc.png" alt="">
-            </div>
-            <p class="bulle_douce_label">Découvrir ou redécouvrir la couleur</p>
-          </div>
         </div>
 
         <h3 class="mt-5">Comment ça se déroule ?</h3>
 
-        <div class="cartes_row cartes_row--compact">
-          <div class="carte_douce carte_douce--compact carte_douce--fond-jaune">
+        <div class="bulles_row">
+          <div class="carte_douce carte_douce--pilule carte_douce--fond-jaune">
             <div class="carte_douce_icone carte_douce_icone--plat">
               <svg viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="8.5" fill="#ffffff"/>
                 <path d="M12 7.5V12l3.2 2" stroke="#FFC145" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <p class="carte_douce_label">Durée : 1h à 2h</p>
+            <p class="carte_douce_label">Durée :<br>1h à 2h</p>
           </div>
-          <div class="carte_douce carte_douce--compact carte_douce--fond-vert">
+          <div class="carte_douce carte_douce--pilule carte_douce--fond-vert">
             <div class="carte_douce_icone carte_douce_icone--plat">
               <img src="images/Icones/ponctuelRegulier-blanc.png" alt="">
             </div>
@@ -169,7 +175,7 @@ include __DIR__ . '/partials/header.php';
               réussir.
             </p>
             <p>
-              <a href="qui-suis-je.php">En savoir plus sur mon parcours →</a>
+              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune btn_on-hover--petit">En savoir plus sur mon parcours →</a>
             </p>
           </div>
         </div>
@@ -181,8 +187,9 @@ include __DIR__ . '/partials/header.php';
           convenir, si vous le souhaitez, d'une première visite.
         </p>
         <p class="text-justify">
-          Le plus simple est d'échanger par téléphone, par email
-          (contact@chaleuretcouleur.fr) ou via le formulaire de contact.
+          Le plus simple est d'échanger par téléphone, par email —
+          <a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a> —
+          ou via le formulaire de contact ci-dessous.
         </p>
         <div class="text-center mt-4">
           <a href="contact.php" class="btn_on-hover">Prendre contact</a>
