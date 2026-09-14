@@ -53,29 +53,6 @@ include __DIR__ . '/partials/header.php';
             </div>
             <p class="carte_douce_label">Tous âges</p>
           </div>
-          <div class="carte_douce">
-            <div class="carte_douce_icone carte_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
-                <rect x="4" y="4" width="16" height="16" rx="1.5"/>
-                <rect x="5" y="5" width="6" height="6" fill="#4CC9A0"/>
-                <rect x="13" y="5" width="6" height="6" fill="#4CC9A0"/>
-                <rect x="5" y="13" width="6" height="6" fill="#4CC9A0"/>
-                <rect x="13" y="13" width="6" height="6" fill="#4CC9A0"/>
-              </svg>
-            </div>
-            <p class="carte_douce_label">Compagnie qui se raréfie</p>
-          </div>
-          <div class="carte_douce">
-            <div class="carte_douce_icone carte_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 13c1 4 4 6 9 6s8-2 9-6"/>
-                <path d="M3 13c1-2 3-3 5-2"/>
-                <path d="M21 13c-1-2-3-3-5-2"/>
-                <circle cx="12" cy="10.5" r="1.5" fill="#FFC145" stroke="none"/>
-              </svg>
-            </div>
-            <p class="carte_douce_label">Envie d'un temps pour soi</p>
-          </div>
         </div>
 
         <p class="text-justify">
@@ -85,6 +62,40 @@ include __DIR__ . '/partials/header.php';
         <p class="text-justify">
           J'interviens à domicile sur Bourg-Saint-Maurice et la Tarentaise.
         </p>
+
+        <h3 class="mt-5">Pourquoi ?</h3>
+
+        <div class="bulles_row">
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone bulle_douce_icone--vert">
+              <svg viewBox="0 0 24 24">
+                <rect x="9" y="11" width="12" height="8" rx="4" fill="#4CC9A0" stroke="#ffffff" stroke-width="1"/>
+                <rect x="3" y="5" width="13" height="9" rx="4" fill="#ffffff"/>
+              </svg>
+            </div>
+            <p class="bulle_douce_label">Besoin de partage</p>
+          </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone bulle_douce_icone--jaune">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13c1 4 4 6 9 6s8-2 9-6"/>
+                <path d="M3 13c1-2 3-3 5-2"/>
+                <path d="M21 13c-1-2-3-3-5-2"/>
+                <circle cx="12" cy="10.5" r="1.5" fill="#FFC145" stroke="none"/>
+              </svg>
+            </div>
+            <p class="bulle_douce_label">Envie d'un temps pour soi</p>
+          </div>
+          <div class="bulle_douce">
+            <div class="bulle_douce_icone bulle_douce_icone--vert">
+              <svg viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M4 16.5 15 5.5l3.5 3.5L7.5 20H4v-3.5Z"/>
+                <path d="M13.5 7 17 10.5l1.8-1.8a1.5 1.5 0 0 0 0-2.1l-1.4-1.4a1.5 1.5 0 0 0-2.1 0L13.5 7Z" fill="#FFC145"/>
+              </svg>
+            </div>
+            <p class="bulle_douce_label">Envie de créer</p>
+          </div>
+        </div>
 
         <h3 class="mt-5">Comment ça se déroule ?</h3>
 
