@@ -68,19 +68,19 @@ include __DIR__ . '/partials/header.php';
         <div class="bulles_row">
           <div class="bulle_douce">
             <div class="bulle_douce_icone">
-              <img src="images/Icones/Lien-partage-corail.png" alt="">
+              <img src="images/Icones/Lien-partage-blanc.png" alt="">
             </div>
             <p class="bulle_douce_label">Besoin de partage</p>
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone">
-              <img src="images/Icones/bien-etre-corail.png" alt="">
+              <img src="images/Icones/bien-etre-blanc.png" alt="">
             </div>
             <p class="bulle_douce_label">Envie d'un temps pour soi</p>
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone">
-              <svg viewBox="0 0 24 24" fill="#FF7A5C">
+              <svg viewBox="0 0 24 24" fill="#ffffff">
                 <path d="M4 16.5 15 5.5l3.5 3.5L7.5 20H4v-3.5Z"/>
               </svg>
             </div>
@@ -88,15 +88,15 @@ include __DIR__ . '/partials/header.php';
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone">
-              <img src="images/Icones/solitude-ennui-corail.png" alt="">
+              <img src="images/Icones/solitude-ennui-blanc.png" alt="">
             </div>
             <p class="bulle_douce_label">Isolement, période d'ennui</p>
           </div>
           <div class="bulle_douce">
             <div class="bulle_douce_icone">
-              <img src="images/Icones/estime-grandir-confiance-corail.png" alt="">
+              <img src="images/Icones/estime-grandir-confiance-blanc.png" alt="">
             </div>
-            <p class="bulle_douce_label">Prendre sa place, estime de soi</p>
+            <p class="bulle_douce_label">Estime de soi, trouver sa place</p>
           </div>
         </div>
 
