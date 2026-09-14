@@ -36,7 +36,7 @@ function initGalerieModal() {
   function openModal(photo) {
     currentPhotos = JSON.parse(photo.dataset.photos || '[]');
     currentLegendes = JSON.parse(photo.dataset.legendes || '[]');
-    currentIndex = 0;
+    currentIndex = parseInt(photo.dataset.coverIndex || '0', 10) || 0;
     showCurrent();
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';

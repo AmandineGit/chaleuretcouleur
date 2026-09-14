@@ -19,12 +19,16 @@ function gal_is_image($file, $allowedExt) {
     return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowedExt, true);
 }
 
-// Légendes par image : une ligne "#01 Ma phrase" dans legende.txt correspond à
-// l'image dont le nom commence par 01 (ex. "01 - Fraises.png"). Si le fichier ne
-// contient aucune ligne préfixée par #, son contenu s'applique à toutes les photos.
+// Lit legende.txt d'une œuvre et renvoie ['captions' => [...], 'coverIndex' => N].
+// - une ligne "#01 Ma phrase" correspond à l'image dont le nom commence par 01
+//   (ex. "01 - Fraises.png") ; sans aucune ligne préfixée par #, le contenu du
+//   fichier s'applique tel quel à toutes les photos.
+// - une ligne "Head 02" désigne l'image 02 comme vignette de couverture (par
+//   défaut, c'est la première image dans l'ordre qui sert de couverture).
 function gal_parse_legendes($legendePath, $images) {
     $captions = array_fill(0, count($images), '');
-    if (!is_file($legendePath)) return $captions;
+    $coverIndex = 0;
+    if (!is_file($legendePath)) return ['captions' => $captions, 'coverIndex' => $coverIndex];
 
     $numberToIndex = [];
     foreach ($images as $i => $file) {
@@ -41,7 +45,12 @@ function gal_parse_legendes($legendePath, $images) {
         $line = trim($line);
         if ($line === '') continue;
 
-        if (preg_match('/^#0*(\d+)\s*(.*)$/', $line, $m)) {
+        if (preg_match('/^head\s+0*(\d+)\s*$/i', $line, $m)) {
+            $num = (int) $m[1];
+            if (isset($numberToIndex[$num])) {
+                $coverIndex = $numberToIndex[$num];
+            }
+        } elseif (preg_match('/^#0*(\d+)\s*(.*)$/', $line, $m)) {
             $hasNumberedLine = true;
             $num = (int) $m[1];
             if (isset($numberToIndex[$num])) {
@@ -56,7 +65,7 @@ function gal_parse_legendes($legendePath, $images) {
         $captions = array_fill(0, count($images), implode(' ', $plainLines));
     }
 
-    return $captions;
+    return ['captions' => $captions, 'coverIndex' => $coverIndex];
 }
 
 if (is_dir($galerieDir)) {
@@ -88,19 +97,21 @@ if (is_dir($galerieDir)) {
                 if (empty($images)) continue;
                 $images = array_values($images);
 
-                $legendes = gal_parse_legendes($entryPath . '/legende.txt', $images);
+                $parsed = gal_parse_legendes($entryPath . '/legende.txt', $images);
 
                 $oeuvres[] = [
                     'photos' => array_map(function ($file) use ($categoryName, $entry) {
                         return 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry) . '/' . rawurlencode($file);
                     }, $images),
-                    'legendes' => $legendes,
+                    'legendes' => $parsed['captions'],
+                    'coverIndex' => $parsed['coverIndex'],
                 ];
             } elseif (gal_is_image($entry, $allowedExt)) {
                 // Photo posée directement dans la catégorie : œuvre à une seule image
                 $oeuvres[] = [
                     'photos' => ['images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry)],
                     'legendes' => [''],
+                    'coverIndex' => 0,
                 ];
             }
         }
@@ -145,15 +156,19 @@ if (is_dir($galerieDir)) {
           <h2 class="galerie_categorie_titre"><?= htmlspecialchars($categoryName) ?></h2>
           <div class="galerie_grid">
             <?php foreach ($oeuvres as $oeuvre): ?>
-              <?php $firstLegende = $oeuvre['legendes'][0] ?? ''; ?>
+              <?php
+                $coverIndex = $oeuvre['coverIndex'] ?? 0;
+                $coverLegende = $oeuvre['legendes'][$coverIndex] ?? '';
+              ?>
               <div class="galerie_item">
                 <img
-                  src="<?= htmlspecialchars($oeuvre['photos'][0]) ?>"
-                  alt="<?= htmlspecialchars($firstLegende !== '' ? $firstLegende : $categoryName) ?>"
+                  src="<?= htmlspecialchars($oeuvre['photos'][$coverIndex]) ?>"
+                  alt="<?= htmlspecialchars($coverLegende !== '' ? $coverLegende : $categoryName) ?>"
                   loading="lazy"
                   class="galerie_photo"
                   data-photos="<?= htmlspecialchars(json_encode($oeuvre['photos']), ENT_QUOTES) ?>"
                   data-legendes="<?= htmlspecialchars(json_encode($oeuvre['legendes']), ENT_QUOTES) ?>"
+                  data-cover-index="<?= (int) $coverIndex ?>"
                 >
               </div>
             <?php endforeach; ?>
