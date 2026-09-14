@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Configuration
-$N8N_WEBHOOK_URL = 'https://n8n.digital-pragma.fr/webhook/contact'; // À remplacer
+$N8N_WEBHOOK_URL = 'https://n8n.digital-pragma.fr/webhook/chaleur-et-couleur-contact'; // À remplacer par l'URL définitive du workflow n8n dédié
 $N8N_AUTH_TOKEN = ''; // Optionnel : token d'authentification n8n
 
 // Lire les données JSON envoyées

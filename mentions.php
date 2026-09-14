@@ -1,9 +1,8 @@
 <?php
-$pageTitle = "Digital Pragma – Mentions légales";
-$pageDescription = "Mentions légales du site Digital Pragma.";
-$canonicalUrl = "https://digital-pragma.fr/mentions.php";
+$pageTitle = "Mentions légales | Chaleur et Couleur";
+$pageDescription = "Mentions légales du site Chaleur et Couleur.";
+$canonicalUrl = "https://chaleuretcouleur.fr/mentions.php";
 $currentPage = "mentions";
-$logoVariant = "corail";
 $bodyClass = "";
 include __DIR__ . '/partials/header.php';
 ?>
@@ -33,12 +32,15 @@ include __DIR__ . '/partials/header.php';
 
       <!-- Bloc 2 -->
       <div class="mb-5">
-        <h2 class="h2">PHOTOS, ILLUSTRATIONS ET VIDÉOS</h2>
+        <h2 class="h2">PHOTOS ET DROIT À L'IMAGE</h2>
         <p class="text-justify">
-          Les photos et vidéos présentes sur le site sont la propriété de Digital Pragma. <br>
-          Remerciement et crédit à Nordine Meddour pour les photographies de montagnes. <br>
-          Toute reproduction, même partielle, est interdite sans l'accord préalable de Digital Pragma. <br>
-          Les illustrations et vidéos sont la propriété de leurs auteurs respectifs. <br>
+          Les photos présentes sur ce site, notamment dans la galerie, sont la propriété
+          de Chaleur et Couleur et ne sont publiées qu'avec l'accord explicite et
+          préalable des personnes photographiées ou de leurs représentants légaux. Toute
+          personne apparaissant sur une photo peut à tout moment demander son retrait, en
+          écrivant à l'adresse indiquée ci-dessus. <br>
+          Toute reproduction, même partielle, est interdite sans l'accord préalable de
+          Chaleur et Couleur.
         </p>
       </div>
 
@@ -46,8 +48,8 @@ include __DIR__ . '/partials/header.php';
       <div class="mb-5">
         <h2 class="h2">DROITS D’AUTEUR ET PROPRIÉTÉ INTELLECTUELLE</h2>
         <p class="text-justify">
-          L’ensemble de ce site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Toute copie, reproduction, représentation, adaptation, diffusion, intégrale ou partielle, du contenu du site de Digital-Pragma, par quelque procédé que ce soit, est illicite à l’exception d’une unique copie réservée à l’usage exclusivement privé du copiste.
-          Les informations contenues dans ce site sont présentes à titre purement informatif et sont non contractuelles. Digital-Pragma ne saurait être tenue responsable de toute erreur ou omission dans les textes et illustrations du site. Les informations peuvent faire l’objet de modifications sans préavis.
+          L’ensemble de ce site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Toute copie, reproduction, représentation, adaptation, diffusion, intégrale ou partielle, du contenu du site de Chaleur et Couleur, par quelque procédé que ce soit, est illicite à l’exception d’une unique copie réservée à l’usage exclusivement privé du copiste.
+          Les informations contenues dans ce site sont présentes à titre purement informatif et sont non contractuelles. Chaleur et Couleur ne saurait être tenue responsable de toute erreur ou omission dans les textes et illustrations du site. Les informations peuvent faire l’objet de modifications sans préavis.
         </p>
       </div>
 

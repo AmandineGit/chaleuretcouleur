@@ -1,9 +1,8 @@
 <?php
-$pageTitle = "Digital Pragma – Contact";
-$pageDescription = "Contactez Digital Pragma pour discuter d'un coaching individuel ou d'un atelier collectif.";
-$canonicalUrl = "https://digital-pragma.fr/contact.php";
+$pageTitle = "Contact | Chaleur et Couleur";
+$pageDescription = "Contactez Chaleur et Couleur pour une visite à domicile ou pour organiser un temps collectif en résidence ou en association.";
+$canonicalUrl = "https://chaleuretcouleur.fr/contact.php";
 $currentPage = "contact";
-$logoVariant = "corail";
 $bodyClass = "";
 include __DIR__ . '/partials/header.php';
 ?>
@@ -41,12 +40,9 @@ include __DIR__ . '/partials/header.php';
                   <div>
                     <select name="position" required>
                       <option value="" disabled selected>Vous êtes...</option>
-                      <option value="Artisan / Commercant">Artisan / Commercant</option>
-                      <option value="Dirigeant (CEO, DG, Gérant)">Dirigeant (CEO, DG, Gérant)</option>
-                      <option value="Manager / Responsable d'équipe">Manager / Responsable d'équipe</option>
-                      <option value="RH / Responsable RH">RH / Responsable RH</option>
-                      <option value="Salarié (participant à un atelier)">Salarié (participant à un atelier)</option>
-                      <option value="Collectivité / Association">Collectivité / Association</option>
+                      <option value="Particulier / famille">Un particulier / une famille</option>
+                      <option value="Résidence senior / structure médico-sociale">Une résidence senior / structure médico-sociale</option>
+                      <option value="Association">Une association</option>
                       <option value="Autre">Autre</option>
                     </select>
                   </div>
@@ -64,9 +60,6 @@ include __DIR__ . '/partials/header.php';
             </div>
           </div>
         </div>
-      </div>
-      <div class="map_img-box">
-        <img src="images/DigipraTech.png" alt="">
       </div>
     </div>
   </section>
