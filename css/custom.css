@@ -699,14 +699,26 @@ body.page-galerie .who_section h1 {
    pas de badge rond, juste l'image en grand format */
 .carte_douce_icone--grande {
   background-color: transparent;
-  width: 90px;
-  height: 90px;
+  width: 360px;
+  height: 360px;
+  max-width: 100%;
 }
 
 .carte_douce_icone--grande img {
-  width: 90px;
-  height: 90px;
+  width: 360px;
+  height: 360px;
+  max-width: 100%;
   object-fit: contain;
+}
+
+/* Rangée dédiée aux grandes illustrations (Matériel fourni, Techniques variées) */
+.cartes_row--grandes {
+  gap: 40px;
+}
+
+.cartes_row--grandes .carte_douce {
+  flex: 0 1 400px;
+  max-width: 400px;
 }
 
 .carte_douce_label {

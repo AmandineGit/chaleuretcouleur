@@ -113,22 +113,25 @@ include __DIR__ . '/partials/header.php';
             <p class="carte_douce_label">De 1h à 2h</p>
           </div>
           <div class="carte_douce carte_douce--compact">
+            <div class="carte_douce_icone carte_douce_icone--vert">
+              <img src="images/Icones/ponctuelRegulier-blanc.png" alt="">
+            </div>
+            <p class="carte_douce_label">Ponctuel ou régulier</p>
+          </div>
+        </div>
+
+        <div class="cartes_row cartes_row--grandes">
+          <div class="carte_douce">
             <div class="carte_douce_icone carte_douce_icone--grande">
               <img src="images/Icones/Materiels1.png" alt="">
             </div>
             <p class="carte_douce_label">Matériel fourni</p>
           </div>
-          <div class="carte_douce carte_douce--compact">
+          <div class="carte_douce">
             <div class="carte_douce_icone carte_douce_icone--grande">
               <img src="images/Icones/TechVariees.png" alt="">
             </div>
             <p class="carte_douce_label">Techniques variées</p>
-          </div>
-          <div class="carte_douce carte_douce--compact">
-            <div class="carte_douce_icone carte_douce_icone--vert">
-              <img src="images/Icones/ponctuelRegulier-blanc.png" alt="">
-            </div>
-            <p class="carte_douce_label">Ponctuel ou régulier</p>
           </div>
         </div>
 
