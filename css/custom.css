@@ -695,6 +695,20 @@ body.page-galerie .who_section h1 {
   color: #ffffff;
 }
 
+/* Grandes illustrations couleur (ex. Matériel fourni, Techniques variées) :
+   pas de badge rond, juste l'image en grand format */
+.carte_douce_icone--grande {
+  background-color: transparent;
+  width: 90px;
+  height: 90px;
+}
+
+.carte_douce_icone--grande img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
 .carte_douce_label {
   margin: 0;
   color: var(--warm-brown);

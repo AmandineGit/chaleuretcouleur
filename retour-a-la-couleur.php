@@ -105,24 +105,14 @@ include __DIR__ . '/partials/header.php';
             <p class="carte_douce_label">De 1h à 2h</p>
           </div>
           <div class="carte_douce carte_douce--compact">
-            <div class="carte_douce_icone carte_douce_icone--vert">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="6" y="13" width="12" height="8" rx="1.5" fill="#ffffff"/>
-                <rect x="8" y="10" width="8" height="3" rx="1" fill="#ffffff"/>
-                <path d="M9 6l7 7" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
-                <circle cx="9" cy="6" r="1.8" fill="#FFC145"/>
-              </svg>
+            <div class="carte_douce_icone carte_douce_icone--grande">
+              <img src="images/Icones/Materiels1.png" alt="">
             </div>
             <p class="carte_douce_label">Matériel fourni</p>
           </div>
           <div class="carte_douce carte_douce--compact">
-            <div class="carte_douce_icone carte_douce_icone--jaune">
-              <svg viewBox="0 0 24 24" fill="#ffffff">
-                <path d="M12 3a9 8 0 1 0 0 16c1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H16a5 5 0 0 0 5-5c0-2.8-2-5-4-5.6A9 8 0 0 0 12 3Z"/>
-                <circle cx="7.5" cy="10.5" r="1.1" fill="#FFC145"/>
-                <circle cx="10.5" cy="7" r="1.1" fill="#4CC9A0"/>
-                <circle cx="15" cy="7.5" r="1.1" fill="#FF7A5C"/>
-              </svg>
+            <div class="carte_douce_icone carte_douce_icone--grande">
+              <img src="images/Icones/TechVariees.png" alt="">
             </div>
             <p class="carte_douce_label">Techniques variées</p>
           </div>
