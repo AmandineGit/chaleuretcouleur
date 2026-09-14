@@ -23,7 +23,7 @@ function gal_is_image($file, $allowedExt) {
 // - une ligne "#01 Ma phrase" correspond à l'image dont le nom commence par 01
 //   (ex. "01 - Fraises.png") ; sans aucune ligne préfixée par #, le contenu du
 //   fichier s'applique tel quel à toutes les photos.
-// - une ligne "Head 02" désigne l'image 02 comme vignette de couverture (par
+// - une ligne "#Head 02" (ou "Head 02") désigne l'image 02 comme vignette de couverture (par
 //   défaut, c'est la première image dans l'ordre qui sert de couverture).
 function gal_parse_legendes($legendePath, $images) {
     $captions = array_fill(0, count($images), '');
@@ -45,7 +45,7 @@ function gal_parse_legendes($legendePath, $images) {
         $line = trim($line);
         if ($line === '') continue;
 
-        if (preg_match('/^head\s+0*(\d+)\s*$/i', $line, $m)) {
+        if (preg_match('/^#?head\s+0*(\d+)\s*$/i', $line, $m)) {
             $num = (int) $m[1];
             if (isset($numberToIndex[$num])) {
                 $coverIndex = $numberToIndex[$num];
