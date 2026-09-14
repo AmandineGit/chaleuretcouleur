@@ -729,4 +729,29 @@ body.page-galerie .who_section h1 {
   }
 }
 
+/* --------------------------------------------------------------------------
+   RETOUR À LA COULEUR : photo à côté du texte "Qui vous accueille"
+-------------------------------------------------------------------------- */
+.qui_accueille_bloc {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.qui_accueille_photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .qui_accueille_bloc {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 
