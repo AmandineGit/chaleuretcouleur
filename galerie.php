@@ -16,7 +16,18 @@ $allowedExt = ['jpg', 'jpeg', 'png', 'webp'];
 $categories = [];
 
 function gal_is_image($file, $allowedExt) {
+    if (preg_match('/\.(thumb|display)\.webp$/i', $file)) return false;
     return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowedExt, true);
+}
+
+// Renvoie le chemin (web, urlencodé) du dérivé .thumb.webp / .display.webp
+// d'une image si celui-ci existe sur disque, sinon celui de l'original.
+function gal_derived_path($absDir, $webDir, $file, $suffix) {
+    $derivedName = pathinfo($file, PATHINFO_FILENAME) . $suffix;
+    if (is_file($absDir . '/' . $derivedName)) {
+        return $webDir . '/' . rawurlencode($derivedName);
+    }
+    return $webDir . '/' . rawurlencode($file);
 }
 
 // Lit legende.txt d'une œuvre et renvoie ['captions' => [...], 'coverIndex' => N].
@@ -98,18 +109,28 @@ if (is_dir($galerieDir)) {
                 $images = array_values($images);
 
                 $parsed = gal_parse_legendes($entryPath . '/legende.txt', $images);
+                $webDir = 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry);
 
                 $oeuvres[] = [
-                    'photos' => array_map(function ($file) use ($categoryName, $entry) {
-                        return 'images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry) . '/' . rawurlencode($file);
+                    'photos' => array_map(function ($file) use ($webDir) {
+                        return $webDir . '/' . rawurlencode($file);
+                    }, $images),
+                    'thumbs' => array_map(function ($file) use ($entryPath, $webDir) {
+                        return gal_derived_path($entryPath, $webDir, $file, '.thumb.webp');
+                    }, $images),
+                    'displays' => array_map(function ($file) use ($entryPath, $webDir) {
+                        return gal_derived_path($entryPath, $webDir, $file, '.display.webp');
                     }, $images),
                     'legendes' => $parsed['captions'],
                     'coverIndex' => $parsed['coverIndex'],
                 ];
             } elseif (gal_is_image($entry, $allowedExt)) {
                 // Photo posée directement dans la catégorie : œuvre à une seule image
+                $webDir = 'images/galerie/' . rawurlencode($categoryName);
                 $oeuvres[] = [
-                    'photos' => ['images/galerie/' . rawurlencode($categoryName) . '/' . rawurlencode($entry)],
+                    'photos' => [$webDir . '/' . rawurlencode($entry)],
+                    'thumbs' => [gal_derived_path($categoryPath, $webDir, $entry, '.thumb.webp')],
+                    'displays' => [gal_derived_path($categoryPath, $webDir, $entry, '.display.webp')],
                     'legendes' => [''],
                     'coverIndex' => 0,
                 ];
@@ -162,11 +183,11 @@ if (is_dir($galerieDir)) {
               ?>
               <div class="galerie_item">
                 <img
-                  src="<?= htmlspecialchars($oeuvre['photos'][$coverIndex]) ?>"
+                  src="<?= htmlspecialchars($oeuvre['thumbs'][$coverIndex]) ?>"
                   alt="<?= htmlspecialchars($coverLegende !== '' ? $coverLegende : $categoryName) ?>"
                   loading="lazy"
                   class="galerie_photo"
-                  data-photos="<?= htmlspecialchars(json_encode($oeuvre['photos']), ENT_QUOTES) ?>"
+                  data-photos="<?= htmlspecialchars(json_encode($oeuvre['displays']), ENT_QUOTES) ?>"
                   data-legendes="<?= htmlspecialchars(json_encode($oeuvre['legendes']), ENT_QUOTES) ?>"
                   data-cover-index="<?= (int) $coverIndex ?>"
                 >

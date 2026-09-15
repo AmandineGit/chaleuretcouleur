@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Génère automatiquement les dérivés .thumb.webp / .display.webp pour les
+# images de la galerie ajoutées ou modifiées dans ce commit, et les ajoute
+# au commit en cours. Activé via : git config core.hooksPath .githooks
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+mapfile -d '' -t staged < <(
+  git diff --cached --name-only --diff-filter=ACM -z -- images/galerie
+)
+
+images=()
+for f in "${staged[@]}"; do
+  case "${f,,}" in
+    *.thumb.webp|*.display.webp) continue ;;
+    *.jpg|*.jpeg|*.png|*.webp) images+=("$f") ;;
+  esac
+done
+
+if [[ ${#images[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+echo "Optimisation des images de la galerie ajoutées à ce commit..."
+scripts/optimize-galerie.sh "${images[@]}"
+
+for src in "${images[@]}"; do
+  dir="$(dirname -- "$src")"
+  base="$(basename -- "$src")"
+  base="${base%.*}"
+  for derived in "$dir/$base.thumb.webp" "$dir/$base.display.webp"; do
+    if [[ -f "$derived" ]]; then
+      git add -- "$derived"
+    fi
+  done
+done
