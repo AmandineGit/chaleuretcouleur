@@ -46,8 +46,9 @@
     <p>
       All Rights Reserved.&copy; 2026 Chaleur et Couleur
       <br>
-      <a href="mentions.php">Mentions légales
-      </a>
+      <a href="mentions.php">Mentions légales</a>
+      &middot;
+      <a href="conditions-prestation.php">Conditions de prestation</a>
     </p>
   </section>
 
