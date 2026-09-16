@@ -103,10 +103,12 @@ body {
 
 .btn_on-hover--jaune {
   background-color: #FFC145;
+  color: var(--warm-brown);
 }
 
 .btn_on-hover--jaune:hover {
   background-color: #E0A83A;
+  color: var(--warm-brown);
 }
 
 .btn_on-hover--vert {
@@ -115,6 +117,29 @@ body {
 
 .btn_on-hover--vert:hover {
   background-color: #3BAE88;
+}
+
+/* Boutons des bandeaux "Retour à la couleur" / "Médiation" (accueil) : fond
+   marron, texte jaune/vert (inverse des variantes --jaune/--vert ci-dessus,
+   qui restent utilisées telles quelles ailleurs sur le site). */
+.btn_on-hover--brun-jaune {
+  background-color: var(--warm-brown);
+  color: #FFC145;
+}
+
+.btn_on-hover--brun-jaune:hover {
+  background-color: #362f29;
+  color: #FFC145;
+}
+
+.btn_on-hover--brun-vert {
+  background-color: var(--warm-brown);
+  color: #4CC9A0;
+}
+
+.btn_on-hover--brun-vert:hover {
+  background-color: #362f29;
+  color: #4CC9A0;
 }
 
 .btn_on-hover--corail {
@@ -133,6 +158,10 @@ body {
 /* --------------------------------------------------------------------------
    ACCUEIL : récit + teasers
 -------------------------------------------------------------------------- */
+.recit_section.layout_padding {
+  padding: 30px 0;
+}
+
 .recit_section h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -140,13 +169,227 @@ body {
   font-size: 2.2rem;
 }
 
+.recit_section h1 .bulle-icon {
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.2em;
+}
+
 .recit_section p {
   font-size: 1.1rem;
   line-height: 1.8;
 }
 
+.recit_texte_corail {
+  color: var(--honey);
+  font-weight: 700;
+}
+
+/* Dégradé arc-en-ciel sur le texte (background-clip:text) : le texte lui-même
+   devient transparent pour laisser voir le dégradé de fond au travers. */
+.recit_texte_arc-en-ciel {
+  font-weight: 700;
+  background-image: linear-gradient(
+    90deg,
+    #FF5C5C 0%,
+    #FF9A45 18%,
+    #FFC145 24%,
+    #4CC9A0 30%,
+    #4EA8DE 66%,
+    #7B6EF6 82%,
+    #E162C4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* variante "tree" : texte + photo de l'arbre en deux colonnes */
+.recit_section--tree .recit_photo_col {
+  margin-top: 2rem;
+}
+
+.recit_section--tree .recit_photo {
+  display: block;
+  margin: 0 auto;
+  width: auto; /* neutralise l'attribut HTML width="900" : sans ça, la contrainte
+                  max-height (JS) écrase l'image au lieu de la réduire à l'échelle */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+  .recit_section--tree .recit_photo_col {
+    margin-top: 0;
+  }
+
+  .recit_section--tree .recit_texte_col {
+    padding-right: 2rem;
+  }
+}
+
+/* Fond photo unique pour tout le contenu de la page (intro + les deux
+   bandeaux), quand la variante "meadow" est active — voir index.php.
+   background-attachment:fixed peu fiable sur mobile (iOS notamment) : on
+   repasse en scroll normal sous 768px plutôt que de laisser un rendu cassé. */
+.page_photo_fond {
+  background-image: url("../images/accueil-hero-prairie.webp");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .page_photo_fond {
+    background-attachment: scroll;
+  }
+}
+
+/* variante "meadow" : la photo vient du fond partagé .page_photo_fond
+   (voir ci-dessus) ; cette section reste juste une fenêtre transparente
+   par-dessus, avec son propre calque de lisibilité. */
+.recit_section--meadow {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.recit_section--meadow .recit_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 247, 240, 0.3) 0%,
+    rgba(251, 247, 240, 0.78) 42%,
+    rgba(251, 247, 240, 0.94) 100%
+  );
+}
+
+.recit_section--meadow .recit_content {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTE "ARBRE" (accueil, index.php) : fond photo pleine page.
+   Scopé sur body.accueil2 — présent sur index.php et absent d'index2.php
+   (variante "prairie" de comparaison). À nettoyer (fusionner dans les
+   règles par défaut, supprimer index2.php) une fois le choix tranché.
+-------------------------------------------------------------------------- */
+body.accueil2 .page_photo_fond {
+  background-image: url("../images/accueil-hero-arbre.webp");
+}
+
+/* Titre en blanc, posé directement sur la photo (pas de calque derrière) */
+body.accueil2 .recit_section h1 {
+  color: #FFFFFF;
+}
+
+/* Calque blanc semi-transparent sur toute la section (titre + paragraphes),
+   sans flou ni dégradé. .recit_content a déjà position:relative + z-index:1
+   (règle par défaut plus haut), donc le titre et les paragraphes qu'il
+   contient passent naturellement au-dessus de ce ::before. */
+body.accueil2 .recit_section--meadow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+body.accueil2 .recit_content p {
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: #FFFFFF;
+}
+
+/* "Chaleur et Couleur est née..." repasse en marron (au lieu du blanc
+   ci-dessus, qui reste pour le second paragraphe). */
+body.accueil2 .recit_content p:first-of-type {
+  color: var(--warm-brown);
+  font-weight: 700;
+}
+
+/* Zone plus floue autour de "Les humains..." / "La couleur devient...",
+   en plus du léger flou déjà appliqué à toute la section : le
+   backdrop-filter s'applique ici directement sur le paragraphe, qui sert
+   donc lui-même de fenêtre plus dépolie que le reste. */
+body.accueil2 .recit_content p:last-of-type {
+  position: relative;
+  display: inline-block;
+  padding: 10px 22px;
+}
+
+/* Le flou + le fond vivent sur ce calque séparé, derrière le texte
+   (z-index:-1) : un mask appliqué directement sur le paragraphe ferait
+   aussi disparaître les mots en bord de zone, pas seulement le fond. */
+body.accueil2 .recit_content p:last-of-type::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+}
+
+/* Fin contour marron sur les lettres (même technique que les titres des
+   bandeaux plus bas : text-stroke + text-shadow pour un support large). */
+/* "La couleur devient alors..." repasse en blanc uni, dégradé arc-en-ciel
+   retiré pour cette page. */
+body.accueil2 .recit_texte_arc-en-ciel {
+  background-image: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: #FFFFFF;
+}
+
+/* Texte simple des deux bandeaux en marron (au lieu du blanc de index.php).
+   Spécificité nécessaire : .teaser_dominant/.teaser_discret .teaser_tagline
+   (cadre foncé, plus bas dans ce fichier) remet du blanc par-dessus sinon. */
+body.accueil2 .teaser_dominant .teaser_tagline,
+body.accueil2 .teaser_discret .teaser_tagline {
+  color: var(--warm-brown);
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Bandeaux un peu plus opaques que sur la version prairie (0.65/0.75) */
+body.accueil2 .page_photo_fond .teaser_dominant {
+  background: linear-gradient(135deg, rgba(255, 227, 171, 0.8) 0%, rgba(251, 247, 240, 0.85) 120%);
+}
+
+body.accueil2 .page_photo_fond .teaser_discret {
+  background: linear-gradient(135deg, rgba(76, 201, 160, 0.8) 0%, rgba(251, 247, 240, 0.85) 120%);
+}
+
+/* Vignettes ("En groupe", "À domicile"...) : fond blanc/crème clair, texte
+   brun foncé (au lieu du jaune/vert de index.php). */
+body.accueil2 .teaser_dominant .badges_service .carte_ligne,
+body.accueil2 .teaser_discret .badges_service .carte_ligne {
+  background-color: var(--cream);
+}
+
 .teaser_section {
   border-radius: 0;
+}
+
+/* Padding vertical réduit : le contenu (titre, badges, accroche, icône,
+   bouton) remplit déjà bien la section, pas besoin des 60px/45px par défaut
+   de .layout_padding/.layout_padding2. */
+.teaser_dominant.layout_padding {
+  padding: 30px 0;
+}
+
+.teaser_discret.layout_padding2 {
+  padding: 25px 0;
 }
 
 .teaser_dominant {
@@ -189,8 +432,178 @@ body {
 
 .teaser_tagline {
   font-size: 1.05rem;
-  margin: 15px auto 25px auto;
+  /* Marges verticales seulement : avec "auto" à gauche/droite, ce bloc
+     restait centré dans sa colonne même sur desktop (text-md-left),
+     puisque max-width le rend plus étroit que la colonne. */
+  margin: 10px 0 12px 0;
   max-width: 560px;
+  color: #FFFFFF;
+}
+
+/* "Retour à la couleur" revient au marron par défaut du site (le blanc reste
+   pour "Médiation"). */
+/* Cadre foncé derrière le texte simple, pour qu'il ressorte quel que soit ce
+   qu'il y a derrière (photo + bandeau semi-transparent) : jaune foncé pour
+   "Retour", vert foncé pour "Médiation", texte blanc pour le contraste.
+   inline-block pour que le cadre épouse le texte plutôt que toute la
+   largeur de la colonne. */
+.teaser_dominant .teaser_tagline {
+  display: inline-block;
+  background-color: rgba(224, 168, 58, 0.5);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 0;
+}
+
+.teaser_discret .teaser_tagline {
+  display: inline-block;
+  background-color: rgba(65, 171, 136, 0.5);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 0;
+}
+
+
+@media (max-width: 767px) {
+  .teaser_tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Badges courts ("À domicile", "Tête-à-tête"...) : réutilisation du même
+   composant .carte_ligne / .carte_ligne_label que la section "Pour qui" de
+   retour-a-la-couleur.php (fond clair, coins arrondis, texte sombre) — pas
+   de nouveau style de badge, juste une rangée qui les fait flotter en ligne
+   et wrap sur mobile au lieu de l'empilement plein-largeur "un par ligne"
+   utilisé là-bas, et un padding réduit adapté à un mot court plutôt qu'une
+   phrase.  */
+.badges_service {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.badges_service .carte_ligne {
+  padding: 6px 16px;
+  /* Léger relief : liseré clair en haut (comme un reflet) + ombre portée en
+     bas, pour un effet de pastille légèrement bombée plutôt que plate. */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.teaser_dominant .badges_service .carte_ligne {
+  background-color: #FFC145;
+}
+
+.teaser_discret .badges_service .carte_ligne {
+  background-color: #4CC9A0;
+}
+
+.badges_service .carte_ligne_label {
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .badges_service {
+    justify-content: center;
+  }
+
+  .badges_service .carte_ligne {
+    flex-direction: row;
+    padding: 6px 14px;
+  }
+}
+
+.teaser_accroche {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px; /* même taille que .btn_on-hover */
+  color: var(--warm-brown);
+  opacity: 0.85;
+  margin: 14px 0 0 0;
+}
+
+.accroche_icone {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  object-fit: contain;
+}
+
+.accroche_icone--soin {
+  width: 1.7em;
+  height: 1.7em;
+  vertical-align: -0.5em;
+}
+
+/* Sur fond photo (voir .page_photo_fond) : les bandeaux passent en
+   dégradés semi-transparents pour laisser voir la photo derrière. */
+.page_photo_fond .teaser_dominant {
+  /* Jaune encore plus éclairci (blanc mélangé dedans, #FFC145 -> #FFE3AB),
+     transparence inchangée (0.65/0.75). */
+  background: linear-gradient(135deg, rgba(255, 227, 171, 0.65) 0%, rgba(251, 247, 240, 0.75) 120%);
+}
+
+.page_photo_fond .teaser_discret {
+  /* Même niveau de transparence que .teaser_dominant juste au-dessus (avant
+     ce correctif, resté à l'ancien 0.55/0.8 pendant que l'autre montait à
+     0.85/0.88 — Médiation paraissait nettement plus transparent). L'ancien
+     opacity:0.9 (ci-dessus, hérité, pensé pour un fond opaque) s'ajoutait en
+     plus par-dessus tout l'élément et accentuait encore l'écart : neutralisé
+     ici pour ce fond photo. */
+  background: linear-gradient(135deg, rgba(76, 201, 160, 0.65) 0%, rgba(251, 247, 240, 0.75) 120%);
+  opacity: 1;
+}
+
+/* Ligne texte + icône des bandeaux "Retour à la couleur" / "Médiation".
+   Marges resserrées : avec les badges + la phrase d'accroche qui remplissent
+   maintenant la colonne de texte, les grands blancs avant l'icône et le
+   bouton (surtout visibles sur mobile, une fois les colonnes empilées)
+   n'ont plus besoin d'autant d'espace. */
+.teaser_ligne {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.teaser_icone_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.teaser_icone_badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--warm-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Copie mobile de l'icône, affichée juste sous le titre (voir index.php) ;
+   la copie "desktop" dans .teaser_icone_col reste seule visible à partir de
+   768px (d-none d-md-flex), le bouton n'est pas dupliqué et reste après le
+   texte comme avant. */
+.teaser_icone_badge--mobile {
+  margin: 14px auto 0 auto;
+}
+
+.teaser_icone_badge img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .teaser_icone_col {
+    margin-top: 10px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -406,16 +819,20 @@ body {
   padding: 60px 0;
 }
 
-/* Bandeau du haut en corail sur la page "Retour à la couleur" uniquement */
+/* Bandeau du haut en corail sur la page "Retour à la couleur" uniquement.
+   Dégradé semi-transparent (même traitement que les bandeaux de l'accueil) :
+   jaune éclairci au blanc plutôt que juste baisser l'opacité, pour rester
+   lumineux. */
 body.page-retour .who_section {
   background-color: var(--coral);
-  background: linear-gradient(135deg, var(--coral) 0%, var(--cream) 120%);
+  background: linear-gradient(135deg, rgba(255, 217, 140, 0.85) 0%, rgba(251, 247, 240, 0.88) 120%);
 }
 
-/* Bandeau du haut en vert d'eau (fondu bleu) sur la page "Médiation par la couleur" */
+/* Bandeau du haut en vert d'eau sur la page "Médiation par la couleur" —
+   même niveau de transparence que ci-dessus. */
 body.page-mediation .who_section {
   background-color: var(--seafoam);
-  background: linear-gradient(135deg, var(--seafoam) 0%, var(--cream) 120%);
+  background: linear-gradient(135deg, rgba(76, 201, 160, 0.85) 0%, rgba(251, 247, 240, 0.88) 120%);
 }
 
 /* Titres de page en corail (Retour à la couleur + Médiation), contour blanc */

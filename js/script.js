@@ -3,7 +3,32 @@
 document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initGalerieModal();
+  initRecitPhotoHeight();
 });
+
+/**
+ * Accueil, variante "tree" : réduit la photo de l'arbre pour que sa hauteur
+ * affichée corresponde à celle du bloc de texte à côté (au lieu de remplir
+ * toute la largeur de sa colonne). Sans contrainte sous 768px, où la photo
+ * passe sous le texte.
+ */
+function initRecitPhotoHeight() {
+  const texte = document.querySelector('.recit_section--tree .recit_texte_col');
+  const photo = document.querySelector('.recit_section--tree .recit_photo');
+  if (!texte || !photo) return;
+
+  const sync = () => {
+    if (window.innerWidth < 768) {
+      photo.style.maxHeight = '';
+      return;
+    }
+    photo.style.maxHeight = texte.offsetHeight + 'px';
+  };
+
+  sync();
+  window.addEventListener('load', sync);
+  window.addEventListener('resize', sync);
+}
 
 /**
  * Modale d'affichage plein format pour la galerie, avec navigation

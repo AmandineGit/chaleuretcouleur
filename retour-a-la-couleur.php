@@ -162,7 +162,7 @@ include __DIR__ . '/partials/header.php';
           peut s'appliquer selon la localité, pour le déplacement.
         </p>
 
-        <h3 class="mt-5">Qui vous accueille ?</h3>
+        <h3 class="mt-5">Qui vient chez vous ?</h3>
         <div class="qui_accueille_bloc">
           <img src="images/Amandine-Vesrtrepen.png" alt="Amandine" class="qui_accueille_photo">
           <div>

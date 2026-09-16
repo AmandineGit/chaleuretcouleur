@@ -1,24 +1,21 @@
 <?php
-// Accueil : variante "arbre" (fond photo pleine page). La variante "prairie"
-// reste disponible sur index2.php pour comparaison avant de trancher.
+// Accueil, variante "prairie" (comparaison) : conservée ici le temps de
+// trancher face à la variante "arbre" désormais en place sur index.php.
 $pageTitle = "Chaleur et Couleur – Présence et créativité contre l'isolement";
 $pageDescription = "Chaleur et Couleur accompagne les personnes isolées ou âgées par la couleur : des visites à domicile en tête-à-tête et des temps collectifs en résidence ou en association.";
-$canonicalUrl = "https://chaleuretcouleur.fr/";
+$canonicalUrl = "https://chaleuretcouleur.fr/index2.php";
 $currentPage = "accueil";
-$bodyClass = "accueil accueil2";
+$bodyClass = "accueil";
+
+// Variante du bloc d'intro à l'essai : 'tree' (photo de l'arbre en colonne) ou
+// 'meadow' (photo de la prairie en fond de section). À trancher visuellement,
+// puis nettoyer la variante non retenue.
+$heroVariant = 'meadow';
 
 include __DIR__ . '/partials/header.php';
+
+ob_start();
 ?>
-
-<!-- Fond photo unique pour tout le contenu (hors footer) : l'arbre continue
-     derrière l'intro et les deux bandeaux, qui deviennent semi-transparents. -->
-<div class="page_photo_fond">
-
-<!-- récit -->
-<section class="recit_section recit_section--meadow layout_padding">
-  <div class="container recit_content">
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-8 text-center">
         <h1>La couleur comme prétexte pour venir, s'asseoir, et parler
           <span aria-hidden="true">🖌️<svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
             <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
@@ -33,10 +30,50 @@ include __DIR__ . '/partials/header.php';
           <span class="recit_texte_corail">Les humains ont besoin d'échanger, de rire et de se sentir créatifs et utiles.</span><br>
           <span class="recit_texte_arc-en-ciel">La couleur devient alors un prétexte simple pour se retrouver.</span>
         </p>
+<?php
+$recitTexte = ob_get_clean();
+?>
+
+<?php if ($heroVariant === 'meadow'): ?>
+<!-- Fond photo unique pour tout le contenu (hors footer) : la prairie continue
+     derrière l'intro et les deux bandeaux, qui deviennent semi-transparents.
+     À l'essai en même temps que la variante "meadow" ; sans effet si "tree". -->
+<div class="page_photo_fond">
+<?php endif; ?>
+
+<!-- récit -->
+<?php if ($heroVariant === 'meadow'): ?>
+<section class="recit_section recit_section--meadow layout_padding">
+  <div class="recit_overlay"></div>
+  <div class="container recit_content">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8 text-center">
+        <?= $recitTexte ?>
       </div>
     </div>
   </div>
 </section>
+<?php else: ?>
+<section class="recit_section recit_section--tree layout_padding">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 text-center text-md-left recit_texte_col">
+        <?= $recitTexte ?>
+      </div>
+      <div class="col-md-5 recit_photo_col">
+        <img
+          src="images/accueil-hero-arbre.webp"
+          alt="Un arbre à contre-jour au bord du lac de Roselend"
+          class="img-fluid recit_photo"
+          loading="eager"
+          width="900"
+          height="1246"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 <!-- end récit -->
 
 <!-- teaser dominant : Retour à la couleur -->
@@ -111,7 +148,9 @@ include __DIR__ . '/partials/header.php';
 </section>
 <!-- end teaser discret -->
 
+<?php if ($heroVariant === 'meadow'): ?>
 </div>
 <!-- end page_photo_fond -->
+<?php endif; ?>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>
