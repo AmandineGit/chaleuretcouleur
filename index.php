@@ -18,21 +18,25 @@ include __DIR__ . '/partials/header.php';
 <section class="recit_section recit_section--meadow layout_padding">
   <div class="container recit_content">
     <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-8 text-center">
-        <h1>La couleur comme prétexte pour venir, s'asseoir, et parler
-          <span aria-hidden="true">🖌️<svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
-            <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M 76.72,82.35 A 24,24 0 1,0 68.17,85.63 L 74.29,90.0 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
-          </svg>🌈</span>
+      <div class="col-md-11 col-lg-10 text-center">
+        <h1 class="sr-only">La couleur est prétexte pour venir, s'asseoir, et parler
+          <span class="sr-only">Chaleur et Couleur — ateliers créatifs et visites à domicile pour lutter contre l'isolement, en Tarentaise</span>
         </h1>
-        <p class="text-center mt-4">
-          Chaleur et Couleur est née d'un constat simple :<br>
-          quand l'isolement s'installe, il affaiblit le moral, la confiance et l'élan du quotidien.
-        </p>
-        <p class="text-center">
-          <span class="recit_texte_corail">Les humains ont besoin d'échanger, de rire et de se sentir créatifs et utiles.</span><br>
-          <span class="recit_texte_arc-en-ciel">La couleur devient alors un prétexte simple pour se retrouver.</span>
-        </p>
+        <div class="recit_texte_bloc">
+          <p class="text-center recit_texte_intro">
+            Chaleur et Couleur est née d'un constat simple :<br>
+            quand l'isolement s'installe, il affaiblit le moral, la confiance et l'élan du quotidien.
+          </p>
+          <p class="text-center">
+            <span class="recit_texte_brun">Les humains ont besoin d'échanger, de rire et de se sentir créatifs et utiles.</span><br>
+            <span class="recit_texte_corail">La couleur est prétexte pour venir, s'asseoir, et parler.<br>
+              <span aria-hidden="true">🖌️<svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
+                <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M 76.72,82.35 A 24,24 0 1,0 68.17,85.63 L 74.29,90.0 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
+              </svg>🌈</span>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   </div>

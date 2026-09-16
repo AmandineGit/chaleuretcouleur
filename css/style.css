@@ -176,6 +176,13 @@ a:focus {
   outline: none;
 }
 
+.custom_nav-container .navbar-toggler .navbar-toggler-label {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
   background-image: url(../images/menu.png);
   background-size: 55px;
@@ -608,7 +615,7 @@ a:focus {
 .info_section {
   background-color: #3A322B;
   color: #ffffff;
-  padding: 90px 0 45px 0;
+  padding: 40px 0 30px 0;
 }
 
 .info_section h5 {

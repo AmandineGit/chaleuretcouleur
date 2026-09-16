@@ -124,22 +124,22 @@ body {
    qui restent utilisées telles quelles ailleurs sur le site). */
 .btn_on-hover--brun-jaune {
   background-color: var(--warm-brown);
-  color: #FFC145;
+  color: var(--cream);
 }
 
 .btn_on-hover--brun-jaune:hover {
   background-color: #362f29;
-  color: #FFC145;
+  color: var(--cream);
 }
 
 .btn_on-hover--brun-vert {
   background-color: var(--warm-brown);
-  color: #4CC9A0;
+  color: var(--cream);
 }
 
 .btn_on-hover--brun-vert:hover {
   background-color: #362f29;
-  color: #4CC9A0;
+  color: var(--cream);
 }
 
 .btn_on-hover--corail {
@@ -159,7 +159,13 @@ body {
    ACCUEIL : récit + teasers
 -------------------------------------------------------------------------- */
 .recit_section.layout_padding {
-  padding: 30px 0;
+  padding: 25px 0;
+}
+
+@media (min-width: 769px) {
+  .recit_section.layout_padding {
+    padding: 0;
+  }
 }
 
 .recit_section h1 {
@@ -169,7 +175,7 @@ body {
   font-size: 2.2rem;
 }
 
-.recit_section h1 .bulle-icon {
+.recit_section .bulle-icon {
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.2em;
@@ -183,6 +189,10 @@ body {
 .recit_texte_corail {
   color: var(--honey);
   font-weight: 700;
+}
+
+.recit_texte_brun {
+  color: var(--warm-brown);
 }
 
 /* Dégradé arc-en-ciel sur le texte (background-clip:text) : le texte lui-même
@@ -312,32 +322,69 @@ body.accueil2 .recit_content p {
    ci-dessus, qui reste pour le second paragraphe). */
 body.accueil2 .recit_content p:first-of-type {
   color: var(--warm-brown);
-  font-weight: 700;
 }
 
-/* Zone plus floue autour de "Les humains..." / "La couleur devient...",
-   en plus du léger flou déjà appliqué à toute la section : le
-   backdrop-filter s'applique ici directement sur le paragraphe, qui sert
-   donc lui-même de fenêtre plus dépolie que le reste. */
-body.accueil2 .recit_content p:last-of-type {
-  position: relative;
+.recit_texte_intro {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 769px) {
+  body.accueil2 .recit_texte_intro {
+    margin-top: 15px;
+  }
+}
+
+.recit_texte_bloc p:last-child {
+  margin-bottom: 0;
+}
+
+/* Phrase reprise de l'ancien H1 : taille plus proche d'un titre */
+body.accueil2 .recit_texte_corail {
+  font-size: 1.4rem;
   display: inline-block;
-  padding: 10px 22px;
+}
+
+body.accueil2 .recit_texte_corail [aria-hidden="true"] {
+  font-size: 160%;
+}
+
+@media (min-width: 769px) {
+  body.accueil2 .recit_texte_corail [aria-hidden="true"] {
+    font-size: 130%;
+  }
+}
+
+/* Zone plus floue sur tout le bloc de texte (titre + paragraphes), en plus
+   du léger flou déjà appliqué à toute la section : le backdrop-filter
+   s'applique ici directement sur le bloc, qui sert donc lui-même de
+   fenêtre plus dépolie que le reste. */
+body.accueil2 .recit_texte_bloc {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 70px;
 }
 
 /* Le flou + le fond vivent sur ce calque séparé, derrière le texte
-   (z-index:-1) : un mask appliqué directement sur le paragraphe ferait
+   (z-index:-1) : un mask appliqué directement sur le bloc ferait
    aussi disparaître les mots en bord de zone, pas seulement le fond. */
-body.accueil2 .recit_content p:last-of-type::before {
+body.accueil2 .recit_texte_bloc::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0 -15px;
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.35);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  mask-composite: intersect;
 }
 
 /* Fin contour marron sur les lettres (même technique que les titres des
