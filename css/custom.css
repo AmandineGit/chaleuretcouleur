@@ -612,7 +612,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 /* --------------------------------------------------------------------------
-   MÉDIATION PAR LA COULEUR : bloc "En bref"
+   MÉDIATION PAR LA COULEUR : cartes "Modalités" / "Comment ça se passe"
 -------------------------------------------------------------------------- */
 .en_bref_box {
   background-color: #ffffff;
@@ -630,13 +630,104 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   color: var(--seafoam-dark);
 }
 
-.en_bref_box ul {
+/* Même style que la carte "Modalités" ci-dessus, en corail (couleur des
+   boutons/accents de cette page) au lieu du vert par défaut. */
+.en_bref_box--corail {
+  border-left-color: var(--honey);
+}
+
+.en_bref_box--corail h3 {
+  color: var(--honey-dark);
+}
+
+.en_bref_box ul,
+.en_bref_box ol {
   margin: 0;
   padding-left: 20px;
 }
 
 .en_bref_box li {
   margin-bottom: 8px;
+}
+
+.en_bref_box li:last-child {
+  margin-bottom: 0;
+}
+
+/* "Les bénéfices d'un atelier créatif collectif" : un bandeau horizontal
+   par bénéfice, sur le même principe que .cartes_lignes / .carte_ligne
+   ("Pour qui", voir retour-a-la-couleur.php) — icône à gauche, texte à
+   droite. .carte_ligne .carte_douce_icone force un fond transparent (les
+   icônes qu'elle utilise portent déjà leur couleur) ; comme les icônes
+   utilisées ici sont blanches, elles ont besoin de leur propre badge rond
+   coloré (.benefice_icone), sur le même modèle que .carte_douce_icone
+   mais en corail (couleur des boutons/accents de cette page). */
+.carte_ligne--benefice {
+  align-items: flex-start;
+}
+
+.benefice_icone {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefice_icone img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.benefice_icone--grande img {
+  width: 50px;
+  height: 50px;
+}
+
+.benefice_icone--tres-grande img {
+  width: 70px;
+  height: 70px;
+}
+
+.benefice_texte h4 {
+  color: var(--warm-brown);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+}
+
+.benefice_texte p {
+  margin: 0;
+  padding-left: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .carte_ligne--benefice {
+    align-items: center;
+  }
+
+  .benefice_texte {
+    text-align: center;
+  }
+
+  .benefice_texte p {
+    padding-left: 0;
+  }
+}
+
+.benefices_sources {
+  margin-top: 8px;
+}
+
+.benefices_sources a {
+  color: #6E8FBF;
+  text-decoration: underline;
 }
 
 /* --------------------------------------------------------------------------
