@@ -195,56 +195,12 @@ body {
   color: var(--warm-brown);
 }
 
-/* Dégradé arc-en-ciel sur le texte (background-clip:text) : le texte lui-même
-   devient transparent pour laisser voir le dégradé de fond au travers. */
-.recit_texte_arc-en-ciel {
-  font-weight: 700;
-  background-image: linear-gradient(
-    90deg,
-    #FF5C5C 0%,
-    #FF9A45 18%,
-    #FFC145 24%,
-    #4CC9A0 30%,
-    #4EA8DE 66%,
-    #7B6EF6 82%,
-    #E162C4 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* variante "tree" : texte + photo de l'arbre en deux colonnes */
-.recit_section--tree .recit_photo_col {
-  margin-top: 2rem;
-}
-
-.recit_section--tree .recit_photo {
-  display: block;
-  margin: 0 auto;
-  width: auto; /* neutralise l'attribut HTML width="900" : sans ça, la contrainte
-                  max-height (JS) écrase l'image au lieu de la réduire à l'échelle */
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-}
-
-@media (min-width: 768px) {
-  .recit_section--tree .recit_photo_col {
-    margin-top: 0;
-  }
-
-  .recit_section--tree .recit_texte_col {
-    padding-right: 2rem;
-  }
-}
-
 /* Fond photo unique pour tout le contenu de la page (intro + les deux
    bandeaux), quand la variante "meadow" est active — voir index.php.
    background-attachment:fixed peu fiable sur mobile (iOS notamment) : on
    repasse en scroll normal sous 768px plutôt que de laisser un rendu cassé. */
 .page_photo_fond {
-  background-image: url("../images/accueil-hero-prairie.webp");
+  background-image: url("../images/accueil-hero-arbre.webp");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
@@ -268,35 +224,9 @@ body {
   overflow: hidden;
 }
 
-.recit_section--meadow .recit_overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 247, 240, 0.3) 0%,
-    rgba(251, 247, 240, 0.78) 42%,
-    rgba(251, 247, 240, 0.94) 100%
-  );
-}
-
 .recit_section--meadow .recit_content {
   position: relative;
   z-index: 1;
-}
-
-/* --------------------------------------------------------------------------
-   VARIANTE "ARBRE" (accueil, index.php) : fond photo pleine page.
-   Scopé sur body.accueil2 — présent sur index.php et absent d'index2.php
-   (variante "prairie" de comparaison). À nettoyer (fusionner dans les
-   règles par défaut, supprimer index2.php) une fois le choix tranché.
--------------------------------------------------------------------------- */
-body.accueil2 .page_photo_fond {
-  background-image: url("../images/accueil-hero-arbre.webp");
-}
-
-/* Titre en blanc, posé directement sur la photo (pas de calque derrière) */
-body.accueil2 .recit_section h1 {
-  color: #FFFFFF;
 }
 
 /* Calque blanc semi-transparent sur toute la section (titre + paragraphes),
@@ -385,18 +315,6 @@ body.accueil2 .recit_texte_bloc::before {
     linear-gradient(to right, transparent, black 12%, black 88%, transparent),
     linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
   mask-composite: intersect;
-}
-
-/* Fin contour marron sur les lettres (même technique que les titres des
-   bandeaux plus bas : text-stroke + text-shadow pour un support large). */
-/* "La couleur devient alors..." repasse en blanc uni, dégradé arc-en-ciel
-   retiré pour cette page. */
-body.accueil2 .recit_texte_arc-en-ciel {
-  background-image: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
-  color: #FFFFFF;
 }
 
 /* Texte simple des deux bandeaux en marron (au lieu du blanc de index.php).

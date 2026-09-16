@@ -1,6 +1,5 @@
 <?php
-// Accueil : variante "arbre" (fond photo pleine page). La variante "prairie"
-// reste disponible sur index2.php pour comparaison avant de trancher.
+// Accueil : variante "arbre" (fond photo pleine page).
 $pageTitle = "Chaleur et Couleur – Présence et créativité contre l'isolement";
 $pageDescription = "Chaleur et Couleur accompagne les personnes isolées ou âgées par la couleur : des visites à domicile en tête-à-tête et des temps collectifs en résidence ou en association.";
 $canonicalUrl = "https://chaleuretcouleur.fr/";
