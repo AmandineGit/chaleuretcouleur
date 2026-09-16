@@ -15,11 +15,15 @@
         align-items: center;
     }
 
+    .custom_nav-container .navbar-brand {
+        align-self: flex-start;
+    }
+
     .custom_nav-container .navbar-toggler {
         display: flex;
         align-items: center;
         gap: 25px;
-        margin-top: -20px;
+        margin-top: 0;
     }
 
     .user_option {

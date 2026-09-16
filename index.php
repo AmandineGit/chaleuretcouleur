@@ -16,12 +16,12 @@ include __DIR__ . '/partials/header.php';
 <!-- récit -->
 <section class="recit_section recit_section--meadow layout_padding">
   <div class="container recit_content">
-    <div class="row justify-content-center">
-      <div class="col-md-11 col-lg-10 text-center">
-        <h1 class="sr-only">La couleur est prétexte pour venir, s'asseoir, et parler
-          <span class="sr-only">Chaleur et Couleur — ateliers créatifs et visites à domicile pour lutter contre l'isolement, en Tarentaise</span>
-        </h1>
-        <div class="recit_texte_bloc">
+    <div class="recit_texte_bloc">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-9 col-lg-9 text-center">
+          <h1 class="sr-only">La couleur est prétexte pour venir, s'asseoir, et parler
+            <span class="sr-only">Chaleur et Couleur — ateliers créatifs et visites à domicile pour lutter contre l'isolement, en Tarentaise</span>
+          </h1>
           <p class="text-center recit_texte_intro">
             Chaleur et Couleur est née d'un constat simple :<br>
             quand l'isolement s'installe, il affaiblit le moral, la confiance et l'élan du quotidien.
@@ -35,6 +35,9 @@ include __DIR__ . '/partials/header.php';
               </svg>🌈</span>
             </span>
           </p>
+        </div>
+        <div class="col-md-3 col-lg-2 recit_logo_col">
+          <img src="images/Logo-CC-v1-web.png" alt="">
         </div>
       </div>
     </div>

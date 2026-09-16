@@ -659,6 +659,10 @@ a:focus {
   margin: 0;
 }
 
+.info_section .info_contact p a {
+  color: #ffffff;
+}
+
 .info_section .info_contact > div {
   display: -webkit-box;
   display: -ms-flexbox;

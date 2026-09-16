@@ -27,7 +27,7 @@ body {
 }
 
 .brand-logo-test img {
-  height: 100px;
+  height: 60px;
   width: auto;
   margin-right: 12px;
   display: block;
@@ -66,6 +66,16 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-galerie {
   color: #FF7A5C;
+}
+
+/* --------------------------------------------------------------------------
+   MENU FIXE
+-------------------------------------------------------------------------- */
+.hero_area {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -159,7 +169,7 @@ body {
    ACCUEIL : récit + teasers
 -------------------------------------------------------------------------- */
 .recit_section.layout_padding {
-  padding: 25px 0;
+  padding: 0 0 25px;
 }
 
 @media (min-width: 769px) {
@@ -193,6 +203,28 @@ body {
 
 .recit_texte_brun {
   color: var(--warm-brown);
+}
+
+/* Logo affiché à côté du texte du premier bloc, dans le même bloc flouté
+   (.recit_texte_bloc, voir index.php) que le texte. */
+.recit_logo_col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recit_logo_col img {
+  width: 100%;
+  max-width: 189px;
+  height: auto;
+}
+
+/* Mobile uniquement : logo au-dessus du texte (au lieu de à droite comme
+   sur PC), sans changer l'ordre dans le HTML. */
+@media (max-width: 767px) {
+  .recit_logo_col {
+    order: -1;
+  }
 }
 
 /* Fond photo unique pour tout le contenu de la page (intro + les deux
@@ -261,7 +293,7 @@ body.accueil2 .recit_content p:first-of-type {
 
 @media (min-width: 769px) {
   body.accueil2 .recit_texte_intro {
-    margin-top: 15px;
+    margin-top: 0;
   }
 }
 
@@ -294,6 +326,14 @@ body.accueil2 .recit_texte_bloc {
   box-sizing: border-box;
   width: 100%;
   padding: 10px 70px;
+}
+
+/* PC uniquement : zone de texte agrandie (padding latéral réduit), sans
+   toucher à la taille du logo (.recit_logo_col, inchangé). */
+@media (min-width: 769px) {
+  body.accueil2 .recit_texte_bloc {
+    padding: 10px 30px;
+  }
 }
 
 /* Le flou + le fond vivent sur ce calque séparé, derrière le texte
@@ -781,7 +821,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 /* --- Fond gris sur la section who --- */
 .who_section {
   background-color: #E9EEF0;
-  padding: 60px 0;
+  padding: 20px 0;
 }
 
 /* Bandeau du haut en corail sur la page "Retour à la couleur" uniquement.

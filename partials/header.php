@@ -55,7 +55,7 @@ $navLinks = [
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand brand-logo-test" href="index.php">
-            <img src="images/Logo-CC-v1-web.png" alt="Chaleur et Couleur">
+            <img src="favicon/web-app-manifest-512x512.png" alt="Chaleur et Couleur">
             <span class="brand-text">
               <span class="brand-chaleur">Chaleur</span> <span class="brand-et">et</span> <span class="brand-couleur">Couleur</span>
             </span>
