@@ -298,6 +298,38 @@ body.accueil2 .recit_texte_col h1 {
   }
 }
 
+/* Footer "collé en bas" sur l'accueil : sur un écran haut, le fond photo
+   (donc le footer juste après) s'étire pour combler l'espace au lieu de
+   laisser un vide crème sous les bandeaux ; sur un écran court, la chaîne
+   flex ne fait que suivre la hauteur réelle du contenu (flex-shrink à 0
+   partout), sans jamais le compresser. Même principe que sur la page
+   contact (voir plus bas dans ce fichier). */
+body.accueil2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.accueil2 main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body.accueil2 .page_photo_fond {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+/* Remplit l'espace laissé par le footer collé en bas (voir index.php) avec
+   le même calque blanc semi-transparent que le bloc récit (bandeau 1),
+   plutôt que de laisser la photo brute sous le dernier bandeau. */
+body.accueil2 .page_photo_fond_filler {
+  flex: 1 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* variante "meadow" : la photo vient du fond partagé .page_photo_fond
    (voir ci-dessus) ; cette section reste juste une fenêtre transparente
    par-dessus, avec son propre calque de lisibilité. */
@@ -1207,6 +1239,27 @@ body.page-galerie .who_section h1 {
   color: rgba(0, 0, 0, 0.4);
 }
 
+/* Footer "collé en bas" sur la page contact : sur un écran haut, le fond
+   photo (donc le footer juste après) s'étire pour combler l'espace au lieu
+   de laisser un vide crème sous le formulaire ; sur un écran court, la
+   chaîne flex ne fait que suivre la hauteur réelle du contenu (flex-shrink
+   à 0 partout), sans jamais le compresser. */
+body.contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.contact main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body.contact .page_photo_fond {
+  flex: 1 0 auto;
+}
+
 /* Page contact avec le fond photo "arbre" (.page_photo_fond, voir index.php
    et contact.php) : calque blanc semi-transparent + flou derrière le
    formulaire pour garder le texte lisible, même principe que
@@ -1248,7 +1301,6 @@ body.contact .heading_container h2::after {
 @media (min-width: 768px) {
   body.contact .page_photo_fond {
     position: relative;
-    min-height: 100vh;
   }
 
   body.contact .page_photo_fond::before {

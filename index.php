@@ -113,6 +113,11 @@ include __DIR__ . '/partials/header.php';
 </section>
 <!-- end teaser discret -->
 
+<!-- Comble l'espace laissé par le footer collé en bas sur les grands écrans,
+     avec le même calque blanc de lisibilité que le bloc récit en haut de
+     page (voir .recit_section--meadow::before). -->
+<div class="page_photo_fond_filler" aria-hidden="true"></div>
+
 </div>
 <!-- end page_photo_fond -->
 
