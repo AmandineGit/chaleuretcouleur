@@ -1,7 +1,7 @@
 <?php
-$pageTitle = "Retour à la couleur – Visites à domicile | Chaleur et Couleur";
-$pageDescription = "Retour à la couleur : une présence à domicile en tête-à-tête, pour les personnes isolées ou âgées, autour de la couleur et de la conversation, sans exigence de résultat.";
-$canonicalUrl = "https://chaleuretcouleur.fr/retour-a-la-couleur.php";
+$pageTitle = "Présence en couleur – Visites à domicile | Chaleur et Couleur";
+$pageDescription = "Présence en couleur : une visite à domicile en tête-à-tête, pour les personnes isolées ou âgées, autour de la couleur et de la conversation, sans exigence de résultat.";
+$canonicalUrl = "https://chaleuretcouleur.fr/presence-en-couleur.php";
 $currentPage = "retour";
 $bodyClass = "page-retour";
 include __DIR__ . '/partials/header.php';
@@ -12,7 +12,7 @@ include __DIR__ . '/partials/header.php';
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
         <div class="heading_container text-center">
-          <h1>Retour à la couleur</h1>
+          <h1>Présence en couleur</h1>
         </div>
         <p class="text-justify">
           Une visite à domicile, seule à seul, pour partager un moment autour de la

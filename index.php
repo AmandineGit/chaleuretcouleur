@@ -41,12 +41,12 @@ include __DIR__ . '/partials/header.php';
 </section>
 <!-- end récit -->
 
-<!-- teaser dominant : Retour à la couleur -->
+<!-- teaser dominant : Présence en couleur (lien vers presence-en-couleur.php) -->
 <section class="teaser_section teaser_dominant layout_padding">
   <div class="container">
     <div class="detail-box text-center">
-      <h2>Retour à la couleur</h2>
-      <a href="retour-a-la-couleur.php" class="teaser_icone_badge teaser_icone_badge--mobile d-md-none">
+      <h2>Présence en couleur</h2>
+      <a href="presence-en-couleur.php" class="teaser_icone_badge teaser_icone_badge--mobile d-md-none">
         <img src="images/Icones/domicile-jaune.png" alt="">
       </a>
     </div>
@@ -65,10 +65,10 @@ include __DIR__ . '/partials/header.php';
             <p class="teaser_accroche">Rien à réussir, juste à être là et partager ensemble. <svg class="accroche_icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#4A2E1F" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3c1.74,0 3.41,0.81 4.5,2.08C13.09,3.81 14.76,3 16.5,3 19.58,3 22,5.41 22,8.5c0,3.77 -3.4,6.86 -8.55,11.53L12,21.35z"/></svg></p>
           </div>
           <div class="col-md-4 text-center teaser_icone_col">
-            <a href="retour-a-la-couleur.php" class="teaser_icone_badge d-none d-md-flex">
+            <a href="presence-en-couleur.php" class="teaser_icone_badge d-none d-md-flex">
               <img src="images/Icones/domicile-jaune.png" alt="">
             </a>
-            <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--brun-jaune">En savoir plus</a>
+            <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--brun-jaune">En savoir plus</a>
           </div>
         </div>
       </div>

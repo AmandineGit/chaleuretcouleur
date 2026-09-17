@@ -71,7 +71,7 @@ include __DIR__ . '/partials/header.php';
         </p>
 
         <div class="text-center mt-4 qui-suis-je_cta">
-          <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--jaune">Découvrir Retour à la couleur →</a>
+          <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--jaune">Découvrir Présence en couleur →</a>
           <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--vert">Découvrir Médiation par la couleur →</a>
         </div>
 

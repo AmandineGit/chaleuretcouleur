@@ -2,7 +2,7 @@
 // Attendu avant l'include : $pageTitle, $pageDescription, $canonicalUrl, $currentPage, $bodyClass (optionnel)
 $navLinks = [
   'accueil' => ['href' => 'index.php', 'label' => 'Accueil'],
-  'retour' => ['href' => 'retour-a-la-couleur.php', 'label' => 'Retour à la couleur'],
+  'retour' => ['href' => 'presence-en-couleur.php', 'label' => 'Présence en couleur'],
   'mediation' => ['href' => 'mediation-par-la-couleur.php', 'label' => 'Médiation par la couleur'],
   'galerie' => ['href' => 'galerie.php', 'label' => 'Galerie'],
   'contact' => ['href' => 'contact.php', 'label' => 'Contact'],
