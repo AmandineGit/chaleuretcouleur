@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <h5>Découvrez et suivez les activités Chaleur et Couleur sur les réseaux</h5>
+            <h5>Découvrez et suivez les activités<br>Chaleur et Couleur sur les réseaux</h5>
             <div class="social_box">
               <a href="https://www.facebook.com/profile.php?id=61593282579582&locale=fr_FR" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <svg width="96" height="96" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">

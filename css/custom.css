@@ -1086,6 +1086,7 @@ body.page-galerie .who_section h1 {
 /* Alignement et lisibilité du texte dans le footer */
 .info_section h5 {
   font-weight: normal;
+  font-size: 18px;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -1109,8 +1110,8 @@ body.page-galerie .who_section h1 {
 
 .info_section .social_box a img,
 .info_section .social_box a svg {
-  width: 96px;
-  height: 96px;
+  width: 65px;
+  height: 65px;
   filter: brightness(100%);
   transition: all 0.3s ease;
 }
