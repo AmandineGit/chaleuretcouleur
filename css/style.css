@@ -88,7 +88,7 @@ body {
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
-  background-color: #3A322B;
+  background-color: var(--header-footer-brown);
 }
 
 .header_section .nav_container {
@@ -613,7 +613,7 @@ a:focus {
 
 /* end contact section */
 .info_section {
-  background-color: #3A322B;
+  background-color: var(--header-footer-brown);
   color: #ffffff;
   padding: 40px 0 30px 0;
 }
@@ -714,7 +714,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #3A322B;
+  background-color: var(--header-footer-brown);
   font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;

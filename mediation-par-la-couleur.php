@@ -126,11 +126,11 @@ include __DIR__ . '/partials/header.php';
         </div>
 
         <div class="en_bref_box mt-5">
-          <h3>Comment ça se passe avec votre structure</h3>
+          <h3>Comment ça se passe avec votre structure ?</h3>
           <ol>
             <li>Premier échange par téléphone ou en visio, pour cerner le contexte et les besoins du groupe</li>
             <li>Proposition d'un format (type d'atelier, fréquence, durée, tarif) et des besoins logistiques</li>
-            <li>Envoi d'un devis valable 3 mois ; les dates proposées sont réservées pendant 7 jours — passé ce délai, de nouvelles disponibilités sont à redéfinir ensemble lors de la validation du devis</li>
+            <li>Envoi d'un devis valable 3 mois ; les dates proposées sont réservées pendant 7 jours, passé ce délai, de nouvelles disponibilités sont à redéfinir ensemble lors de la validation du devis</li>
             <li>Mise en place des séances aux dates convenues</li>
             <li>Retour après chaque séance, sous 48h</li>
           </ol>
@@ -139,7 +139,7 @@ include __DIR__ . '/partials/header.php';
         <h3 class="mt-5">Contact</h3>
         <p class="text-justify">
           Pour organiser une intervention, contactez-moi avec le nom de votre structure
-          et le nombre de personnes concerné — je reviens vers vous rapidement.
+          et le nombre de personnes concerné. Je reviens vers vous rapidement.
         </p>
         <div class="text-center mt-4">
           <a href="contact.php" class="btn_on-hover">Demander un devis</a>

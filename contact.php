@@ -3,10 +3,11 @@ $pageTitle = "Contact | Chaleur et Couleur";
 $pageDescription = "Contactez Chaleur et Couleur pour une visite à domicile ou pour organiser un temps collectif en résidence ou en association.";
 $canonicalUrl = "https://chaleuretcouleur.fr/contact.php";
 $currentPage = "contact";
-$bodyClass = "";
+$bodyClass = "contact";
 include __DIR__ . '/partials/header.php';
 ?>
 
+<div class="page_photo_fond">
 <section class="contact_section layout_padding">
     <div class="container">
 
@@ -63,5 +64,6 @@ include __DIR__ . '/partials/header.php';
       </div>
     </div>
   </section>
+</div>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>

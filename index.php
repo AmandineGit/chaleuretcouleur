@@ -18,23 +18,19 @@ include __DIR__ . '/partials/header.php';
   <div class="container recit_content">
     <div class="recit_texte_bloc">
       <div class="row justify-content-center align-items-center">
-        <div class="col-md-9 col-lg-9 text-center">
-          <h1 class="sr-only">La couleur est prétexte pour venir, s'asseoir, et parler
-            <span class="sr-only">Chaleur et Couleur — ateliers créatifs et visites à domicile pour lutter contre l'isolement, en Tarentaise</span>
-          </h1>
-          <p class="text-center recit_texte_intro">
-            Chaleur et Couleur est née d'un constat simple :<br>
-            quand l'isolement s'installe, il affaiblit le moral, la confiance et l'élan du quotidien.
-          </p>
-          <p class="text-center">
-            <span class="recit_texte_brun">Les humains ont besoin d'échanger, de rire et de se sentir créatifs et utiles.</span><br>
-            <span class="recit_texte_corail">La couleur est prétexte pour venir, s'asseoir, et parler.<br>
-              <span aria-hidden="true">🖌️<svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
-                <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M 76.72,82.35 A 24,24 0 1,0 68.17,85.63 L 74.29,90.0 Z" fill="#FFFFFF" stroke="#4A4038" stroke-width="2" stroke-linejoin="round"/>
+        <div class="col-md-9 col-lg-9 text-center recit_texte_col">
+          <h1 class="text-center">
+            <span class="recit_texte_brun">Nous avons tous besoin d'échanger, de rire<br>et de se sentir créatifs et utiles.</span><br>
+            <span class="recit_texte_corail"><span class="recit_icones_inline" aria-hidden="true">🖌️</span>La couleur comme prétexte au partage.<span class="recit_icones_inline" aria-hidden="true"><svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
+                <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M 76.72,82.35 A 24,24 0 1,0 68.17,85.63 L 74.29,90.0 Z" fill="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+              </svg>🌈</span><br class="recit_icones_saut">
+              <span class="recit_icones_fin" aria-hidden="true">🖌️<svg class="bulle-icon" viewBox="0 0 100 100" focusable="false">
+                <path d="M 23.16,61.75 A 28,28 0 1,1 33.14,65.58 L 26,70.68 Z" fill="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M 76.72,82.35 A 24,24 0 1,0 68.17,85.63 L 74.29,90.0 Z" fill="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
               </svg>🌈</span>
             </span>
-          </p>
+          </h1>
         </div>
         <div class="col-md-3 col-lg-2 recit_logo_col">
           <img src="images/Logo-CC-v1-web.png" alt="">
@@ -66,7 +62,7 @@ include __DIR__ . '/partials/header.php';
               <div class="carte_ligne badge_service"><p class="carte_ligne_label">Juste pour vous</p></div>
               <div class="carte_ligne badge_service"><p class="carte_ligne_label">Matériel fourni</p></div>
             </div>
-            <p class="teaser_accroche">Rien à réussir, juste à être là et partager ensemble. <svg class="accroche_icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#4A4038" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3c1.74,0 3.41,0.81 4.5,2.08C13.09,3.81 14.76,3 16.5,3 19.58,3 22,5.41 22,8.5c0,3.77 -3.4,6.86 -8.55,11.53L12,21.35z"/></svg></p>
+            <p class="teaser_accroche">Rien à réussir, juste à être là et partager ensemble. <svg class="accroche_icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#4A2E1F" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3c1.74,0 3.41,0.81 4.5,2.08C13.09,3.81 14.76,3 16.5,3 19.58,3 22,5.41 22,8.5c0,3.77 -3.4,6.86 -8.55,11.53L12,21.35z"/></svg></p>
           </div>
           <div class="col-md-4 text-center teaser_icone_col">
             <a href="retour-a-la-couleur.php" class="teaser_icone_badge d-none d-md-flex">

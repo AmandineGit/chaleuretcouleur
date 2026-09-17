@@ -5,7 +5,11 @@
   --seafoam-dark: #41AB88;
   --coral: #FFC145;
   --cream: #FBF7F0;
-  --warm-brown: #4A4038;
+  --warm-brown: #4A2E1F;
+  /* Même teinte que --warm-brown depuis que tout le marron du site a été
+     unifié — gardée séparée pour cibler facilement header/footer seuls si
+     besoin de les distinguer à nouveau plus tard. Voir css/style.css. */
+  --header-footer-brown: #4A2E1F;
 }
 
 .navbar-nav::before {
@@ -133,7 +137,7 @@ body {
    marron, texte jaune/vert (inverse des variantes --jaune/--vert ci-dessus,
    qui restent utilisées telles quelles ailleurs sur le site). */
 .btn_on-hover--brun-jaune {
-  background-color: var(--warm-brown);
+  background-color: var(--header-footer-brown);
   color: var(--cream);
 }
 
@@ -143,7 +147,7 @@ body {
 }
 
 .btn_on-hover--brun-vert {
-  background-color: var(--warm-brown);
+  background-color: var(--header-footer-brown);
   color: var(--cream);
 }
 
@@ -178,22 +182,25 @@ body {
   }
 }
 
-.recit_section h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  color: var(--warm-brown);
-  font-size: 2.2rem;
+/* Reset du h1 de la section récit : ce sont .recit_texte_brun et
+   .recit_texte_corail (voir index.php) qui pilotent entièrement
+   l'apparence du texte (couleur, taille, graisse par breakpoint) ; le h1
+   ne doit donc porter aucun style par défaut du navigateur ni de police. */
+body.accueil2 .recit_texte_col h1 {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
 }
 
+/* stroke est un attribut hérité en SVG : le poser sur .bulle-icon (plutôt
+   que sur chaque <path>, voir index.php) suffit à colorer les deux icônes. */
 .recit_section .bulle-icon {
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.2em;
-}
-
-.recit_section p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  stroke: var(--header-footer-brown);
 }
 
 .recit_texte_corail {
@@ -201,8 +208,54 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  body.accueil2 .recit_texte_corail {
+    background-color: rgba(255, 255, 255, 0.45);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}
+
+/* Icônes (🖌️💛🌈) : sur PC, elles encadrent la phrase (voir index.php).
+   Sur mobile, elles passent toutes les trois à la fin, après le point et
+   un retour à la ligne (.recit_icones_fin), et les icônes intercalées dans
+   la phrase sont masquées (.recit_icones_inline). */
+.recit_icones_fin,
+.recit_icones_saut {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body.accueil2 .recit_icones_inline {
+    display: none;
+  }
+
+  body.accueil2 .recit_icones_fin,
+  body.accueil2 .recit_icones_saut {
+    display: inline;
+  }
+}
+
 .recit_texte_brun {
   color: var(--warm-brown);
+}
+
+@media (min-width: 769px) {
+  body.accueil2 .recit_texte_brun {
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body.accueil2 .recit_texte_brun {
+    font-weight: 700;
+    font-size: 1.3rem;
+    background-color: rgba(255, 255, 255, 0.45);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 }
 
 /* Logo affiché à côté du texte du premier bloc, dans le même bloc flouté
@@ -250,7 +303,7 @@ body {
    par-dessus, avec son propre calque de lisibilité. */
 .recit_section--meadow {
   position: relative;
-  min-height: 320px;
+  min-height: 246px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -261,54 +314,27 @@ body {
   z-index: 1;
 }
 
-/* Calque blanc semi-transparent sur toute la section (titre + paragraphes),
-   sans flou ni dégradé. .recit_content a déjà position:relative + z-index:1
-   (règle par défaut plus haut), donc le titre et les paragraphes qu'il
-   contient passent naturellement au-dessus de ce ::before. */
+/* Calque blanc semi-transparent sur tout le bandeau (titre h1), sans flou
+   ni dégradé. .recit_content a déjà position:relative + z-index:1 (règle
+   par défaut plus haut), donc le h1 qu'il contient passe naturellement
+   au-dessus de ce ::before. */
 body.accueil2 .recit_section--meadow::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: rgba(255, 255, 255, 0.5);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
-body.accueil2 .recit_content p {
-  font-size: 1.2rem;
-  line-height: 1.35;
-  color: #FFFFFF;
-}
-
-/* "Chaleur et Couleur est née..." repasse en marron (au lieu du blanc
-   ci-dessus, qui reste pour le second paragraphe). */
-body.accueil2 .recit_content p:first-of-type {
-  color: var(--warm-brown);
-}
-
-.recit_texte_intro {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-@media (min-width: 769px) {
-  body.accueil2 .recit_texte_intro {
-    margin-top: 0;
-  }
-}
-
-.recit_texte_bloc p:last-child {
-  margin-bottom: 0;
-}
-
-/* Phrase reprise de l'ancien H1 : taille plus proche d'un titre */
+/* display:inline-block fait tenir tout le texte + icônes de ce bloc dans un
+   seul rectangle de fond (voir la version mobile plus haut), au lieu d'un
+   surlignage tranché par ligne. */
 body.accueil2 .recit_texte_corail {
   font-size: 1.4rem;
   display: inline-block;
 }
 
 body.accueil2 .recit_texte_corail [aria-hidden="true"] {
-  font-size: 160%;
+  font-size: 120%;
 }
 
 @media (min-width: 769px) {
@@ -342,7 +368,7 @@ body.accueil2 .recit_texte_bloc {
 body.accueil2 .recit_texte_bloc::before {
   content: "";
   position: absolute;
-  inset: 0 -15px;
+  inset: 1% -15px;
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.35);
   -webkit-backdrop-filter: blur(10px);
@@ -355,6 +381,15 @@ body.accueil2 .recit_texte_bloc::before {
     linear-gradient(to right, transparent, black 12%, black 88%, transparent),
     linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
   mask-composite: intersect;
+}
+
+/* Mobile uniquement : plus de rectangle dédié (fond + bords fondus) sous le
+   texte — seul le calque de lisibilité de toute la section
+   (.recit_section--meadow::before, voir plus haut) reste. */
+@media (max-width: 767px) {
+  body.accueil2 .recit_texte_bloc::before {
+    content: none;
+  }
 }
 
 /* Texte simple des deux bandeaux en marron (au lieu du blanc de index.php).
@@ -585,7 +620,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: var(--warm-brown);
+  background-color: var(--header-footer-brown);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1158,6 +1193,59 @@ body.page-galerie .who_section h1 {
 
 .contact_section .contact-form textarea::placeholder {
   color: rgba(0, 0, 0, 0.4);
+}
+
+/* Page contact avec le fond photo "arbre" (.page_photo_fond, voir index.php
+   et contact.php) : calque blanc semi-transparent + flou derrière le
+   formulaire pour garder le texte lisible, même principe que
+   .recit_section--meadow sur l'accueil. */
+body.contact .contact_section {
+  position: relative;
+}
+
+body.contact .contact_section .contact-form {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+body.contact .heading_container {
+  position: relative;
+  z-index: 1;
+}
+
+body.contact .heading_container h2 {
+  color: #FFFFFF;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.contact .heading_container h2::before,
+body.contact .heading_container h2::after {
+  background-color: #FFFFFF;
+}
+
+/* Fond agrandi en hauteur (comme sur l'accueil, où .page_photo_fond
+   enveloppe plusieurs sections) + calque dégradé vertical par-dessus la
+   photo : jaune en haut, vert en bas, avec un fondu entre les deux.
+   Mêmes tons que les bandeaux de l'accueil (voir plus haut dans ce fichier) :
+   jaune = rgba(255, 227, 171, ...) de .page_photo_fond .teaser_dominant,
+   vert = rgba(76, 201, 160, ...) de .page_photo_fond .teaser_discret.
+   PC uniquement (au-delà du breakpoint mobile utilisé ailleurs pour
+   .page_photo_fond, voir plus haut). */
+@media (min-width: 768px) {
+  body.contact .page_photo_fond {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body.contact .page_photo_fond::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 227, 171, 0.8) 0%, rgba(76, 201, 160, 0.8) 100%);
+    pointer-events: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
