@@ -145,22 +145,26 @@ include __DIR__ . '/partials/header.php';
           </div>
         </div>
 
-        <p class="text-justify">
-          Je viens avec le matériel nécessaire, vous n'avez rien à préparer. Je propose
-          différentes pratiques (peinture, crayon graphite, crayons de couleur,
-          feutres, fusain, pastels...), à choisir ou à découvrir selon vos envies.
-          Certains préfèrent peindre en silence, d'autres parler en même temps. Il n'y
-          a pas de bonne façon de faire, le matériel est simplement un support pour
-          passer un moment ensemble.
-        </p>
-        <p class="text-justify">
-          Le rythme des visites (ponctuelles, hebdomadaires, toutes les deux
-          semaines...) se décide ensemble, selon les besoins et les disponibilités.
-        </p>
-        <p class="text-justify">
-          Tarif : 45 € la séance d'une heure, 60 € pour deux heures. Un supplément
-          peut s'appliquer selon la localité, pour le déplacement.
-        </p>
+        <div class="en_bref_box en_bref_box--jaune mt-5">
+          <p class="text-justify">
+            <strong>Matériel et technique :</strong> Je viens avec le matériel nécessaire, vous n'avez rien à préparer. Je propose
+            différentes pratiques (peinture, crayon graphite, crayons de couleur,
+            feutres, fusain, pastels...), à choisir ou à découvrir selon vos envies.
+          </p>
+          <p class="text-justify">
+            <strong>Intentions :</strong> Certains préfèrent peindre en silence, d'autres parler en même temps.
+            Il n'y a pas de bonne façon de faire, le matériel est simplement un support
+            pour passer un moment ensemble.
+          </p>
+          <p class="text-justify">
+            <strong>Rythme :</strong> Des visites (ponctuelles, hebdomadaires, toutes les deux
+            semaines...) qui se décident ensemble, selon les besoins et les disponibilités.
+          </p>
+          <p class="text-justify">
+            <strong>Tarif :</strong> 45 € la séance d'une heure, 60 € pour deux heures. Un supplément
+            peut s'appliquer selon la localité pour le déplacement.
+          </p>
+        </div>
 
         <h3 class="mt-5">Qui vient chez vous ?</h3>
         <div class="qui_accueille_bloc">

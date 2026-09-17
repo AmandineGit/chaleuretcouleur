@@ -204,7 +204,7 @@ body.accueil2 .recit_texte_col h1 {
 }
 
 .recit_texte_corail {
-  color: var(--honey);
+  color: #EC7051;
   font-weight: 700;
 }
 
@@ -647,7 +647,8 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 /* --------------------------------------------------------------------------
-   MÉDIATION PAR LA COULEUR : cartes "Modalités" / "Comment ça se passe"
+   CARTES "MODALITÉS" / "COMMENT ÇA SE PASSE" : médiation et retour à la
+   couleur
 -------------------------------------------------------------------------- */
 .en_bref_box {
   background-color: #ffffff;
@@ -666,13 +667,23 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 /* Même style que la carte "Modalités" ci-dessus, en corail (couleur des
-   boutons/accents de cette page) au lieu du vert par défaut. */
+   boutons/accents de la page médiation) au lieu du vert par défaut. */
 .en_bref_box--corail {
   border-left-color: var(--honey);
 }
 
 .en_bref_box--corail h3 {
   color: var(--honey-dark);
+}
+
+/* Idem, en jaune (couleur des boutons/accents de la page retour à la
+   couleur). */
+.en_bref_box--jaune {
+  border-left-color: #FFC145;
+}
+
+.en_bref_box--jaune h3 {
+  color: #E0A83A;
 }
 
 .en_bref_box ul,
@@ -1419,7 +1430,8 @@ body.contact .heading_container h2::after {
 }
 
 /* --------------------------------------------------------------------------
-   RETOUR À LA COULEUR : photo à côté du texte "Qui vous accueille"
+   PHOTO À CÔTÉ DU TEXTE DE PRÉSENTATION : "Qui vient chez vous ?" (retour à
+   la couleur) et "L'intervenante" (médiation par la couleur)
 -------------------------------------------------------------------------- */
 .qui_accueille_bloc {
   display: flex;

@@ -125,6 +125,24 @@ include __DIR__ . '/partials/header.php';
           </div>
         </div>
 
+        <h3 class="mt-5">L'intervenante</h3>
+        <div class="qui_accueille_bloc">
+          <img src="images/Amandine-Vesrtrepen.png" alt="Amandine" class="qui_accueille_photo">
+          <div>
+            <p class="text-justify">
+              Je m'appelle Amandine. J'ai reçu une formation artistique dans ma
+              jeunesse, avant de passer vingt ans à accompagner des humains dans le
+              monde professionnel : coaching, formation, écoute. Aujourd'hui, je fais
+              revenir la couleur dans ma vie et dans celle des autres, comme un
+              prétexte simple pour être présente à quelqu'un, sans rien à prouver ni à
+              réussir.
+            </p>
+            <p>
+              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune btn_on-hover--petit">En savoir plus sur mon parcours →</a>
+            </p>
+          </div>
+        </div>
+
         <div class="en_bref_box mt-5">
           <h3>Comment ça se passe avec votre structure ?</h3>
           <ol>
