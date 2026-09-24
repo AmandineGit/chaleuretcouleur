@@ -93,7 +93,11 @@ include __DIR__ . '/partials/header.php';
           tendre la main au travers du partage et de la création. Découvrir chacun sa
           direction, accompagner, et surtout partager.
         </p>
-        <div class="text-center my-4">
+        <div class="text-center mt-4 qui-suis-je_cta">
+          <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--jaune">Découvrir Présence en couleur →</a>
+          <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--vert">Découvrir Médiation par la couleur →</a>
+        </div>
+        <div id="qui-suis-je" class="text-center my-4">
           <img src="images/Amandine-Vesrtrepen.png" alt="Amandine" class="qui-suis-je_photo">
         </div>
 
@@ -131,11 +135,6 @@ include __DIR__ . '/partials/header.php';
           Je suis basée à Bourg-Saint-Maurice, en Tarentaise (Savoie), où j'interviens
           à domicile et auprès des structures locales.
         </p>
-
-        <div class="text-center mt-4 qui-suis-je_cta">
-          <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--jaune">Découvrir Présence en couleur →</a>
-          <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--vert">Découvrir Médiation par la couleur →</a>
-        </div>
 
       </div>
     </div>

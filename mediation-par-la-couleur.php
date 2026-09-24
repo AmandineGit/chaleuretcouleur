@@ -138,7 +138,7 @@ include __DIR__ . '/partials/header.php';
               réussir.
             </p>
             <p>
-              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
+              <a href="qui-suis-je.php#qui-suis-je" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
             </p>
           </div>
         </div>

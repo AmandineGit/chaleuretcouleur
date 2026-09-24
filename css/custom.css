@@ -166,22 +166,10 @@ body {
   color: var(--cream);
 }
 
-.btn_on-hover--brun-orange,
-.btn_on-hover--brun-orange:visited {
-  background-color: var(--header-footer-brown);
-  color: var(--cream);
-}
-
-.btn_on-hover--brun-orange:hover {
-  background-color: #362f29;
-  color: var(--cream);
-}
-
-/* Essai : fond arc-en-ciel (bouton "Découvrir la démarche" de l'accueil).
+/* Fond arc-en-ciel (bouton "Découvrir la démarche" de l'accueil).
    Dégradé deux fois plus large que le bouton : au survol, il glisse
    (background-position) au lieu de changer de couleur. Texte blanc gras +
-   légère ombre marron pour rester lisible sur les teintes claires. Pour revenir
-   au marron : remettre btn_on-hover--brun-orange dans index.php. */
+   légère ombre marron pour rester lisible sur les teintes claires. */
 .btn_on-hover--arc-en-ciel,
 .btn_on-hover--arc-en-ciel:visited {
   background: linear-gradient(90deg,
@@ -268,7 +256,7 @@ body.accueil2 .page_photo_fond::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(177, 225, 231, 0.8) 0%, rgba(177, 225, 231, 0.3) 100%);
+  background: linear-gradient(to bottom, rgba(177, 225, 231, 0.65) 0%, rgba(177, 225, 231, 0.3) 100%);
   pointer-events: none;
 }
 
@@ -422,7 +410,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
    placés par zone nommée, indépendamment de leur ordre dans le DOM — utile
    car l'ordre voulu diffère entre mobile (texte, logo, bouton empilés) et PC
    (texte en haut à gauche, bouton en bas à gauche dans la même colonne que
-   le texte, logo sur toute la hauteur à droite, sans ligne dédiée pour le
+   le texte, logo à droite sur les deux rangées, sans ligne dédiée pour le
    bouton). */
 .teaser_intro_grid {
   display: grid;
@@ -457,11 +445,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 
 .teaser_intro_grid_button {
   grid-area: button;
-  /* Sans ça, la cellule "button" s'étire (stretch, comportement par défaut
-     des éléments de grille) pour occuper toute la hauteur de sa rangée —
-     rangée elle-même agrandie sur PC par le logo qui chevauche les deux
-     rangées "text"/"button". Résultat : du vide sous le bouton. */
-  align-self: start;
 }
 
 @media (min-width: 768px) {
@@ -1321,6 +1304,13 @@ body.contact .page_photo_fond::before {
 /* --------------------------------------------------------------------------
    PAGE "QUI SUIS-JE ?" : photo de profil
 -------------------------------------------------------------------------- */
+/* Ancre "Qui suis-je ?" posée sur la photo ronde juste au-dessus du titre
+   (lien qui-suis-je.php#qui-suis-je) : marge pour que la photo ne passe pas
+   sous le menu fixe (.hero_area). */
+#qui-suis-je {
+  scroll-margin-top: 120px;
+}
+
 .qui-suis-je_photo {
   width: 200px;
   height: 200px;
