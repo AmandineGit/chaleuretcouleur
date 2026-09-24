@@ -41,7 +41,7 @@ include __DIR__ . '/partials/header.php';
           </ul>
         </div>
 
-        <h3>Pour quelles structures</h3>
+        <h3>Pour quelles structures ?</h3>
         <p class="text-justify">
           Résidences seniors, foyers, associations de proximité...<br>
           Toute structure qui accueille des personnes isolées ou âgées et souhaite
@@ -138,7 +138,7 @@ include __DIR__ . '/partials/header.php';
               réussir.
             </p>
             <p>
-              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune btn_on-hover--petit">En savoir plus sur mon parcours →</a>
+              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
             </p>
           </div>
         </div>

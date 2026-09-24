@@ -123,7 +123,7 @@ include __DIR__ . '/partials/header.php';
               réussir.
             </p>
             <p>
-              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune btn_on-hover--petit">En savoir plus sur mon parcours →</a>
+              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
             </p>
           </div>
         </div>

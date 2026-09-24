@@ -85,7 +85,8 @@ body {
 /* --------------------------------------------------------------------------
    BOUTON "EN SAVOIR PLUS" / "CONTACTEZ-NOUS" (style de base, réutilisé partout)
 -------------------------------------------------------------------------- */
-.btn_on-hover {
+.btn_on-hover,
+.btn_on-hover:visited {
   display: inline-block;
   background-color: var(--honey);
   color: #ffffff;
@@ -104,7 +105,8 @@ body {
   transform: translateY(-2px);
 }
 
-.btn_on-hover--discret {
+.btn_on-hover--discret,
+.btn_on-hover--discret:visited {
   background-color: transparent;
   color: var(--seafoam-dark);
   border: 1px solid var(--seafoam);
@@ -115,7 +117,8 @@ body {
   color: #ffffff;
 }
 
-.btn_on-hover--jaune {
+.btn_on-hover--jaune,
+.btn_on-hover--jaune:visited {
   background-color: #FFC145;
   color: var(--warm-brown);
 }
@@ -125,7 +128,8 @@ body {
   color: var(--warm-brown);
 }
 
-.btn_on-hover--vert {
+.btn_on-hover--vert,
+.btn_on-hover--vert:visited {
   background-color: #4CC9A0;
 }
 
@@ -135,8 +139,13 @@ body {
 
 /* Boutons des bandeaux "Retour à la couleur" / "Médiation" (accueil) : fond
    marron, texte jaune/vert (inverse des variantes --jaune/--vert ci-dessus,
-   qui restent utilisées telles quelles ailleurs sur le site). */
-.btn_on-hover--brun-jaune {
+   qui restent utilisées telles quelles ailleurs sur le site).
+   :visited redéclaré partout ci-dessous : sans ça, le violet par défaut du
+   navigateur pour les liens visités (a:visited, plus spécifique qu'une
+   simple classe) reprend le dessus une fois le lien cliqué et casse le
+   contraste sur le fond marron. */
+.btn_on-hover--brun-jaune,
+.btn_on-hover--brun-jaune:visited {
   background-color: var(--header-footer-brown);
   color: var(--cream);
 }
@@ -146,7 +155,8 @@ body {
   color: var(--cream);
 }
 
-.btn_on-hover--brun-vert {
+.btn_on-hover--brun-vert,
+.btn_on-hover--brun-vert:visited {
   background-color: var(--header-footer-brown);
   color: var(--cream);
 }
@@ -156,7 +166,19 @@ body {
   color: var(--cream);
 }
 
-.btn_on-hover--corail {
+.btn_on-hover--brun-orange,
+.btn_on-hover--brun-orange:visited {
+  background-color: var(--header-footer-brown);
+  color: var(--cream);
+}
+
+.btn_on-hover--brun-orange:hover {
+  background-color: #362f29;
+  color: var(--cream);
+}
+
+.btn_on-hover--corail,
+.btn_on-hover--corail:visited {
   background-color: #FF7A5C;
 }
 
@@ -164,126 +186,14 @@ body {
   background-color: #E0603F;
 }
 
-.btn_on-hover--petit {
-  padding: 8px 24px;
-  font-size: 12.8px;
-}
-
 /* --------------------------------------------------------------------------
-   ACCUEIL : récit + teasers
+   ACCUEIL : teasers
 -------------------------------------------------------------------------- */
-.recit_section.layout_padding {
-  padding: 0 0 25px;
-}
 
-@media (min-width: 769px) {
-  .recit_section.layout_padding {
-    padding: 0;
-  }
-}
-
-/* Reset du h1 de la section récit : ce sont .recit_texte_brun et
-   .recit_texte_corail (voir index.php) qui pilotent entièrement
-   l'apparence du texte (couleur, taille, graisse par breakpoint) ; le h1
-   ne doit donc porter aucun style par défaut du navigateur ni de police. */
-body.accueil2 .recit_texte_col h1 {
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* stroke est un attribut hérité en SVG : le poser sur .bulle-icon (plutôt
-   que sur chaque <path>, voir index.php) suffit à colorer les deux icônes. */
-.recit_section .bulle-icon {
-  width: 1.1em;
-  height: 1.1em;
-  vertical-align: -0.2em;
-  stroke: var(--header-footer-brown);
-}
-
-.recit_texte_corail {
-  color: #EC7051;
-  font-weight: 700;
-}
-
-@media (max-width: 767px) {
-  body.accueil2 .recit_texte_corail {
-    background-color: rgba(255, 255, 255, 0.45);
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-}
-
-/* Icônes (🖌️💛🌈) : sur PC, elles encadrent la phrase (voir index.php).
-   Sur mobile, elles passent toutes les trois à la fin, après le point et
-   un retour à la ligne (.recit_icones_fin), et les icônes intercalées dans
-   la phrase sont masquées (.recit_icones_inline). */
-.recit_icones_fin,
-.recit_icones_saut {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  body.accueil2 .recit_icones_inline {
-    display: none;
-  }
-
-  body.accueil2 .recit_icones_fin,
-  body.accueil2 .recit_icones_saut {
-    display: inline;
-  }
-}
-
-.recit_texte_brun {
-  color: var(--warm-brown);
-}
-
-@media (min-width: 769px) {
-  body.accueil2 .recit_texte_brun {
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 767px) {
-  body.accueil2 .recit_texte_brun {
-    font-weight: 700;
-    font-size: 1.3rem;
-    background-color: rgba(255, 255, 255, 0.45);
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-  }
-}
-
-/* Logo affiché à côté du texte du premier bloc, dans le même bloc flouté
-   (.recit_texte_bloc, voir index.php) que le texte. */
-.recit_logo_col {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.recit_logo_col img {
-  width: 100%;
-  max-width: 189px;
-  height: auto;
-}
-
-/* Mobile uniquement : logo au-dessus du texte (au lieu de à droite comme
-   sur PC), sans changer l'ordre dans le HTML. */
-@media (max-width: 767px) {
-  .recit_logo_col {
-    order: -1;
-  }
-}
-
-/* Fond photo unique pour tout le contenu de la page (intro + les deux
-   bandeaux), quand la variante "meadow" est active — voir index.php.
-   background-attachment:fixed peu fiable sur mobile (iOS notamment) : on
-   repasse en scroll normal sous 768px plutôt que de laisser un rendu cassé. */
+/* Fond photo unique pour tout le contenu de la page (bandeau orange + les
+   deux cartes jaune/vert) — voir index.php. background-attachment:fixed
+   peu fiable sur mobile (iOS notamment) : on repasse en scroll normal sous
+   768px plutôt que de laisser un rendu cassé. */
 .page_photo_fond {
   background-image: url("../images/accueil-hero-arbre.webp");
   background-size: cover;
@@ -317,111 +227,32 @@ body.accueil2 main {
 }
 
 body.accueil2 .page_photo_fond {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
 }
 
-/* Remplit l'espace laissé par le footer collé en bas (voir index.php) avec
-   le même calque blanc semi-transparent que le bloc récit (bandeau 1),
-   plutôt que de laisser la photo brute sous le dernier bandeau. */
-body.accueil2 .page_photo_fond_filler {
-  flex: 1 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-/* variante "meadow" : la photo vient du fond partagé .page_photo_fond
-   (voir ci-dessus) ; cette section reste juste une fenêtre transparente
-   par-dessus, avec son propre calque de lisibilité. */
-.recit_section--meadow {
-  position: relative;
-  min-height: 246px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.recit_section--meadow .recit_content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Calque blanc semi-transparent sur tout le bandeau (titre h1), sans flou
-   ni dégradé. .recit_content a déjà position:relative + z-index:1 (règle
-   par défaut plus haut), donc le h1 qu'il contient passe naturellement
-   au-dessus de ce ::before. */
-body.accueil2 .recit_section--meadow::before {
+/* Calque bleu/vert clair sur toute la hauteur du fond photo (bandeau
+   d'intro + cartes jaune/vert + filler), plus opaque en haut qu'en bas :
+   mêmes ingrédients que le calque de la page contact
+   (body.contact .page_photo_fond::before, voir plus bas dans ce fichier).
+   Teinte = #3BB5C4 mélangé à 60 % de blanc. Chaque section affichée
+   par-dessus doit être position:relative pour rester au-dessus de ce
+   calque (voir .teaser_section ci-dessous). */
+body.accueil2 .page_photo_fond::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(177, 225, 231, 0.8) 0%, rgba(177, 225, 231, 0.3) 100%);
+  pointer-events: none;
 }
 
-/* display:inline-block fait tenir tout le texte + icônes de ce bloc dans un
-   seul rectangle de fond (voir la version mobile plus haut), au lieu d'un
-   surlignage tranché par ligne. */
-body.accueil2 .recit_texte_corail {
-  font-size: 1.4rem;
-  display: inline-block;
-}
-
-body.accueil2 .recit_texte_corail [aria-hidden="true"] {
-  font-size: 120%;
-}
-
-@media (min-width: 769px) {
-  body.accueil2 .recit_texte_corail [aria-hidden="true"] {
-    font-size: 130%;
-  }
-}
-
-/* Zone plus floue sur tout le bloc de texte (titre + paragraphes), en plus
-   du léger flou déjà appliqué à toute la section : le backdrop-filter
-   s'applique ici directement sur le bloc, qui sert donc lui-même de
-   fenêtre plus dépolie que le reste. */
-body.accueil2 .recit_texte_bloc {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 10px 70px;
-}
-
-/* PC uniquement : zone de texte agrandie (padding latéral réduit), sans
-   toucher à la taille du logo (.recit_logo_col, inchangé). */
-@media (min-width: 769px) {
-  body.accueil2 .recit_texte_bloc {
-    padding: 10px 30px;
-  }
-}
-
-/* Le flou + le fond vivent sur ce calque séparé, derrière le texte
-   (z-index:-1) : un mask appliqué directement sur le bloc ferait
-   aussi disparaître les mots en bord de zone, pas seulement le fond. */
-body.accueil2 .recit_texte_bloc::before {
-  content: "";
-  position: absolute;
-  inset: 1% -15px;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.35);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -webkit-mask-image:
-    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
-  mask-composite: intersect;
-}
-
-/* Mobile uniquement : plus de rectangle dédié (fond + bords fondus) sous le
-   texte — seul le calque de lisibilité de toute la section
-   (.recit_section--meadow::before, voir plus haut) reste. */
-@media (max-width: 767px) {
-  body.accueil2 .recit_texte_bloc::before {
-    content: none;
-  }
+/* Remplit l'espace laissé par le footer collé en bas (voir index.php) :
+   plus besoin de son propre fond, le calque ci-dessus (::before) couvre
+   déjà toute la hauteur, filler compris. */
+body.accueil2 .page_photo_fond_filler {
+  flex: 1 0 auto;
 }
 
 /* Texte simple des deux bandeaux en marron (au lieu du blanc de index.php).
@@ -430,7 +261,7 @@ body.accueil2 .recit_texte_bloc::before {
 body.accueil2 .teaser_dominant .teaser_tagline,
 body.accueil2 .teaser_discret .teaser_tagline {
   color: var(--warm-brown);
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: transparent;
 }
 
 /* Bandeaux un peu plus opaques que sur la version prairie (0.65/0.75) */
@@ -450,18 +281,38 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 .teaser_section {
+  position: relative;
   border-radius: 0;
 }
 
 /* Padding vertical réduit : le contenu (titre, badges, accroche, icône,
-   bouton) remplit déjà bien la section, pas besoin des 60px/45px par défaut
-   de .layout_padding/.layout_padding2. */
-.teaser_dominant.layout_padding {
+   bouton) remplit déjà bien la section, pas besoin des 60px par défaut de
+   .layout_padding. */
+.teaser_split.layout_padding {
   padding: 30px 0;
 }
 
-.teaser_discret.layout_padding2 {
-  padding: 25px 0;
+/* Même réduction que .teaser_split.layout_padding ci-dessus, pour le
+   bandeau "Retour à la couleur" (45px par défaut de .layout_padding2). */
+.teaser_intro_section.layout_padding2 {
+  padding: 30px 0;
+}
+
+/* Les deux cartes ("Présence en couleur" / "Médiation par la couleur") sont
+   posées côte à côte à partir de md (grille Bootstrap col-md-6) et empilées
+   en dessous. La couleur/le padding/les coins arrondis vivent sur ce bloc
+   interne plutôt que sur la colonne elle-même, pour garder un espace visible
+   entre les deux cartes (le gouttière de colonne ne suffirait pas, puisque
+   le fond irait jusqu'au bord de la colonne). */
+.teaser_split_row {
+  row-gap: 20px;
+}
+
+.teaser_split_col {
+  height: 100%;
+  padding: 28px 24px;
+  border-radius: 18px;
+  text-align: center;
 }
 
 .teaser_dominant {
@@ -502,23 +353,188 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
      1px  1px 0 #ffffff;
 }
 
+/* Bandeau "Retour à la couleur" (texte d'intro), premier bloc de l'accueil,
+   juste au-dessus des cartes jaune/vert. .teaser_split_col (styles plus
+   haut) lui donne le même padding/coins arrondis/centrage que ces deux
+   cartes, posé dans le même .container qu'elles : il ne dépasse donc
+   jamais leur largeur cumulée. Pas de fond propre : la photo de fond
+   apparaît directement à travers, seul le carré corail de
+   .teaser_intro_texte (plus bas) en a un. */
+.teaser_intro h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--warm-brown);
+  font-size: 2rem;
+  text-transform: none;
+  -webkit-text-stroke: 0.5px #ffffff;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
+
+/* Phrase d'accroche ("Nous avons tous besoin d'échanger..."), simple
+   paragraphe (pas un heading : le h1 de la page est "Retour à la couleur",
+   voir .teaser_intro h1 juste au-dessus). */
+.teaser_intro_h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--warm-brown);
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 10px 0 12px 0;
+}
+
+@media (max-width: 767px) {
+  .teaser_intro_h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Grille dédiée (pas la grille Bootstrap) : texte, logo et bouton sont
+   placés par zone nommée, indépendamment de leur ordre dans le DOM — utile
+   car l'ordre voulu diffère entre mobile (texte, logo, bouton empilés) et PC
+   (texte en haut à gauche, bouton en bas à gauche dans la même colonne que
+   le texte, logo sur toute la hauteur à droite, sans ligne dédiée pour le
+   bouton). */
+.teaser_intro_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "logo"
+    "button";
+  gap: 14px;
+}
+
+.teaser_intro_grid_text {
+  grid-area: text;
+}
+
+.teaser_intro_logo_col {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teaser_intro_logo_col img {
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+}
+
+.teaser_intro_grid_button {
+  grid-area: button;
+  /* Sans ça, la cellule "button" s'étire (stretch, comportement par défaut
+     des éléments de grille) pour occuper toute la hauteur de sa rangée —
+     rangée elle-même agrandie sur PC par le logo qui chevauche les deux
+     rangées "text"/"button". Résultat : du vide sous le bouton. */
+  align-self: start;
+}
+
+@media (min-width: 768px) {
+  .teaser_intro_grid {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "text   logo"
+      "button logo";
+    column-gap: 24px;
+    row-gap: 4px;
+  }
+
+  .teaser_intro_logo_col {
+    /* "Réduit de 15%" : padding plutôt qu'un pourcentage sur l'image
+       elle-même — width/height:100% + object-fit:contain ci-dessous gèrent
+       correctement le ratio de l'image dans une cellule étroite et haute,
+       ce qu'une hauteur fixe en % (essayé plus tôt) ne faisait pas, laissant
+       du vide autour de l'image. */
+    padding: 0 12%;
+  }
+
+  .teaser_intro_logo_col img {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Phrase d'accroche agrandie, bouton centré en dessous. */
+  .teaser_intro_grid_button .teaser_intro_h1 {
+    font-size: 1.2rem;
+    margin: 6px 0 14px 0;
+  }
+}
+
+/* Cadre corail translucide (même principe que .teaser_tagline sur les cartes
+   jaune/vert) : inline-block pour épouser le texte plutôt que toute la
+   largeur de la colonne. */
+.teaser_intro_texte {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(255, 122, 92, 0.8);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* Halo blanc sur les bords, qui se fond vers le corail en allant vers le
+     centre (inset : l'ombre part du bord intérieur du cadre, pas de
+     l'extérieur). */
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+
+.teaser_intro_texte p {
+  color: var(--warm-brown);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.teaser_intro_texte_centre {
+  display: block;
+  text-align: left;
+  font-style: normal;
+}
+
+@media (max-width: 767px) {
+  .teaser_intro_texte_mobile_centre {
+    display: block;
+    text-align: center;
+  }
+}
+
+.teaser_intro_texte p:last-child {
+  margin-bottom: 0;
+}
+
+.teaser_intro .btn_on-hover {
+  margin-top: 0;
+}
+
+/* Mobile uniquement : carré corail plus opaque pour rester lisible. */
+@media (max-width: 767px) {
+  .teaser_intro_texte {
+    background-color: rgba(255, 122, 92, 0.9);
+  }
+}
+
 .teaser_tagline {
   font-size: 1.05rem;
-  /* Marges verticales seulement : avec "auto" à gauche/droite, ce bloc
-     restait centré dans sa colonne même sur desktop (text-md-left),
-     puisque max-width le rend plus étroit que la colonne. */
+  /* inline-block : centré via le text-align:center de .teaser_split_col
+     plutôt que par des marges automatiques. */
   margin: 10px 0 12px 0;
-  max-width: 560px;
+  max-width: 420px;
   color: #FFFFFF;
 }
 
-/* "Retour à la couleur" revient au marron par défaut du site (le blanc reste
-   pour "Médiation"). */
 /* Cadre foncé derrière le texte simple, pour qu'il ressorte quel que soit ce
    qu'il y a derrière (photo + bandeau semi-transparent) : jaune foncé pour
-   "Retour", vert foncé pour "Médiation", texte blanc pour le contraste.
-   inline-block pour que le cadre épouse le texte plutôt que toute la
-   largeur de la colonne. */
+   "Présence en couleur", vert foncé pour "Médiation", texte blanc pour le
+   contraste. inline-block pour que le cadre épouse le texte plutôt que
+   toute la largeur de la colonne. */
 .teaser_dominant .teaser_tagline {
   display: inline-block;
   background-color: rgba(224, 168, 58, 0.5);
@@ -536,13 +552,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 
-@media (max-width: 767px) {
-  .teaser_tagline {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 /* Badges courts ("À domicile", "Tête-à-tête"...) : réutilisation du même
    composant .carte_ligne / .carte_ligne_label que la section "Pour qui" de
    retour-a-la-couleur.php (fond clair, coins arrondis, texte sombre) — pas
@@ -553,6 +562,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 .badges_service {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 10px;
 }
@@ -580,10 +590,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 @media (max-width: 767px) {
-  .badges_service {
-    justify-content: center;
-  }
-
   .badges_service .carte_ligne {
     flex-direction: row;
     padding: 6px 14px;
@@ -631,21 +637,12 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   opacity: 1;
 }
 
-/* Ligne texte + icône des bandeaux "Retour à la couleur" / "Médiation".
-   Marges resserrées : avec les badges + la phrase d'accroche qui remplissent
-   maintenant la colonne de texte, les grands blancs avant l'icône et le
-   bouton (surtout visibles sur mobile, une fois les colonnes empilées)
-   n'ont plus besoin d'autant d'espace. */
-.teaser_ligne {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .teaser_icone_col {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-top: 14px;
 }
 
 .teaser_icone_badge {
@@ -658,24 +655,10 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   justify-content: center;
 }
 
-/* Copie mobile de l'icône, affichée juste sous le titre (voir index.php) ;
-   la copie "desktop" dans .teaser_icone_col reste seule visible à partir de
-   768px (d-none d-md-flex), le bouton n'est pas dupliqué et reste après le
-   texte comme avant. */
-.teaser_icone_badge--mobile {
-  margin: 14px auto 0 auto;
-}
-
 .teaser_icone_badge img {
   width: 62px;
   height: 62px;
   object-fit: contain;
-}
-
-@media (max-width: 767px) {
-  .teaser_icone_col {
-    margin-top: 10px;
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1262,8 +1245,8 @@ body.contact .page_photo_fond {
 
 /* Page contact avec le fond photo "arbre" (.page_photo_fond, voir index.php
    et contact.php) : calque blanc semi-transparent + flou derrière le
-   formulaire pour garder le texte lisible, même principe que
-   .recit_section--meadow sur l'accueil. */
+   formulaire pour garder le texte lisible, même principe que le calque
+   global body.accueil2 .page_photo_fond::before sur l'accueil. */
 body.contact .contact_section {
   position: relative;
 }
@@ -1296,20 +1279,18 @@ body.contact .heading_container h2::after {
    Mêmes tons que les bandeaux de l'accueil (voir plus haut dans ce fichier) :
    jaune = rgba(255, 227, 171, ...) de .page_photo_fond .teaser_dominant,
    vert = rgba(76, 201, 160, ...) de .page_photo_fond .teaser_discret.
-   PC uniquement (au-delà du breakpoint mobile utilisé ailleurs pour
-   .page_photo_fond, voir plus haut). */
-@media (min-width: 768px) {
-  body.contact .page_photo_fond {
-    position: relative;
-  }
+   PC et mobile désormais (auparavant réservé au PC, ce qui laissait la
+   photo brute sans teinte en dessous de 768px). */
+body.contact .page_photo_fond {
+  position: relative;
+}
 
-  body.contact .page_photo_fond::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(255, 227, 171, 0.8) 0%, rgba(76, 201, 160, 0.8) 100%);
-    pointer-events: none;
-  }
+body.contact .page_photo_fond::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 227, 171, 0.8) 0%, rgba(76, 201, 160, 0.8) 100%);
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -1321,6 +1302,28 @@ body.contact .heading_container h2::after {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Photo détourée (fond transparent) : pas de cadre ni d'ombre, elle se pose
+   directement sur le fond de la page. Placée entre les deux morceaux du
+   paragraphe sur ma maman (voir qui-suis-je.php) : centrée entre les deux
+   sur mobile ; à partir de md, flottante à droite, son haut aligné sur
+   « Lorsque nous lui avons offert… », le texte passant à côté. */
+.qui-suis-je_maman {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin: 16px auto;
+}
+
+@media (min-width: 768px) {
+  .qui-suis-je_maman {
+    float: right;
+    width: 40%;
+    max-width: none;
+    margin: 4px 0 12px 20px;
+  }
 }
 
 .qui-suis-je_cta {
