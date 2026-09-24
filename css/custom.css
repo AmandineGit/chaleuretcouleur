@@ -1326,6 +1326,38 @@ body.contact .page_photo_fond::before {
   }
 }
 
+/* Photo détourée d'Amandine, même principe que .qui-suis-je_maman : placée
+   avant le paragraphe « Le retour à la couleur… » dans le HTML pour
+   flotter à gauche du texte sur PC ; sur mobile, remise après le
+   paragraphe (flex + order). Plus étroite que la photo de maman car en
+   format portrait. */
+.qui-suis-je_amandine_bloc {
+  display: flex;
+  flex-direction: column;
+}
+
+.qui-suis-je_amandine {
+  order: 1;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 16px auto;
+}
+
+@media (min-width: 768px) {
+  .qui-suis-je_amandine_bloc {
+    display: block;
+  }
+
+  .qui-suis-je_amandine {
+    float: left;
+    width: 30%;
+    max-width: none;
+    margin: 4px 20px 12px 0;
+  }
+}
+
 .qui-suis-je_cta {
   display: flex;
   flex-wrap: wrap;

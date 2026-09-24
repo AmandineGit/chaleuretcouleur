@@ -36,15 +36,18 @@ include __DIR__ . '/partials/header.php';
           performance à réussir, mais comme un prétexte pour partager du temps et des
           envies créatives ensemble.
         </p>
-        <p class="text-justify">
-          Le retour à la couleur a été pour moi une lueur dans le monde de la
-          maladie, cela m'a permis de retrouver le sourire et l'envie d'aller vers
-          les autres. Réintégrer la couleur au travers d'une activité créative m'a
-          permis de m'évader de la souffrance, même si la douleur est toujours là, la
-          souffrance, elle, m'oublie un peu. La mobilité légère et adaptée m'a permis
-          de retrouver la souplesse que les inflammations articulaires limitaient de
-          jour en jour.
-        </p>
+        <div class="qui-suis-je_amandine_bloc">
+          <img src="images/AmandineV.webp" alt="Amandine devant ses dessins et peintures" class="qui-suis-je_amandine" loading="lazy" width="600" height="1067">
+          <p class="text-justify">
+            Le retour à la couleur a été pour moi une lueur dans le monde de la
+            maladie, cela m'a permis de retrouver le sourire et l'envie d'aller vers
+            les autres. Réintégrer la couleur au travers d'une activité créative m'a
+            permis de m'évader de la souffrance, même si la douleur est toujours là, la
+            souffrance, elle, m'oublie un peu. La mobilité légère et adaptée m'a permis
+            de retrouver la souplesse que les inflammations articulaires limitaient de
+            jour en jour.
+          </p>
+        </div>
         <p class="text-justify">
           Le partage est venu ensuite naturellement, d'abord avec ma maman. Elle
           souffre depuis plusieurs années d'une « sclérose en plaques », et dernièrement, elle a
