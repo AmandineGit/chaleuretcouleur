@@ -22,21 +22,22 @@ include __DIR__ . '/partials/header.php';
           <div class="detail-box text-center">
             <h1>Retour à la couleur <br class="d-md-none">🖌️🌈<span class="sr-only">, ateliers créatifs pour vaincre l'isolement</span></h1>
           </div>
+          <?php /* Bloc corail masqué (gardé au cas où) : retirer ce commentaire PHP pour le réafficher.
           <div class="teaser_intro_texte">
             <p>
-              <span class="teaser_intro_texte_centre">Chaleur et Couleur est née d'une envie :</span>
-              <span class="teaser_intro_texte_mobile_centre">Faire revenir la couleur et la créativité dans ma vie et dans celle des autres, non pas comme une performance à réussir, mais comme <strong>un prétexte pour partager du temps et des envies créatives ensemble.</strong></span>
+              <span class="teaser_intro_texte_mobile_centre">Faire revenir la couleur et la créativité dans nos vies, comme un prétexte pour <strong>partager du temps et créer ensemble.</strong></span>
             </p>
           </div>
+          */ ?>
         </div>
         <div class="teaser_intro_logo_col">
           <img src="images/Logo-CC-v1-web.png" alt="">
         </div>
         <div class="teaser_intro_grid_button text-center">
           <p class="teaser_intro_h1 text-center">
-            Nous avons tous besoin d'échanger, de rire et de se sentir créatifs et utiles.
+            Car nous avons tous besoin d'échanger, de rire et de se sentir créatifs et utiles.
           </p>
-          <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--brun-orange">En savoir plus</a>
+          <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--arc-en-ciel">Découvrir la démarche <span class="d-none d-md-inline">· </span><br class="d-md-none">Retour à la couleur</a>
         </div>
       </div>
     </div>

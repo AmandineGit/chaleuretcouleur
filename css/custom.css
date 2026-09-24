@@ -177,6 +177,30 @@ body {
   color: var(--cream);
 }
 
+/* Essai : fond arc-en-ciel (bouton "Découvrir la démarche" de l'accueil).
+   Dégradé deux fois plus large que le bouton : au survol, il glisse
+   (background-position) au lieu de changer de couleur. Texte blanc gras +
+   légère ombre marron pour rester lisible sur les teintes claires. Pour revenir
+   au marron : remettre btn_on-hover--brun-orange dans index.php. */
+.btn_on-hover--arc-en-ciel,
+.btn_on-hover--arc-en-ciel:visited {
+  background: linear-gradient(90deg,
+    #A58BE0, #6FB7E9, #4CC9A0, #8FD694, #FFC145, #FFA24D, #FF7A5C, #A58BE0);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  color: #ffffff;
+  font-weight: 700;
+  border: 2px solid #ffffff;
+  text-shadow: 0 1px 3px rgba(74, 46, 31, 0.6);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: background-position 0.6s ease, transform 0.2s ease;
+}
+
+.btn_on-hover--arc-en-ciel:hover {
+  background-position: 100% 50%;
+  color: #ffffff;
+}
+
 .btn_on-hover--corail,
 .btn_on-hover--corail:visited {
   background-color: #FF7A5C;
@@ -293,9 +317,10 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 /* Même réduction que .teaser_split.layout_padding ci-dessus, pour le
-   bandeau "Retour à la couleur" (45px par défaut de .layout_padding2). */
+   bandeau "Retour à la couleur" (45px par défaut de .layout_padding2) ;
+   bas encore réduit pour rapprocher les cartes du bandeau. */
 .teaser_intro_section.layout_padding2 {
-  padding: 30px 0;
+  padding: 30px 0 5px 0;
 }
 
 /* Les deux cartes ("Présence en couleur" / "Médiation par la couleur") sont
@@ -420,10 +445,14 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   justify-content: center;
 }
 
+/* Couleurs du logo ravivées (saturate/contrast) + léger halo blanc qui suit
+   sa forme (drop-shadow, pas box-shadow) pour le détacher de la photo de
+   fond. */
 .teaser_intro_logo_col img {
   width: 100%;
   max-width: 170px;
   height: auto;
+  filter: saturate(1.35) contrast(1.08) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
 }
 
 .teaser_intro_grid_button {
@@ -446,20 +475,22 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
     row-gap: 4px;
   }
 
+  /* Logo sorti du flux (absolute) : il ne compte plus dans la hauteur de
+     la grille, qui s'ajuste donc au texte + bouton seuls (plus de vide
+     sous le bouton). Aligné en haut de sa colonne, il dépasse du bloc en
+     bas, par-dessus le haut des cartes (z-index). */
   .teaser_intro_logo_col {
-    /* "Réduit de 15%" : padding plutôt qu'un pourcentage sur l'image
-       elle-même — width/height:100% + object-fit:contain ci-dessous gèrent
-       correctement le ratio de l'image dans une cellule étroite et haute,
-       ce qu'une hauteur fixe en % (essayé plus tôt) ne faisait pas, laissant
-       du vide autour de l'image. */
-    padding: 0 12%;
+    position: relative;
   }
 
   .teaser_intro_logo_col img {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
     max-width: none;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    z-index: 2;
   }
 
   /* Phrase d'accroche agrandie, bouton centré en dessous. */
@@ -475,7 +506,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 .teaser_intro_texte {
   display: inline-block;
   text-align: left;
-  background-color: rgba(255, 122, 92, 0.8);
+  background-color: rgba(255, 162, 141, 0.8);
   padding: 12px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -491,12 +522,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   font-size: 1.05rem;
   line-height: 1.6;
   font-style: italic;
-}
-
-.teaser_intro_texte_centre {
-  display: block;
-  text-align: left;
-  font-style: normal;
 }
 
 @media (max-width: 767px) {
@@ -517,7 +542,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 /* Mobile uniquement : carré corail plus opaque pour rester lisible. */
 @media (max-width: 767px) {
   .teaser_intro_texte {
-    background-color: rgba(255, 122, 92, 0.9);
+    background-color: rgba(255, 162, 141, 0.9);
   }
 }
 
@@ -1304,57 +1329,59 @@ body.contact .page_photo_fond::before {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Photo détourée (fond transparent) : pas de cadre ni d'ombre, elle se pose
-   directement sur le fond de la page. Placée entre les deux morceaux du
-   paragraphe sur ma maman (voir qui-suis-je.php) : centrée entre les deux
-   sur mobile ; à partir de md, flottante à droite, son haut aligné sur
-   « Lorsque nous lui avons offert… », le texte passant à côté. */
-.qui-suis-je_maman {
-  display: block;
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  margin: 16px auto;
-}
-
-@media (min-width: 768px) {
-  .qui-suis-je_maman {
-    float: right;
-    width: 40%;
-    max-width: none;
-    margin: 4px 0 12px 20px;
-  }
-}
-
-/* Photo détourée d'Amandine, même principe que .qui-suis-je_maman : placée
-   avant le paragraphe « Le retour à la couleur… » dans le HTML pour
-   flotter à gauche du texte sur PC ; sur mobile, remise après le
-   paragraphe (flex + order). Plus étroite que la photo de maman car en
-   format portrait. */
-.qui-suis-je_amandine_bloc {
+/* Blocs photo + texte en deux colonnes (photos détourées, fond transparent :
+   pas de cadre ni d'ombre). Sur PC, la photo occupe une colonne à côté du
+   texte, centrée verticalement : à gauche pour Amandine (image avant le texte
+   dans le HTML), à droite pour ma maman (image après le texte). Sur mobile,
+   tout s'empile et la photo passe sous le texte (order). */
+.qui-suis-je_duo {
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
 }
 
-.qui-suis-je_amandine {
+.qui-suis-je_duo_photo {
   order: 1;
   display: block;
   width: 100%;
-  max-width: 200px;
   height: auto;
   margin: 0 auto 16px auto;
 }
 
+.qui-suis-je_amandine {
+  max-width: 200px;
+}
+
+.qui-suis-je_maman {
+  max-width: 220px;
+}
+
 @media (min-width: 768px) {
-  .qui-suis-je_amandine_bloc {
-    display: block;
+  .qui-suis-je_duo {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
   }
 
-  .qui-suis-je_amandine {
-    float: left;
-    width: 30%;
+  .qui-suis-je_duo_photo {
+    order: 0;
+    margin: 0;
     max-width: none;
-    margin: 4px 20px 12px 0;
+  }
+
+  .qui-suis-je_duo_texte {
+    flex: 1;
+  }
+
+  /* Portrait : plus étroite que la photo de maman. */
+  .qui-suis-je_amandine {
+    flex: 0 0 23%;
+    width: 23%;
+  }
+
+  .qui-suis-je_maman {
+    flex: 0 0 35%;
+    width: 35%;
   }
 }
 
