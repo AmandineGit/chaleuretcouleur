@@ -59,19 +59,6 @@ body {
   color: #4CC9A0;
 }
 
-/* Liens du menu : Retour à la couleur en jaune, Médiation en vert */
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-retour {
-  color: #FFC145;
-}
-
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-mediation {
-  color: #4CC9A0;
-}
-
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.nav-link-galerie {
-  color: #FF7A5C;
-}
-
 /* --------------------------------------------------------------------------
    MENU FIXE
 -------------------------------------------------------------------------- */
@@ -103,18 +90,6 @@ body {
   color: #ffffff;
   text-decoration: none;
   transform: translateY(-2px);
-}
-
-.btn_on-hover--discret,
-.btn_on-hover--discret:visited {
-  background-color: transparent;
-  color: var(--seafoam-dark);
-  border: 1px solid var(--seafoam);
-}
-
-.btn_on-hover--discret:hover {
-  background-color: var(--seafoam);
-  color: #ffffff;
 }
 
 .btn_on-hover--jaune,
@@ -187,15 +162,6 @@ body {
 .btn_on-hover--arc-en-ciel:hover {
   background-position: 100% 50%;
   color: #ffffff;
-}
-
-.btn_on-hover--corail,
-.btn_on-hover--corail:visited {
-  background-color: #FF7A5C;
-}
-
-.btn_on-hover--corail:hover {
-  background-color: #E0603F;
 }
 
 /* --------------------------------------------------------------------------
@@ -968,14 +934,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 /* --------------------------------------------------------------------------
-   PAGE D'ACCUEIL : SECTION Work (projets) 
--------------------------------------------------------------------------- */
-/* --- Alignement du titre --- */
-.work_section .heading_container {
-  align-items: center;
-}
-
-/* --------------------------------------------------------------------------
    PAGE D'ACCUEIL : SECTION WHO 
 -------------------------------------------------------------------------- */
 /* --- Fond gris sur la section who --- */
@@ -1042,50 +1000,6 @@ body.page-galerie .who_section h1 {
 
 .who_section .heading_container {
   align-items: center;
-}
-
-/* --------------------------------------------------------------------------
-   PAGE D'ACCUEIL : SECTION CLIENT Témoignages
--------------------------------------------------------------------------- */
-/* --- Fond gris sur la section Client --- */
-.client_section {
-  background-color: #E9EEF0;
-  padding: 60px 0;
-}
-
-.client_section .container {
-  background: transparent; 
-  max-width: 1140px;
-} 
-
-/* --- Carte centrale blanche dans la section clients --- */
-.client_section .owl-carousel .center .box {
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-/* Les autres cartes gardent leur fond gris clair */
-.client_section .owl-carousel .box {
-  background-color: #f5f5f5;
-  transition: all 0.3s ease;
-}
-
-/* Section témoignages : flèches centrées */
-.client_section .carousel-wrap {
-  position: relative;
-  padding-bottom: 50px;
-}
-
-.client_section .owl-nav {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  z-index: 5;
 }
 
 /* --------------------------------------------------------------------------
