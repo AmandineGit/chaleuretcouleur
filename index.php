@@ -37,7 +37,7 @@ include __DIR__ . '/partials/header.php';
           <p class="teaser_intro_h1 text-center">
             Car nous avons tous besoin d'échanger, de rire et de se sentir créatifs et utiles.
           </p>
-          <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--arc-en-ciel">Découvrir la démarche <span class="d-none d-md-inline">· </span><br class="d-md-none">Retour à la couleur</a>
+          <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--arc-en-ciel">Découvrir la démarche <span class="d-none d-md-inline">· </span><br class="d-md-none">Retour à la couleur</a>
         </div>
       </div>
     </div>

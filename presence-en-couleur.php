@@ -110,6 +110,10 @@ include __DIR__ . '/partials/header.php';
           </div>
         </div>
 
+        <div class="text-center mt-4">
+          <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--arc-en-ciel">Découvrir la démarche Retour à la couleur et ses bénéfices</a>
+        </div>
+
         <h3 class="mt-5">Qui vient chez vous ?</h3>
         <div class="qui_accueille_bloc">
           <img src="images/Amandine-Vesrtrepen.png" alt="Amandine" class="qui_accueille_photo">

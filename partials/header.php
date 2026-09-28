@@ -2,6 +2,7 @@
 // Attendu avant l'include : $pageTitle, $pageDescription, $canonicalUrl, $currentPage, $bodyClass (optionnel)
 $navLinks = [
   'accueil' => ['href' => 'index.php', 'label' => 'Accueil'],
+  'retour-a-la-couleur' => ['href' => 'retour-a-la-couleur.php', 'label' => 'Retour à la couleur'],
   'retour' => ['href' => 'presence-en-couleur.php', 'label' => 'Présence en couleur'],
   'mediation' => ['href' => 'mediation-par-la-couleur.php', 'label' => 'Médiation par la couleur'],
   'galerie' => ['href' => 'galerie.php', 'label' => 'Galerie'],
@@ -29,7 +30,7 @@ $navLinks = [
   <link rel="stylesheet" href="css/bootstrap.css" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet"/>
 
   <!-- Styles -->
   <?php

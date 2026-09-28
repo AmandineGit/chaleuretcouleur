@@ -1,9 +1,9 @@
 :root {
-  --honey: #FF7A5C;
-  --honey-dark: #D9684E;
+  --coral: #FF7A5C;
+  --coral-dark: #D9684E;
   --seafoam: #4CC9A0;
   --seafoam-dark: #41AB88;
-  --coral: #FFC145;
+  --yellow: #FFC145;
   --cream: #FBF7F0;
   --warm-brown: #4A2E1F;
   /* Même teinte que --warm-brown depuis que tout le marron du site a été
@@ -46,17 +46,17 @@ body {
 }
 
 .brand-text .brand-chaleur {
-  color: #FFC145;
+  color: var(--yellow);
 }
 
 .brand-text .brand-et {
-  color: #FF7A5C;
+  color: var(--coral);
   font-weight: 400;
   font-style: italic;
 }
 
 .brand-text .brand-couleur {
-  color: #4CC9A0;
+  color: var(--seafoam);
 }
 
 /* --------------------------------------------------------------------------
@@ -75,7 +75,7 @@ body {
 .btn_on-hover,
 .btn_on-hover:visited {
   display: inline-block;
-  background-color: var(--honey);
+  background-color: var(--coral);
   color: #ffffff;
   border: none;
   padding: 10px 30px;
@@ -86,7 +86,7 @@ body {
 }
 
 .btn_on-hover:hover {
-  background-color: var(--honey-dark);
+  background-color: var(--coral-dark);
   color: #ffffff;
   text-decoration: none;
   transform: translateY(-2px);
@@ -94,7 +94,7 @@ body {
 
 .btn_on-hover--jaune,
 .btn_on-hover--jaune:visited {
-  background-color: #FFC145;
+  background-color: var(--yellow);
   color: var(--warm-brown);
 }
 
@@ -105,7 +105,7 @@ body {
 
 .btn_on-hover--vert,
 .btn_on-hover--vert:visited {
-  background-color: #4CC9A0;
+  background-color: var(--seafoam);
 }
 
 .btn_on-hover--vert:hover {
@@ -141,6 +141,30 @@ body {
   color: var(--cream);
 }
 
+/* Bouton sobre à liseré arc-en-ciel (page Médiation, public professionnel) :
+   fond crème, texte brun, coins peu arrondis. Le liseré est un dégradé posé
+   sous un fond crème limité à la zone intérieure (padding-box), la bordure
+   transparente laissant voir le dégradé (border-box). Au survol, le dégradé
+   remplit tout le bouton. */
+.btn_on-hover--contour,
+.btn_on-hover--contour:visited {
+  background:
+    linear-gradient(var(--cream), var(--cream)) padding-box,
+    linear-gradient(90deg, #A58BE0, #6FB7E9, #4CC9A0, #8FD694, #FFC145, #FFA24D, #FF7A5C) border-box;
+  color: var(--warm-brown);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 8px 28px;
+}
+
+.btn_on-hover--contour:hover {
+  background:
+    linear-gradient(90deg, #A58BE0, #6FB7E9, #4CC9A0, #8FD694, #FFC145, #FFA24D, #FF7A5C) border-box;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(74, 46, 31, 0.6);
+}
+
 /* Fond arc-en-ciel (bouton "Découvrir la démarche" de l'accueil).
    Dégradé deux fois plus large que le bouton : au survol, il glisse
    (background-position) au lieu de changer de couleur. Texte blanc gras +
@@ -154,6 +178,7 @@ body {
   color: #ffffff;
   font-weight: 700;
   border: 2px solid #ffffff;
+  border-radius: 8px;
   text-shadow: 0 1px 3px rgba(74, 46, 31, 0.6);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   transition: background-position 0.6s ease, transform 0.2s ease;
@@ -251,6 +276,25 @@ body.accueil2 .page_photo_fond .teaser_discret {
   background: linear-gradient(135deg, rgba(76, 201, 160, 0.8) 0%, rgba(251, 247, 240, 0.85) 120%);
 }
 
+/* Bloc d'intro (titre "Retour à la couleur", accroche, bouton), sur
+   ordinateur uniquement : panneau crème translucide "verre dépoli" pour le
+   détacher du feuillage, avec les mêmes coins arrondis que les cartes
+   (.teaser_split_col). Le backdrop-filter crée un contexte d'empilement :
+   on remonte toute la section (z-index) pour que le logo, qui déborde en
+   bas, reste au-dessus des cartes. */
+@media (min-width: 768px) {
+  body.accueil2 .page_photo_fond .teaser_intro {
+    background-color: rgba(251, 247, 240, 0.35);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  body.accueil2 .teaser_intro_section {
+    z-index: 3;
+  }
+}
+
 /* Vignettes ("En groupe", "À domicile"...) : fond blanc/crème clair, texte
    brun foncé (au lieu du jaune/vert de index.php). */
 body.accueil2 .teaser_dominant .badges_service .carte_ligne,
@@ -295,22 +339,16 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 .teaser_dominant {
-  background-color: var(--coral);
-  background: linear-gradient(135deg, var(--coral) 0%, var(--cream) 120%);
+  background-color: var(--yellow);
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--cream) 120%);
 }
 
 .teaser_dominant h2 {
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--warm-brown);
   font-size: 2rem;
   text-transform: none;
-  -webkit-text-stroke: 0.5px #ffffff;
-  text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
 }
 
 .teaser_discret {
@@ -324,12 +362,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   font-weight: 600;
   color: var(--warm-brown);
   font-size: 2rem;
-  -webkit-text-stroke: 0.5px #ffffff;
-  text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
 }
 
 /* Bandeau "Retour à la couleur" (texte d'intro), premier bloc de l'accueil,
@@ -343,14 +375,8 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: var(--warm-brown);
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-transform: none;
-  -webkit-text-stroke: 0.5px #ffffff;
-  text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
 }
 
 /* Phrase d'accroche ("Nous avons tous besoin d'échanger..."), simple
@@ -551,11 +577,11 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 .teaser_dominant .badges_service .carte_ligne {
-  background-color: #FFC145;
+  background-color: var(--yellow);
 }
 
 .teaser_discret .badges_service .carte_ligne {
-  background-color: #4CC9A0;
+  background-color: var(--seafoam);
 }
 
 .badges_service .carte_ligne_label {
@@ -658,17 +684,17 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 /* Même style que la carte "Modalités" ci-dessus, en corail (couleur des
    boutons/accents de la page médiation) au lieu du vert par défaut. */
 .en_bref_box--corail {
-  border-left-color: var(--honey);
+  border-left-color: var(--coral);
 }
 
 .en_bref_box--corail h3 {
-  color: var(--honey-dark);
+  color: var(--coral-dark);
 }
 
-/* Idem, en jaune (couleur des boutons/accents de la page retour à la
+/* Idem, en jaune (couleur des boutons/accents de la page Présence en
    couleur). */
 .en_bref_box--jaune {
-  border-left-color: #FFC145;
+  border-left-color: var(--yellow);
 }
 
 .en_bref_box--jaune h3 {
@@ -696,7 +722,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
    icônes qu'elle utilise portent déjà leur couleur) ; comme les icônes
    utilisées ici sont blanches, elles ont besoin de leur propre badge rond
    coloré (.benefice_icone), sur le même modèle que .carte_douce_icone
-   mais en corail (couleur des boutons/accents de cette page). */
+   mais en jaune. */
 .carte_ligne--benefice {
   align-items: flex-start;
 }
@@ -705,7 +731,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: var(--coral);
+  background-color: var(--yellow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -879,7 +905,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 .galerie-modal-close:hover {
-  color: var(--honey);
+  color: var(--coral);
 }
 
 .galerie-modal-nav {
@@ -942,13 +968,13 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   padding: 20px 0;
 }
 
-/* Bandeau du haut en corail sur la page "Retour à la couleur" uniquement.
+/* Bandeau du haut en jaune sur la page "Présence en couleur" uniquement.
    Dégradé semi-transparent (même traitement que les bandeaux de l'accueil) :
    jaune éclairci au blanc plutôt que juste baisser l'opacité, pour rester
    lumineux. */
 body.page-retour .who_section {
-  background-color: var(--coral);
-  background: linear-gradient(135deg, rgba(255, 217, 140, 0.85) 0%, rgba(251, 247, 240, 0.88) 120%);
+  background-color: var(--yellow);
+  background: linear-gradient(135deg, rgba(255, 200, 90, 0.9) 0%, rgba(251, 247, 240, 0.88) 120%);
 }
 
 /* Bandeau du haut en vert d'eau sur la page "Médiation par la couleur" —
@@ -958,39 +984,28 @@ body.page-mediation .who_section {
   background: linear-gradient(135deg, rgba(76, 201, 160, 0.85) 0%, rgba(251, 247, 240, 0.88) 120%);
 }
 
-/* Titres de page en corail (Retour à la couleur + Médiation), contour blanc */
+/* Bandeau du haut en corail sur les pages Galerie, Retour à la couleur et
+   Qui suis-je */
+body.page-galerie .who_section,
+body.page-retour-couleur .who_section,
+body.page-qui-suis-je .who_section {
+  background-color: var(--coral);
+  background: linear-gradient(135deg, var(--coral) 0%, var(--cream) 120%);
+}
+
+/* Titres de page sur bandeau coloré (Présence, Médiation, Galerie, Retour
+   à la couleur, Qui suis-je) : blanc, détaché du fond par une ombre brune
+   très diffuse plutôt que par un contour. */
 body.page-retour .who_section h1,
-body.page-mediation .who_section h1 {
+body.page-mediation .who_section h1,
+body.page-galerie .who_section h1,
+body.page-retour-couleur .who_section h1,
+body.page-qui-suis-je .who_section h1 {
   font-weight: 700;
-  color: #FF7A5C;
-  -webkit-text-stroke: 0.5px #ffffff;
+  color: #ffffff;
   text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
-}
-
-/* Titre agrandi de 10% (2.5rem -> 2.75rem) sur cette page uniquement */
-body.page-retour .who_section h1 {
-  font-size: 2.75rem;
-}
-
-/* Bandeau du haut en corail sur la page Galerie, titre en vert avec contour blanc */
-body.page-galerie .who_section {
-  background-color: #FF7A5C;
-  background: linear-gradient(135deg, #FF7A5C 0%, var(--cream) 120%);
-}
-
-body.page-galerie .who_section h1 {
-  font-weight: 700;
-  color: #41AB88;
-  -webkit-text-stroke: 0.5px #ffffff;
-  text-shadow:
-    -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
+    0 2px 14px rgba(74, 46, 31, 0.35),
+    0 1px 2px rgba(74, 46, 31, 0.25);
 }
 
 .who_section .container {
@@ -1009,7 +1024,7 @@ body.page-galerie .who_section h1 {
 /* Forcer le style bouton orange pour le lien du footer */
 .info_section .btn_on-hover {
   display: inline-block !important;
-  background-color: #FF7A5C !important;
+  background-color: var(--coral) !important;
   color: #ffffff !important;
   border: none !important;
   padding: 10px 25px !important;
@@ -1021,7 +1036,7 @@ body.page-galerie .who_section h1 {
 }
 
 .info_section .btn_on-hover:hover {
-  background-color: #D9684E !important;
+  background-color: var(--coral-dark) !important;
   transform: translateY(-2px);
   color: #ffffff !important;
 }
@@ -1111,7 +1126,7 @@ body.page-galerie .who_section h1 {
 }
 
 .contact_section .contact-form select:focus {
-  border-color: #4CC9A0;
+  border-color: var(--seafoam);
 }
 
 .contact_section .contact-form select option {
@@ -1137,7 +1152,7 @@ body.page-galerie .who_section h1 {
 }
 
 .contact_section .contact-form textarea:focus {
-  border-color: #4CC9A0;
+  border-color: var(--seafoam);
 }
 
 .contact_section .contact-form textarea::placeholder {
@@ -1218,13 +1233,6 @@ body.contact .page_photo_fond::before {
 /* --------------------------------------------------------------------------
    PAGE "QUI SUIS-JE ?" : photo de profil
 -------------------------------------------------------------------------- */
-/* Ancre "Qui suis-je ?" posée sur la photo ronde juste au-dessus du titre
-   (lien qui-suis-je.php#qui-suis-je) : marge pour que la photo ne passe pas
-   sous le menu fixe (.hero_area). */
-#qui-suis-je {
-  scroll-margin-top: 120px;
-}
-
 .qui-suis-je_photo {
   width: 200px;
   height: 200px;
@@ -1335,12 +1343,12 @@ body.contact .page_photo_fond::before {
 }
 
 .carte_douce_icone--jaune {
-  background-color: #FFC145;
+  background-color: var(--yellow);
   color: #ffffff;
 }
 
 .carte_douce_icone--vert {
-  background-color: #4CC9A0;
+  background-color: var(--seafoam);
   color: #ffffff;
 }
 
@@ -1385,11 +1393,11 @@ body.contact .page_photo_fond::before {
 }
 
 .carte_douce--fond-jaune {
-  background-color: #FFC145;
+  background-color: var(--yellow);
 }
 
 .carte_douce--fond-vert {
-  background-color: #4CC9A0;
+  background-color: var(--seafoam);
 }
 
 .carte_douce--fond-jaune .carte_douce_label,
@@ -1489,7 +1497,7 @@ body.contact .page_photo_fond::before {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: #FF7A5C;
+  background-color: var(--coral);
   border-radius: 40px;
   padding: 6px 22px 6px 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -1649,3 +1657,196 @@ body.contact .page_photo_fond::before {
 }
 
 
+
+/* --------------------------------------------------------------------------
+   PAGE "RETOUR À LA COULEUR" : trois bandes pleine largeur empilées
+   (bienfaits / approche / effets).
+-------------------------------------------------------------------------- */
+
+.retour_bande h2 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+/* Bande "Les bienfaits essentiels" : trois cartes photo + texte côte à côte
+   à partir de md, empilées en dessous. */
+.bienfaits_row {
+  row-gap: 30px;
+}
+
+.bienfait {
+  text-align: center;
+}
+
+.bienfait_photo {
+  display: block;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  aspect-ratio: 27 / 20;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+/* Variante carrée non recadrée (images déjà rondes, coins transparents),
+   utilisée dans la bande "Une approche humaine". */
+.bienfait_photo--rond {
+  width: 65%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+/* Photo un peu trop sombre (Bienfaits3) : éclaircie sans toucher au fichier */
+.bienfait_photo--eclaircie {
+  filter: brightness(1.2);
+}
+
+.bienfait h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Liste à puces sous chaque bienfait : texte justifié (les puces se
+   lisent mal sur du texte centré), mais le bloc reste centré dans la carte. */
+.bienfait_liste {
+  display: inline-block;
+  text-align: justify;
+  padding-left: 1.2em;
+  margin-bottom: 0;
+}
+
+.bienfait_liste li + li {
+  margin-top: 10px;
+}
+
+/* Bande "Des effets concrets" : texte des deux cartes */
+.retour_bande--effets .bienfait p {
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+
+/* Sous-titre "Ce que disent les études", dans la bande "Des effets concrets" */
+.etudes_titre {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+/* Titres des bandes, soulignés d'un "coup de feutre" jaune clair derrière
+   la moitié basse des lettres (sur le <span>, pour que le trait suive le
+   texte même quand le bouton prend toute la largeur). Sur ordinateur : titre
+   non cliquable ; sur mobile : bouton repliable avec chevron (voir
+   initBandesRepliables dans js/script.js). */
+.retour_bande_toggle {
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--seafoam-dark);
+  cursor: default;
+}
+
+.retour_bande_titre {
+  padding: 0 8px;
+  background: linear-gradient(transparent 55%, #FFE3AB 55%, #FFE3AB 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@media (max-width: 767px) {
+  .retour_bande.layout_padding2 {
+    padding: 8px 0;
+  }
+
+  .retour_bande h2 {
+    margin-bottom: 0;
+  }
+
+  .retour_bande_toggle {
+    position: relative;
+    width: 100%;
+    padding: 10px 44px;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  /* Chevron : pointe vers le bas quand la bande est fermée, vers le haut
+     quand elle est ouverte. */
+  .retour_bande_toggle::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--seafoam-dark);
+    border-bottom: 2px solid var(--seafoam-dark);
+    transform: translateY(-30%) rotate(-135deg);
+    transition: transform 0.2s ease;
+  }
+
+  .retour_bande.is-fermee .retour_bande_toggle::after {
+    transform: translateY(-70%) rotate(45deg);
+  }
+
+  .retour_bande_contenu {
+    padding-top: 25px;
+  }
+
+  .retour_bande.is-fermee .retour_bande_contenu {
+    display: none;
+  }
+}
+
+/* Page Médiation, "L'art comme médiation" : trois sous-parties (petit titre
+   + liste à puces), avant le bouton vers Retour à la couleur. */
+.art_mediation h4 {
+  color: var(--warm-brown);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 22px 0 8px;
+}
+
+.art_mediation ul {
+  padding-left: 1.2em;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.art_mediation li + li {
+  margin-top: 6px;
+}
+
+/* Page Médiation : citation mise en valeur dans "L'art comme médiation".
+   Liseré vert (couleur de la page), fond vert très léger, italique. */
+.citation_mediation {
+  margin: 25px 0;
+  padding: 18px 24px;
+  border-left: 4px solid var(--seafoam);
+  border-radius: 0 12px 12px 0;
+  background-color: rgba(76, 201, 160, 0.1);
+  color: var(--warm-brown);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Lien texte discret sous les boutons de fin de page (Retour à la couleur
+   -> Qui suis-je, et Qui suis-je -> Retour à la couleur). Sur Retour à la
+   couleur, ces boutons sont hors des bandes repliables, donc toujours
+   visibles sur mobile. */
+.retour_cta_lien {
+  margin: 20px 0 0;
+}
+
+.retour_cta_lien a {
+  color: var(--warm-brown);
+  font-weight: 600;
+  text-decoration: underline;
+}

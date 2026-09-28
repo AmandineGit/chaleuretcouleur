@@ -3,7 +3,46 @@
 document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initGalerieModal();
+  initBandesRepliables();
 });
+
+/**
+ * Page "Retour à la couleur" : sur mobile, chaque bande se replie derrière
+ * son titre (bandeau cliquable). Sur ordinateur, tout reste déplié et le
+ * titre n'est pas cliquable. Sans JavaScript, tout est affiché.
+ */
+function initBandesRepliables() {
+  const bandes = document.querySelectorAll('.retour_bande');
+  if (!bandes.length) return; // Uniquement sur la page Retour à la couleur
+
+  const mobile = window.matchMedia('(max-width: 767px)');
+
+  function setOuverte(bande, ouverte) {
+    bande.classList.toggle('is-fermee', !ouverte);
+    const bouton = bande.querySelector('.retour_bande_toggle');
+    if (mobile.matches) {
+      bouton.setAttribute('aria-expanded', ouverte ? 'true' : 'false');
+    } else {
+      bouton.removeAttribute('aria-expanded');
+    }
+  }
+
+  // Au chargement et à chaque passage mobile/ordinateur : tout replié sur
+  // mobile, tout déplié sur ordinateur.
+  function reinitialiser() {
+    bandes.forEach(bande => setOuverte(bande, !mobile.matches));
+  }
+
+  bandes.forEach(bande => {
+    bande.querySelector('.retour_bande_toggle').addEventListener('click', () => {
+      if (!mobile.matches) return;
+      setOuverte(bande, bande.classList.contains('is-fermee'));
+    });
+  });
+
+  mobile.addEventListener('change', reinitialiser);
+  reinitialiser();
+}
 
 /**
  * Modale d'affichage plein format pour la galerie, avec navigation

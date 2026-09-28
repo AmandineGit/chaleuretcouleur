@@ -48,81 +48,36 @@ include __DIR__ . '/partials/header.php';
           proposer un temps collectif simple à mettre en place.
         </p>
 
-        <h3 class="mt-5">Les bénéfices d'un atelier créatif collectif</h3>
-        <div class="cartes_lignes">
-          <div class="carte_ligne carte_ligne--benefice">
-            <div class="benefice_icone benefice_icone--grande">
-              <img src="images/Icones/solitude-ennui-blanc.png" alt="">
-            </div>
-            <div class="benefice_texte">
-              <h4>Réduction de l'isolement social</h4>
-              <p>
-                Une étude de l'Institut universitaire de gériatrie de Montréal,
-                publiée en 2022 dans
-                <em>Frontiers in Medicine</em> et menée auprès de 106 personnes âgées
-                isolées, a montré une diminution significative du sentiment
-                d'isolement après plusieurs semaines d'ateliers en petit groupe,
-                ainsi qu'un renforcement du sentiment d'appartenance.
-              </p>
-              <p class="benefices_sources small text-muted">
-                Source : Beauchet, O. et al. (2022), <em>Frontiers in Medicine</em>, DOI
-                <a href="https://doi.org/10.3389/fmed.2022.969122" target="_blank" rel="noopener noreferrer">10.3389/fmed.2022.969122</a>
-              </p>
-            </div>
-          </div>
-          <div class="carte_ligne carte_ligne--benefice">
-            <div class="benefice_icone benefice_icone--tres-grande">
-              <img src="images/Icones/Joie-mouvement-vie-blanc.png" alt="">
-            </div>
-            <div class="benefice_texte">
-              <h4>Amélioration de l'activité physique</h4>
-              <p>
-                Une étude de la même équipe, publiée en 2023 dans
-                <em>European Geriatric Medicine</em>, a mesuré une amélioration
-                de l'activité physique de seniors ayant participé à des ateliers
-                de création artistique en groupe.
-              </p>
-              <p class="benefices_sources small text-muted">
-                Source : Planta, O. et al. (2023), <em>European Geriatric Medicine</em>, DOI
-                <a href="https://doi.org/10.1007/s41999-023-00831-9" target="_blank" rel="noopener noreferrer">10.1007/s41999-023-00831-9</a>
-              </p>
-            </div>
-          </div>
-          <div class="carte_ligne carte_ligne--benefice">
-            <div class="benefice_icone">
-              <img src="images/Icones/estime-grandir-confiance-blanc.png" alt="">
-            </div>
-            <div class="benefice_texte">
-              <h4>Effet positif sur le moral et l'engagement social</h4>
-              <p>
-                Une étude publiée en 2019 dans <em>The British Journal of
-                Psychiatry</em>, menée sur 10 ans auprès de plus de 2 000 personnes, relie
-                l'engagement culturel et créatif régulier chez les seniors à un
-                risque réduit de développer une dépression.
-              </p>
-              <p class="benefices_sources small text-muted">
-                Source : Fancourt, D. &amp; Tymoszuk, U. (2019), <em>The British Journal of Psychiatry</em>, DOI
-                <a href="https://doi.org/10.1192/bjp.2018.267" target="_blank" rel="noopener noreferrer">10.1192/bjp.2018.267</a>
-              </p>
-            </div>
-          </div>
-          <div class="carte_ligne carte_ligne--benefice">
-            <div class="benefice_icone">
-              <img src="images/Icones/bien-etre-blanc.png" alt="">
-            </div>
-            <div class="benefice_texte">
-              <h4>Un axe reconnu de santé publique</h4>
-              <p>
-                L'Organisation mondiale de la santé identifie la création
-                d'environnements sociaux favorables comme un levier central de la
-                santé mentale des personnes âgées.
-              </p>
-              <p class="benefices_sources small text-muted">
-                Source : OMS,
-                <a href="https://www.who.int/fr/news-room/fact-sheets/detail/mental-health-of-older-adults" target="_blank" rel="noopener noreferrer">« Santé mentale des personnes âgées »</a>
-              </p>
-            </div>
-          </div>
+        <h3 class="mt-5">L’art comme médiation</h3>
+        <p class="text-justify">
+          À l’origine, la médiation désigne l’intervention d’un tiers pour résoudre
+          un conflit. Aujourd’hui, le mot s’emploie plus largement : il s’agit de
+          créer une relation, et non plus seulement d’en réparer une.
+        </p>
+        <blockquote class="citation_mediation">
+          «&nbsp;La médiation artistique, c’est utiliser la création comme un moyen de se
+          rencontrer et d’échanger. Ce qui compte, ce n’est pas l’œuvre produite,
+          mais la relation et ce que chacun vit pendant l’atelier.&nbsp;»
+        </blockquote>
+        <div class="art_mediation">
+          <h4>Des supports simples pour se rencontrer</h4>
+          <ul>
+            <li>Crayons, pinceaux et papiers ouvrent l’échange tout naturellement.</li>
+            <li>Les mains prennent le relais quand les mots se font attendre.</li>
+          </ul>
+          <h4>Vivre un moment ensemble</h4>
+          <ul>
+            <li>Ce qui compte, c’est l’expérience partagée.</li>
+            <li>Des propositions accessibles permettent à chacun de participer à sa manière.</li>
+          </ul>
+          <h4>Dire, se souvenir, ressentir</h4>
+          <ul>
+            <li>Créer réveille des souvenirs et invite à se raconter.</li>
+            <li>Ce qui naît sur le papier aide à partager ses émotions.</li>
+          </ul>
+        </div>
+        <div class="text-center mt-4">
+          <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--contour">Découvrir la démarche Retour à la couleur et ses bénéfices</a>
         </div>
 
         <h3 class="mt-5">L'intervenante</h3>
@@ -138,7 +93,7 @@ include __DIR__ . '/partials/header.php';
               réussir.
             </p>
             <p>
-              <a href="qui-suis-je.php#qui-suis-je" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
+              <a href="qui-suis-je.php" class="btn_on-hover btn_on-hover--jaune">En savoir plus →</a>
             </p>
           </div>
         </div>
