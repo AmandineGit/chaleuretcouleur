@@ -37,7 +37,7 @@ include __DIR__ . '/partials/header.php';
           <div class="row bienfaits_row">
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/Bienfaits1.webp') ?>" alt="Un homme âgé souriant, pinceau à la main, concentré sur sa peinture" class="bienfait_photo" loading="lazy" width="1076" height="800">
+                <img src="<?= $assetVersion('images/Bienfaits1.webp') ?>" alt="Un homme âgé souriant, pinceau à la main, concentré sur sa peinture" class="bienfait_photo" loading="lazy" width="1076" height="800">
                 <h3>S’apaiser et retrouver du plaisir</h3>
                 <ul class="bienfait_liste">
                   <li>Les gestes simples recentrent l’attention sur l’instant présent.</li>
@@ -47,7 +47,7 @@ include __DIR__ . '/partials/header.php';
             </div>
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/Bienfaits2.webp') ?>" alt="Une main qui peint à grands coups de pinceau une toile aux couleurs vives" class="bienfait_photo" loading="lazy" width="1076" height="800">
+                <img src="<?= $assetVersion('images/Bienfaits2.webp') ?>" alt="Une main qui peint à grands coups de pinceau une toile aux couleurs vives" class="bienfait_photo" loading="lazy" width="1076" height="800">
                 <h3>S’exprimer autrement</h3>
                 <ul class="bienfait_liste">
                   <li>Le dessin, la peinture ou le collage permettent de dire les choses sans passer par les mots.</li>
@@ -57,7 +57,7 @@ include __DIR__ . '/partials/header.php';
             </div>
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/Bienfaits3.webp') ?>" alt="Une femme souriante qui se regarde dans le miroir, l’air fière d’elle" class="bienfait_photo bienfait_photo--eclaircie" loading="lazy" width="1076" height="800">
+                <img src="<?= $assetVersion('images/Bienfaits3.webp') ?>" alt="Une femme souriante qui se regarde dans le miroir, l’air fière d’elle" class="bienfait_photo bienfait_photo--eclaircie" loading="lazy" width="1076" height="800">
                 <h3>Renforcer l’estime de soi</h3>
                 <ul class="bienfait_liste">
                   <li>Des réalisations accessibles redonnent confiance en ses capacités.</li>
@@ -84,7 +84,7 @@ include __DIR__ . '/partials/header.php';
           <div class="row bienfaits_row">
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/ApprocheHumaine1.webp') ?>" alt="Deux personnes face à face, mains ouvertes l’une vers l’autre sur une table, une tasse de thé fumante en arrière-plan" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
+                <img src="<?= $assetVersion('images/ApprocheHumaine1.webp') ?>" alt="Deux personnes face à face, mains ouvertes l’une vers l’autre sur une table, une tasse de thé fumante en arrière-plan" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
                 <h3>Écouter et reformuler</h3>
                 <ul class="bienfait_liste">
                   <li>La Communication Non Violente aide à entendre les besoins derrière les mots.</li>
@@ -94,7 +94,7 @@ include __DIR__ . '/partials/header.php';
             </div>
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/ApprocheHumaine2.webp') ?>" alt="Deux personnes tenant ensemble une feuille avec quelques traces de couleur" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
+                <img src="<?= $assetVersion('images/ApprocheHumaine2.webp') ?>" alt="Deux personnes tenant ensemble une feuille avec quelques traces de couleur" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
                 <h3>Créer du lien, sans comparaison</h3>
                 <ul class="bienfait_liste">
                   <li>L’atelier est avant tout un espace de présence et de relation.</li>
@@ -104,7 +104,7 @@ include __DIR__ . '/partials/header.php';
             </div>
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/ApprocheHumaine3.webp') ?>" alt="Un fauteuil douillet avec un plaid près d’une fenêtre lumineuse, une plante posée à côté" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
+                <img src="<?= $assetVersion('images/ApprocheHumaine3.webp') ?>" alt="Un fauteuil douillet avec un plaid près d’une fenêtre lumineuse, une plante posée à côté" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
                 <h3>Poser un cadre sécurisant</h3>
                 <ul class="bienfait_liste">
                   <li>Chaque rencontre se vit avec bienveillance, authenticité et ouverture.</li>
@@ -131,13 +131,13 @@ include __DIR__ . '/partials/header.php';
           <div class="row justify-content-center bienfaits_row">
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/Effets1.webp') ?>" alt="Une danseuse à genoux, bras levé vers le ciel, au milieu d’un nuage de poudre blanche" class="bienfait_photo" loading="lazy" width="1076" height="800">
+                <img src="<?= $assetVersion('images/Effets1.webp') ?>" alt="Une danseuse à genoux, bras levé vers le ciel, au milieu d’un nuage de poudre blanche" class="bienfait_photo" loading="lazy" width="1076" height="800">
                 <p>Rompre l’ennui au quotidien et remettre du mouvement dans la vie.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $cssVersion('images/Effets2.webp') ?>" alt="Plusieurs mains qui se tiennent par les poignets pour former un cercle, en plein air" class="bienfait_photo" loading="lazy" width="1076" height="800">
+                <img src="<?= $assetVersion('images/Effets2.webp') ?>" alt="Plusieurs mains qui se tiennent par les poignets pour former un cercle, en plein air" class="bienfait_photo" loading="lazy" width="1076" height="800">
                 <p>Recréer du lien social, se sentir écouté et exister à nouveau, pour retrouver sa place, pas à pas.</p>
               </div>
             </div>

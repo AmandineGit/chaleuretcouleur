@@ -35,16 +35,17 @@ $navLinks = [
   <!-- Styles -->
   <?php
     // Paramètre de version basé sur la date de modification du fichier, pour
-    // forcer le navigateur/l'hébergeur à recharger le CSS après chaque déploiement
-    // plutôt que de servir une version mise en cache.
-    $cssVersion = static function (string $file): string {
+    // forcer le navigateur/l'hébergeur à recharger le fichier (CSS, JS, images)
+    // après chaque modification plutôt que de servir une version mise en cache.
+    // Défini ici, utilisé aussi dans les pages et dans partials/footer.php.
+    $assetVersion = static function (string $file): string {
         $path = __DIR__ . '/../' . $file;
         return $file . '?v=' . (is_file($path) ? filemtime($path) : time());
     };
   ?>
-  <link rel="stylesheet" href="<?= $cssVersion('css/style.css') ?>" />
-  <link rel="stylesheet" href="<?= $cssVersion('css/custom.css') ?>" />
-  <link rel="stylesheet" href="<?= $cssVersion('css/responsive.css') ?>" />
+  <link rel="stylesheet" href="<?= $assetVersion('css/style.css') ?>" />
+  <link rel="stylesheet" href="<?= $assetVersion('css/custom.css') ?>" />
+  <link rel="stylesheet" href="<?= $assetVersion('css/responsive.css') ?>" />
 
   <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
 </head>
