@@ -95,14 +95,14 @@ body {
   margin: 0 auto;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+.custom_nav-container .navbar-nav .nav-link {
   margin: 10px 30px;
   color:white;
   text-align: center;
   position: relative;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link::before {
+.custom_nav-container .navbar-nav .nav-link::before {
   position: absolute;
   top: 50%;
   left: -2px;

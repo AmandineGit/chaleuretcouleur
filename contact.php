@@ -48,7 +48,10 @@ include __DIR__ . '/partials/header.php';
                     </select>
                   </div>
                   <div>
-                    <textarea name="message" placeholder="Votre message" class="input_message" rows="4" required></textarea>
+                    <textarea name="message" placeholder="Votre message" class="input_message" rows="4" required aria-describedby="messageHint"></textarea>
+                    <small id="messageHint" class="form-text text-muted">
+                      Merci de ne pas communiquer d'informations médicales, si une adaptation est nécessaire, nous en parlerons de vive voix.
+                    </small>
                   </div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn_on-hover">

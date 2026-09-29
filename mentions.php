@@ -21,14 +21,22 @@ include __DIR__ . '/partials/header.php';
         <h4 class="h5 text-muted">Éditeur du site</h4>
         <p class="text-justify">
           Le site chaleuretcouleur.fr est édité par Amandine Verstrepen (Amandine GHANEM VERSTREPEN), exerçant sous le nom commercial <strong>Chaleur et Couleur</strong>, entrepreneur individuel (micro-entreprise).<br>
-          TVA Intracommunautaire : FR 0D 509 736 427 — SIREN : 509 736 427, inscrite au RCS de Chambéry sous le numéro 509 736 427.<br>
-          Siège : 169, route de la Rouarde, 73140 Saint-Michel-de-Maurienne.<br>
+          TVA Intracommunautaire : FR 0D 509 736 427 — SIRET : 509 736 427 00055, inscrite au RCS de Chambéry sous le numéro 509 736 427.<br>
+          Siège : 166, rue Jean Moulin, 73700 Bourg-Saint-Maurice, France.<br>
           Vous pouvez nous contacter par email à <a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a> ou par téléphone au 06 26 33 08 63.
         </p>
+      </div>
+
+      <!-- Bloc 2 -->
+      <div class="mb-5">
         <h4 class="h5 text-muted">Directrice de la publication</h4>
         <p>
           Amandine GHANEM VERSTREPEN.
         </p>
+      </div>
+
+      <!-- Bloc 3 -->
+      <div class="mb-5">
         <h4 class="h5 text-muted">Hébergement du site</h4>
         <p>
           Société IONOS SARL<br>
@@ -36,7 +44,7 @@ include __DIR__ . '/partials/header.php';
         </p>
       </div>
 
-      <!-- Bloc 2 -->
+      <!-- Bloc 4 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Propriété intellectuelle</h4>
         <p class="text-justify">
@@ -45,17 +53,25 @@ include __DIR__ . '/partials/header.php';
         </p>
       </div>
 
-      <!-- Bloc 3 -->
+      <!-- Bloc 5 -->
+      <div class="mb-5">
+        <h4 class="h5 text-muted">Crédits photos</h4>
+        <p class="text-justify">
+          Certaines illustrations ont été réalisées avec Adobe Express et intègrent des contenus Adobe Stock utilisés sous licence.
+        </p>
+      </div>
+
+      <!-- Bloc 6 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Photos de la galerie et droit à l'image</h4>
         <p class="text-justify">
-          Les photos présentes sur ce site, notamment dans la galerie, sont la propriété de Chaleur et Couleur et ne sont publiées qu'avec l'accord explicite et préalable des personnes photographiées ou de leurs représentants légaux. Toute personne apparaissant sur une photo peut à tout moment demander son retrait, en écrivant à l'adresse indiquée ci-dessus.
+          À l'exception des illustrations mentionnées ci-dessus, les photos présentes sur ce site, notamment dans la galerie, sont la propriété de Chaleur et Couleur et ne sont publiées qu'avec l'accord explicite et préalable des personnes photographiées ou de leurs représentants légaux. Toute personne apparaissant sur une photo peut à tout moment demander son retrait, en écrivant à l'adresse indiquée ci-dessus.
         </p>
       </div>
 
       <h2 class="h2 mt-5">Politique de confidentialité (RGPD)</h2>
 
-      <!-- Bloc 4 -->
+      <!-- Bloc 7 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Responsable de traitement</h4>
         <p class="text-justify">
@@ -63,7 +79,7 @@ include __DIR__ . '/partials/header.php';
         </p>
       </div>
 
-      <!-- Bloc 5 -->
+      <!-- Bloc 8 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Données collectées et finalités</h4>
         <div class="table-responsive">
@@ -71,42 +87,51 @@ include __DIR__ . '/partials/header.php';
             <thead>
               <tr>
                 <th>Finalité</th>
-                <th>Données concernées</th>
+                <th>Données</th>
                 <th>Base légale</th>
                 <th>Durée de conservation</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Répondre à une demande de contact / réservation d'atelier</td>
+                <td>Demande de contact</td>
                 <td>Nom, email, téléphone, message</td>
-                <td>Exécution de mesures précontractuelles / intérêt légitime</td>
-                <td>1 an</td>
+                <td>Intérêt légitime</td>
+                <td>1 an à compter du dernier échange</td>
               </tr>
               <tr>
-                <td>Gestion des clients (ateliers effectivement réalisés)</td>
+                <td>Réservation d'atelier</td>
+                <td>Nom, coordonnées, adresse de l'atelier, date</td>
+                <td>Mesures précontractuelles</td>
+                <td>Jusqu'à la prestation, puis bascule en gestion clients (ou 1 an si non concrétisée)</td>
+              </tr>
+              <tr>
+                <td>Gestion des clients</td>
                 <td>Nom, coordonnées, historique des prestations</td>
                 <td>Exécution du contrat</td>
-                <td>1 an, indépendamment de l'obligation légale de conservation des pièces comptables (factures) pendant 10 ans</td>
+                <td>Durée de la relation commerciale, puis 5 ans en archivage intermédiaire (preuve) ; factures 10 ans (obligation comptable)</td>
               </tr>
               <tr>
-                <td>Autorisation parentale (mineurs)</td>
-                <td>Nom de l'enfant, âge, nom et signature du/des responsable(s) légal(aux)</td>
-                <td>Consentement / intérêt légitime (encadrement de la prestation)</td>
-                <td>1 an</td>
+                <td>Autorisation parentale (mineurs, ateliers à domicile ou organisés par Chaleur et Couleur)</td>
+                <td>Nom et âge de l'enfant, nom et signature du ou des responsables légaux</td>
+                <td>Exécution du contrat pendant la prestation, puis intérêt légitime (preuve)</td>
+                <td>Durée de la prestation, puis 5 ans en archivage intermédiaire ; en cas d'incident, jusqu'à l'expiration des délais de prescription</td>
               </tr>
               <tr>
                 <td>Droit à l'image</td>
-                <td>Photographies, nom du signataire</td>
-                <td>Consentement explicite (document séparé)</td>
-                <td>3 ans</td>
+                <td>Photographies, nom du signataire, autorisation signée</td>
+                <td>Consentement (retirable à tout moment)</td>
+                <td>Photos : 3 ans maximum de diffusion, suppression dès retrait du consentement. Autorisation : durée de diffusion + 5 ans (preuve)</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="text-justify">
+          Lorsque l'atelier est organisé au sein d'une structure partenaire, les autorisations relatives aux participants sont en principe recueillies par cette structure, selon les modalités prévues dans la convention.
+        </p>
       </div>
 
-      <!-- Bloc 6 -->
+      <!-- Bloc 9 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Âge minimum pour la collecte de données en ligne</h4>
         <p class="text-justify">
@@ -115,7 +140,7 @@ include __DIR__ . '/partials/header.php';
         </p>
       </div>
 
-      <!-- Bloc 7 -->
+      <!-- Bloc 10 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Destinataires des données</h4>
         <p class="text-justify">
@@ -125,16 +150,16 @@ include __DIR__ . '/partials/header.php';
         </p>
       </div>
 
-      <!-- Bloc 8 -->
+      <!-- Bloc 11 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Droits des personnes</h4>
         <p class="text-justify">
           Conformément au RGPD, toute personne dispose d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition sur ses données, ainsi que du droit d'introduire une réclamation auprès de la CNIL.<br>
-          Ces droits peuvent être exercés par email à l'adresse suivante : <a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a>, ou par courrier à l'adresse : 169, route de la Rouarde, 73140 Saint-Michel-de-Maurienne.
+          Ces droits peuvent être exercés par email à l'adresse suivante : <a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a>, ou par courrier à l'adresse : 166, rue Jean Moulin, 73700 Bourg-Saint-Maurice, France.
         </p>
       </div>
 
-      <!-- Bloc 9 -->
+      <!-- Bloc 12 -->
       <div class="mb-5">
         <h4 class="h5 text-muted">Cookies</h4>
         <p class="text-justify">

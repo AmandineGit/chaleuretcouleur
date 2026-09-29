@@ -44,6 +44,33 @@
     }
 }
 
+/* Menu mobile forcé par js/script.js (initMenuCompact) au-delà de 992px,
+   quand un titre du menu passerait sur trois lignes : mêmes règles que
+   ci-dessus. */
+.custom_nav-container.nav-force-mobile {
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom_nav-container.nav-force-mobile .navbar-brand {
+    align-self: flex-start;
+}
+
+.custom_nav-container.nav-force-mobile .navbar-toggler {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 0;
+}
+
+.custom_nav-container.nav-force-mobile .navbar-collapse > div {
+    flex-direction: column !important;
+}
+
+.custom_nav-container.nav-force-mobile .navbar-nav .nav-link {
+    padding: 0 5px;
+}
+
 @media (max-width: 768px) {
 
     .info_section .col-md-3 {

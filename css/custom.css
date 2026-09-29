@@ -24,13 +24,13 @@ body {
   color: var(--warm-brown);
 }
 
-/* Test du logo dessiné à la main dans le header */
-.brand-logo-test {
+/* Logo dessiné à la main dans le header */
+.brand-logo {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.brand-logo-test img {
+.brand-logo img {
   height: 60px;
   width: auto;
   margin-right: 12px;
@@ -1737,7 +1737,7 @@ body.contact .page_photo_fond::before {
   margin-top: 40px;
 }
 
-/* Titres des bandes, soulignés d'un "coup de feutre" jaune clair derrière
+/* Titres des bandes, soulignés d'un "coup de feutre" de couleur claire derrière
    la moitié basse des lettres (sur le <span>, pour que le trait suive le
    texte même quand le bouton prend toute la largeur). Sur ordinateur : titre
    non cliquable ; sur mobile : bouton repliable avec chevron (voir
@@ -1748,16 +1748,22 @@ body.contact .page_photo_fond::before {
   border: 0;
   font: inherit;
   font-weight: 700;
-  color: var(--seafoam-dark);
+  color: var(--warm-brown);
   cursor: default;
 }
 
 .retour_bande_titre {
   padding: 0 8px;
-  background: linear-gradient(transparent 55%, #FFE3AB 55%, #FFE3AB 92%, transparent 92%);
+  background: linear-gradient(transparent 55%, var(--trait) 55%, var(--trait) 92%, transparent 92%);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+
+/* Couleur du trait par bande : les couleurs du site éclaircies d'autant
+   (blanc mélangé dedans). */
+.retour_bande--bienfaits { --trait: #AEE7D4; } /* vert d'eau #4CC9A0 */
+.retour_bande--approche  { --trait: #FFE3AB; } /* jaune #FFC145 */
+.retour_bande--effets    { --trait: #FFC3B6; } /* corail #FF7A5C */
 
 @media (max-width: 767px) {
   .retour_bande.layout_padding2 {
@@ -1785,8 +1791,8 @@ body.contact .page_photo_fond::before {
     top: 50%;
     width: 10px;
     height: 10px;
-    border-right: 2px solid var(--seafoam-dark);
-    border-bottom: 2px solid var(--seafoam-dark);
+    border-right: 2px solid var(--warm-brown);
+    border-bottom: 2px solid var(--warm-brown);
     transform: translateY(-30%) rotate(-135deg);
     transition: transform 0.2s ease;
   }
