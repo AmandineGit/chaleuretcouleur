@@ -2,9 +2,11 @@
 // Attendu avant l'include : $pageTitle, $pageDescription, $canonicalUrl, $currentPage, $bodyClass (optionnel)
 $navLinks = [
   'accueil' => ['href' => 'index.php', 'label' => 'Accueil'],
-  'retour-a-la-couleur' => ['href' => 'retour-a-la-couleur.php', 'label' => 'Retour à la couleur'],
-  'retour' => ['href' => 'presence-en-couleur.php', 'label' => 'Présence en couleur'],
-  'mediation' => ['href' => 'mediation-par-la-couleur.php', 'label' => 'Médiation par la couleur'],
+  // 'hint' : petit texte en bulle au survol sur ordinateur, en sous-titre dans le
+  // menu replié (voir .nav-link-hint dans custom.css)
+  'retour-a-la-couleur' => ['href' => 'retour-a-la-couleur.php', 'label' => 'Retour à la couleur', 'hint' => 'La démarche'],
+  'retour' => ['href' => 'presence-en-couleur.php', 'label' => 'Présence en couleur', 'hint' => 'Visite à domicile'],
+  'mediation' => ['href' => 'mediation-par-la-couleur.php', 'label' => 'Médiation par la couleur', 'hint' => 'Atelier collectif'],
   'galerie' => ['href' => 'galerie.php', 'label' => 'Galerie'],
   'contact' => ['href' => 'contact.php', 'label' => 'Contact'],
 ];
@@ -75,7 +77,7 @@ $navLinks = [
               <ul class="navbar-nav">
                 <?php foreach ($navLinks as $key => $link): ?>
                 <li class="nav-item">
-                  <a class="nav-link nav-link-<?= $key ?><?= $currentPage === $key ? ' active' : '' ?>" href="<?= $link['href'] ?>"><?= $link['label'] ?></a>
+                  <a class="nav-link nav-link-<?= $key ?><?= $currentPage === $key ? ' active' : '' ?>" href="<?= $link['href'] ?>"><?= $link['label'] ?><?php if (isset($link['hint'])): ?> <span class="nav-link-hint"><?= htmlspecialchars($link['hint']) ?></span><?php endif; ?></a>
                 </li>
                 <?php endforeach; ?>
               </ul>
