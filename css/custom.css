@@ -269,6 +269,24 @@ body.accueil2 .teaser_discret .teaser_tagline {
   background-color: transparent;
 }
 
+/* Début de phrase mis en valeur : semi-gras + surlignage bas, plus doux
+   qu'un gras plein. Jaune vif sur la carte jaune pâle ; vert tendre (palette
+   arc-en-ciel) sur la carte verte, dont le fond est déjà vert d'eau. */
+.teaser_tagline_fort {
+  font-weight: 600;
+  padding: 0 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.teaser_dominant .teaser_tagline_fort {
+  background: linear-gradient(transparent 55%, rgba(255, 193, 69, 0.6) 55%);
+}
+
+.teaser_discret .teaser_tagline_fort {
+  background: linear-gradient(transparent 55%, rgba(170, 225, 170, 0.95) 55%);
+}
+
 /* Bandeaux un peu plus opaques que sur la version prairie (0.65/0.75) */
 body.accueil2 .page_photo_fond .teaser_dominant {
   background: linear-gradient(135deg, rgba(255, 227, 171, 0.8) 0%, rgba(251, 247, 240, 0.85) 120%);

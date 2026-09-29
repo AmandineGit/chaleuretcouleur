@@ -56,7 +56,7 @@ include __DIR__ . '/partials/header.php';
             <h2>Présence en couleur</h2>
           </div>
           <p class="teaser_tagline">
-            Une présence à domicile, en tête-à-tête, pour les personnes de tous âges, isolées ou non.
+            <span class="teaser_tagline_fort">Une présence à domicile, en tête-à-tête</span>, pour les personnes de tous âges, isolées ou non.
           </p>
           <div class="badges_service">
             <div class="carte_ligne badge_service"><p class="carte_ligne_label">À domicile</p></div>
@@ -68,7 +68,7 @@ include __DIR__ . '/partials/header.php';
             <a href="presence-en-couleur.php" class="teaser_icone_badge">
               <img src="images/Icones/domicile-jaune.png" alt="">
             </a>
-            <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--brun-jaune">En savoir plus</a>
+            <a href="presence-en-couleur.php" class="btn_on-hover btn_on-hover--brun-jaune">Découvrir la visite à domicile</a>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ include __DIR__ . '/partials/header.php';
             <h3>Médiation par la couleur</h3>
           </div>
           <p class="teaser_tagline">
-            Des temps collectifs pour s'amuser et créer ensemble, au rythme de chacun afin de trouver sa place en douceur.
+            <span class="teaser_tagline_fort">Des temps collectifs pour s'amuser et créer</span> ensemble, au rythme de chacun afin de trouver sa place en douceur.
           </p>
           <div class="badges_service">
             <div class="carte_ligne badge_service"><p class="carte_ligne_label">Dans vos locaux</p></div>
@@ -91,7 +91,7 @@ include __DIR__ . '/partials/header.php';
             <a href="mediation-par-la-couleur.php" class="teaser_icone_badge">
               <img src="images/Icones/PourTous-groupes-vert.png" alt="">
             </a>
-            <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--brun-vert">En savoir plus</a>
+            <a href="mediation-par-la-couleur.php" class="btn_on-hover btn_on-hover--brun-vert">Découvrir l'atelier collectif</a>
           </div>
         </div>
       </div>
