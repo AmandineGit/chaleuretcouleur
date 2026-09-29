@@ -4,8 +4,10 @@
   --seafoam: #4CC9A0;
   --seafoam-dark: #41AB88;
   --yellow: #FFC145;
+  --yellow-dark: #E0A83A;
   --cream: #FBF7F0;
   --warm-brown: #4A2E1F;
+  --warm-brown-dark: #362f29;
   /* Même teinte que --warm-brown depuis que tout le marron du site a été
      unifié — gardée séparée pour cibler facilement header/footer seuls si
      besoin de les distinguer à nouveau plus tard. Voir css/style.css. */
@@ -99,7 +101,7 @@ body {
 }
 
 .btn_on-hover--jaune:hover {
-  background-color: #E0A83A;
+  background-color: var(--yellow-dark);
   color: var(--warm-brown);
 }
 
@@ -126,7 +128,7 @@ body {
 }
 
 .btn_on-hover--brun-jaune:hover {
-  background-color: #362f29;
+  background-color: var(--warm-brown-dark);
   color: var(--cream);
 }
 
@@ -137,7 +139,7 @@ body {
 }
 
 .btn_on-hover--brun-vert:hover {
-  background-color: #362f29;
+  background-color: var(--warm-brown-dark);
   color: var(--cream);
 }
 
@@ -698,7 +700,7 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
 }
 
 .en_bref_box--jaune h3 {
-  color: #E0A83A;
+  color: var(--yellow-dark);
 }
 
 .en_bref_box ul,
