@@ -84,16 +84,6 @@ include __DIR__ . '/partials/header.php';
           <div class="row bienfaits_row">
             <div class="col-md-4">
               <div class="bienfait">
-                <img src="<?= $assetVersion('images/ApprocheHumaine1.webp') ?>" alt="Deux personnes face à face, mains ouvertes l’une vers l’autre sur une table, une tasse de thé fumante en arrière-plan" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
-                <h3>Écouter et reformuler</h3>
-                <ul class="bienfait_liste">
-                  <li>La Communication Non Violente aide à entendre les besoins derrière les mots.</li>
-                  <li>La reformulation permet de se sentir compris, sans être pressé.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="bienfait">
                 <img src="<?= $assetVersion('images/ApprocheHumaine2.webp') ?>" alt="Deux personnes tenant ensemble une feuille avec quelques traces de couleur" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
                 <h3>Créer du lien, sans comparaison</h3>
                 <ul class="bienfait_liste">
@@ -109,6 +99,16 @@ include __DIR__ . '/partials/header.php';
                 <ul class="bienfait_liste">
                   <li>Chaque rencontre se vit avec bienveillance, authenticité et ouverture.</li>
                   <li>L’atelier vient à chacun, dans un univers qui est le sien.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bienfait">
+                <img src="<?= $assetVersion('images/ApprocheHumaine1.webp') ?>" alt="Deux personnes face à face, mains ouvertes l’une vers l’autre sur une table, une tasse de thé fumante en arrière-plan" class="bienfait_photo bienfait_photo--rond" loading="lazy" width="800" height="800">
+                <h3>Écouter et reformuler</h3>
+                <ul class="bienfait_liste">
+                  <li>La Communication Non Violente aide à entendre les besoins derrière les mots.</li>
+                  <li>La reformulation permet de se sentir compris, sans être pressé.</li>
                 </ul>
               </div>
             </div>
