@@ -10,6 +10,50 @@
 }
 
 @media (max-width: 992px) {
+    .user_option {
+        flex-direction: column;
+    }
+
+    .custom_nav-container .nav_search-btn {
+        background-position: center;
+        margin-top: 10px;
+    }
+
+    .user_option a {
+        margin-bottom: 10px;
+    }
+}
+
+/* Menu : passage en menu mobile sous 1290px (au lieu des 992px de
+   navbar-expand-lg), pour que les titres ne s'étalent pas sur trois lignes.
+   navbar-expand-menu reprend les règles de navbar-expand-xl de Bootstrap
+   avec ce seuil. */
+@media (min-width: 1290px) {
+    .navbar-expand-menu {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+
+    .navbar-expand-menu .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-expand-menu .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .navbar-expand-menu .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-menu .navbar-toggler {
+        display: none;
+    }
+}
+
+@media (max-width: 1289.98px) {
     .custom_nav-container {
         flex-direction: column;
         align-items: center;
@@ -26,49 +70,9 @@
         margin-top: 0;
     }
 
-    .user_option {
-        flex-direction: column;
-    }
-
-    .custom_nav-container .nav_search-btn {
-        background-position: center;
-        margin-top: 10px;
-    }
-
-    .user_option a {
-        margin-bottom: 10px;
-    }
-
-    .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+    .custom_nav-container .navbar-nav .nav-link {
         padding: 0 5px;
     }
-}
-
-/* Menu mobile forcé par js/script.js (initMenuCompact) au-delà de 992px,
-   quand un titre du menu passerait sur trois lignes : mêmes règles que
-   ci-dessus. */
-.custom_nav-container.nav-force-mobile {
-    flex-direction: column;
-    align-items: center;
-}
-
-.custom_nav-container.nav-force-mobile .navbar-brand {
-    align-self: flex-start;
-}
-
-.custom_nav-container.nav-force-mobile .navbar-toggler {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-top: 0;
-}
-
-.custom_nav-container.nav-force-mobile .navbar-collapse > div {
-    flex-direction: column !important;
-}
-
-.custom_nav-container.nav-force-mobile .navbar-nav .nav-link {
-    padding: 0 5px;
 }
 
 @media (max-width: 768px) {

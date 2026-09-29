@@ -4,53 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initGalerieModal();
   initBandesRepliables();
-  initMenuCompact();
 });
-
-/**
- * Menu : Bootstrap ne passe en menu mobile que sous 992px. Au-dessus, si
- * un titre du menu s'étale sur trois lignes ou plus, on bascule aussi en
- * menu mobile (retrait de navbar-expand-lg + classe nav-force-mobile, voir
- * css/responsive.css).
- */
-function initMenuCompact() {
-  const nav = document.querySelector('.custom_nav-container');
-  if (!nav) return;
-
-  const links = nav.querySelectorAll('.navbar-nav .nav-link');
-  const range = document.createRange();
-
-  // Nombre de lignes occupées par le texte d'un lien
-  function nbLignes(link) {
-    range.selectNodeContents(link);
-    const tops = new Set();
-    for (const rect of range.getClientRects()) {
-      if (rect.width > 0) tops.add(Math.round(rect.top));
-    }
-    return tops.size;
-  }
-
-  function mettreAJour() {
-    // On remet le menu ordinateur pour mesurer les titres ; tout se fait
-    // avant l'affichage suivant, donc sans clignotement.
-    nav.classList.add('navbar-expand-lg');
-    nav.classList.remove('nav-force-mobile');
-    if (window.innerWidth < 992) return; // Bootstrap gère déjà ce cas
-
-    const tropLong = Array.from(links).some(link => nbLignes(link) >= 3);
-    nav.classList.toggle('navbar-expand-lg', !tropLong);
-    nav.classList.toggle('nav-force-mobile', tropLong);
-  }
-
-  let attente = null;
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(attente);
-    attente = requestAnimationFrame(mettreAJour);
-  });
-  // La police Poppins change la largeur des titres une fois chargée
-  if (document.fonts) document.fonts.ready.then(mettreAJour);
-  mettreAJour();
-}
 
 /**
  * Page "Retour à la couleur" : sur mobile, chaque bande se replie derrière

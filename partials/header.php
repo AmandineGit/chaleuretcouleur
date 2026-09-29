@@ -55,7 +55,7 @@ $navLinks = [
     <!-- header -->
     <header class="header_section">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+        <nav class="navbar navbar-expand-menu custom_nav-container pt-3">
           <a class="navbar-brand brand-logo" href="index.php">
             <img src="favicon/web-app-manifest-512x512.png" alt="Chaleur et Couleur">
             <span class="brand-text">
@@ -71,7 +71,7 @@ $navLinks = [
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <div class="d-flex ml-auto flex-column align-items-center">
               <ul class="navbar-nav">
                 <?php foreach ($navLinks as $key => $link): ?>
                 <li class="nav-item">

@@ -1754,16 +1754,16 @@ body.contact .page_photo_fond::before {
 
 .retour_bande_titre {
   padding: 0 8px;
-  background: linear-gradient(transparent 55%, var(--trait) 55%, var(--trait) 92%, transparent 92%);
+  --trait-clair: color-mix(in srgb, var(--trait) 45%, white);
+  background: linear-gradient(transparent 55%, var(--trait-clair) 55%, var(--trait-clair) 92%, transparent 92%);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* Couleur du trait par bande : les couleurs du site éclaircies d'autant
-   (blanc mélangé dedans). */
-.retour_bande--bienfaits { --trait: #AEE7D4; } /* vert d'eau #4CC9A0 */
-.retour_bande--approche  { --trait: #FFE3AB; } /* jaune #FFC145 */
-.retour_bande--effets    { --trait: #FFC3B6; } /* corail #FF7A5C */
+/* Couleur du trait par bande, éclaircie ci-dessus (blanc mélangé dedans) */
+.retour_bande--bienfaits { --trait: var(--seafoam); }
+.retour_bande--approche  { --trait: var(--yellow); }
+.retour_bande--effets    { --trait: var(--coral); }
 
 @media (max-width: 767px) {
   .retour_bande.layout_padding2 {
