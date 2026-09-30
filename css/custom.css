@@ -1098,63 +1098,21 @@ body.page-qui-suis-je .who_section h1 {
   color: #ffffff !important;
 }
 
-/* Alignement à gauche du bloc newsletter */
-.info_section .detail-box {
-  text-align: center;
-}
-
-/* Alignement et lisibilité du texte dans le footer */
-.info_section h5 {
-  font-weight: normal;
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
 /* Espacement pour le bouton */
 .info_section .btn_on-hover {
   margin-bottom: 20px;
 }
 
-/* Espacement pour la social box */
-.info_section .social_box {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-}
-
-.info_section .social_box a {
-  display: inline-block;
-}
-
-.info_section .social_box a img,
-.info_section .social_box a svg {
-  width: 65px;
-  height: 65px;
-  filter: brightness(100%);
-  transition: all 0.3s ease;
-}
-.info_section .social_box a:hover img,
-.info_section .social_box a:hover svg {
-  filter: brightness(130%);
-}
-
-
-/* --------------------------------------------------------------------------
-  RESPONSIVE : <768px
--------------------------------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-  /* Centrage du bloc "Se renseigner" sur mobile */
-  .info_section .detail-box {
-    text-align: center !important;
-  }
-
-  .info_section .social_box {
-    justify-content: center !important;
-    padding-left: 0 !important;
+/* E-mail, téléphone et adresse sur une seule ligne, répartis sur toute la
+   largeur à partir de lg (en dessous, la ligne ne tient pas) ; empilés
+   en dessous */
+@media (min-width: 992px) {
+  .info_section .info_contact--ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
   }
 }
 
