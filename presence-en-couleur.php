@@ -16,9 +16,9 @@ include __DIR__ . '/partials/header.php';
         </div>
         <p class="text-justify">
           Une visite à domicile, seule à seul, pour partager un moment autour de la
-          couleur : poser des tons sur une page, en parler ou non, à son rythme. Rien à
-          réussir, personne à impressionner, juste une présence régulière, pour celles
-          et ceux qui en manquent.
+          couleur : poser des tons sur une page, en parler ou non, à son rythme.<br>
+          Rien à réussir, personne à impressionner, juste une présence régulière, pour
+          celles et ceux qui en manquent.
         </p>
       </div>
     </div>

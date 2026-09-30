@@ -35,7 +35,7 @@ include __DIR__ . '/partials/header.php';
         </div>
         <div class="teaser_intro_grid_button text-center">
           <p class="teaser_intro_h1 text-center">
-            Car nous avons tous besoin d'échanger, de rire et de se sentir créatifs et utiles.
+            Échanger, rire, se sentir créatif et utile.
           </p>
           <a href="retour-a-la-couleur.php" class="btn_on-hover btn_on-hover--arc-en-ciel">Découvrir la démarche <span class="d-none d-md-inline">· </span><br class="d-md-none">Retour à la couleur</a>
         </div>
@@ -56,7 +56,7 @@ include __DIR__ . '/partials/header.php';
             <h2>Présence en couleur</h2>
           </div>
           <p class="teaser_tagline">
-            <span class="teaser_tagline_fort">Une présence à domicile, en tête-à-tête</span>, pour les personnes de tous âges, isolées ou non.
+            <span class="teaser_tagline_fort">Une présence à domicile, en tête-à-tête</span>, pour les personnes de tous âges.
           </p>
           <div class="badges_service">
             <div class="carte_ligne badge_service"><p class="carte_ligne_label">À domicile</p></div>
