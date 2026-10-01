@@ -583,7 +583,6 @@ body.accueil2 .teaser_discret .badges_service .carte_ligne {
   /* inline-block : centré via le text-align:center de .teaser_split_col
      plutôt que par des marges automatiques. */
   margin: 10px 0 12px 0;
-  max-width: 420px;
   color: #FFFFFF;
 }
 

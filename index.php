@@ -56,7 +56,7 @@ include __DIR__ . '/partials/header.php';
             <h2>Présence en couleur</h2>
           </div>
           <p class="teaser_tagline">
-            <span class="teaser_tagline_fort">Une présence à domicile, en tête-à-tête</span>, pour les personnes de tous âges.
+            <span class="teaser_tagline_fort">Une présence à domicile qui fait du bien :</span><br>se redécouvrir, échanger, créer ensemble.<br>De 16 à 99 ans et plus.
           </p>
           <div class="badges_service">
             <div class="carte_ligne badge_service"><p class="carte_ligne_label">À domicile</p></div>
@@ -79,7 +79,7 @@ include __DIR__ . '/partials/header.php';
             <h3>Médiation par la couleur</h3>
           </div>
           <p class="teaser_tagline">
-            <span class="teaser_tagline_fort">Des temps collectifs pour s'amuser et créer</span> ensemble, au rythme de chacun afin de trouver sa place en douceur.
+            <span class="teaser_tagline_fort">Des temps collectifs qui font du bien :</span><br>s'amuser, partager, trouver sa place à son rythme.<br>De 16 à 99 ans et plus.
           </p>
           <div class="badges_service">
             <div class="carte_ligne badge_service"><p class="carte_ligne_label">Dans vos locaux</p></div>
