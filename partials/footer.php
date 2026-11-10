@@ -8,13 +8,13 @@
           <div class="img-box">
             <img src="images/envelope-white.png" width="18" alt="E-mail">
           </div>
-          <p><a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a></p>
+          <p><a href="mailto:contact@chaleuretcouleur.fr">contact@chaleuretcouleur.fr</a><br><a href="contact.php">Formulaire de contact</a></p>
         </div>
         <div>
           <div class="img-box">
             <img src="images/telephone-white.png" width="12" alt="Téléphone">
           </div>
-          <p>+33 6 26 33 08 63</p>
+          <p><a href="tel:+33626330863">+33 6 26 33 08 63</a></p>
         </div>
         <div>
           <div class="img-box">

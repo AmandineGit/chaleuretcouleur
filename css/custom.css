@@ -1102,6 +1102,14 @@ body.page-qui-suis-je .who_section h1 {
   margin-bottom: 20px;
 }
 
+/* E-mail et téléphone cliquables : soulignés au survol pour qu'on voie
+   que ce sont des liens */
+.info_section .info_contact p a:hover,
+.info_section .info_contact p a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 /* E-mail, téléphone et adresse sur une seule ligne, répartis sur toute la
    largeur à partir de lg (en dessous, la ligne ne tient pas) ; empilés
    en dessous */
