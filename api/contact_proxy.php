@@ -31,6 +31,31 @@ $N8N_AUTH_TOKEN = ''; // Optionnel : token d'authentification n8n
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
+// Anti-spam : champ piège rempli ou envoi trop rapide => robot
+// On ne contacte pas n8n mais on renvoie la même réponse qu'en cas de succès
+require_once __DIR__ . '/contact_token.php';
+
+$spamReason = null;
+if (!empty($data['website'])) {
+    $spamReason = 'honeypot';
+} else {
+    $age = contact_form_token_age($data['form_token'] ?? null, $tokenError);
+    if ($age === null) {
+        $spamReason = $tokenError;
+    } elseif ($age < CONTACT_FORM_MIN_DELAY) {
+        $spamReason = "délai trop court (envoyé en {$age}s)";
+    }
+}
+
+if ($spamReason !== null) {
+    error_log("Formulaire de contact : spam bloqué, raison : $spamReason");
+    echo json_encode([
+        'success' => true,
+        'message' => 'Votre message a été envoyé avec succès !'
+    ]);
+    exit;
+}
+
 // Validation des données
 $errors = [];
 

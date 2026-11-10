@@ -4,6 +4,7 @@ $pageDescription = "Contactez Chaleur et Couleur pour une visite à domicile ou 
 $canonicalUrl = "https://chaleuretcouleur.fr/contact.php";
 $currentPage = "contact";
 $bodyClass = "contact";
+require_once __DIR__ . '/api/contact_token.php';
 include __DIR__ . '/partials/header.php';
 ?>
 
@@ -53,6 +54,12 @@ include __DIR__ . '/partials/header.php';
                       Merci de ne pas communiquer d'informations médicales, si une adaptation est nécessaire, nous en parlerons de vive voix.
                     </small>
                   </div>
+                  <!-- Anti-spam : champ piège invisible pour les humains + jeton d'horodatage signé -->
+                  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                    <label for="website">Ne pas remplir ce champ</label>
+                    <input type="text" id="website" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+                  </div>
+                  <input type="hidden" name="form_token" value="<?= htmlspecialchars(contact_form_token()) ?>">
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn_on-hover">
                       Envoyer

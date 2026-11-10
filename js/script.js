@@ -145,7 +145,10 @@ function initContactForm() {
       email: formData.get('email'),
       phone: formData.get('phone'),
       position: formData.get('position'),
-      message: formData.get('message')
+      message: formData.get('message'),
+      // Anti-spam : champ piège + jeton d'horodatage signé, vérifiés par le proxy
+      website: formData.get('website'),
+      form_token: formData.get('form_token')
     };
 
     try {
