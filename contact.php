@@ -5,6 +5,7 @@ $canonicalUrl = "https://chaleuretcouleur.fr/contact.php";
 $currentPage = "contact";
 $bodyClass = "contact";
 require_once __DIR__ . '/api/contact_token.php';
+require_once __DIR__ . '/api/contact_turnstile.php';
 include __DIR__ . '/partials/header.php';
 ?>
 
@@ -60,6 +61,8 @@ include __DIR__ . '/partials/header.php';
                     <input type="text" id="website" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
                   </div>
                   <input type="hidden" name="form_token" value="<?= htmlspecialchars(contact_form_token()) ?>">
+                  <!-- Anti-spam : vérification Cloudflare Turnstile (le plus souvent invisible) -->
+                  <div class="cf-turnstile d-flex justify-content-center mb-3" data-sitekey="<?= htmlspecialchars(TURNSTILE_SITE_KEY) ?>" data-language="fr"></div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn_on-hover">
                       Envoyer
@@ -67,6 +70,7 @@ include __DIR__ . '/partials/header.php';
                   </div>
                   <div id="formMessage" style="margin-top: 15px; text-align: center;"></div>
                 </form>
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
               </div>
             </div>
           </div>

@@ -34,6 +34,7 @@ $data = json_decode($json, true);
 // Anti-spam : champ piège rempli ou envoi trop rapide => robot
 // On ne contacte pas n8n mais on renvoie la même réponse qu'en cas de succès
 require_once __DIR__ . '/contact_token.php';
+require_once __DIR__ . '/contact_turnstile.php';
 
 $spamReason = null;
 if (!empty($data['website'])) {
@@ -44,6 +45,9 @@ if (!empty($data['website'])) {
         $spamReason = $tokenError;
     } elseif ($age < CONTACT_FORM_MIN_DELAY) {
         $spamReason = "délai trop court (envoyé en {$age}s)";
+    } elseif (!turnstile_verify($data['turnstile_token'] ?? null, $turnstileError)) {
+        // Vérifié en dernier : inutile d'appeler Cloudflare pour les robots simples
+        $spamReason = $turnstileError;
     }
 }
 

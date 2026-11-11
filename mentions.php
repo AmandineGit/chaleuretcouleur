@@ -146,6 +146,7 @@ include __DIR__ . '/partials/header.php';
         <p class="text-justify">
           Les données collectées sont destinées exclusivement à Amandine Verstrepen / Chaleur et Couleur. Aucune donnée n'est cédée ou vendue à des tiers.<br>
           Le formulaire de contact du site transite par un outil d'automatisation (n8n) auto-hébergé par Chaleur et Couleur, au même titre que le site lui-même — il ne s'agit pas d'un tiers externe.<br>
+          Pour le protéger des envois automatisés (spam), le formulaire utilise le service Cloudflare Turnstile (Cloudflare, Inc.). Lors de l'affichage du formulaire, ce service reçoit des informations techniques sur le navigateur (adresse IP, caractéristiques du navigateur) afin de vérifier qu'il s'agit d'une personne et non d'un robot. Il ne reçoit pas le contenu du message. Plus d'informations : <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">politique de confidentialité de Cloudflare</a>.<br>
           Un emailing ponctuel (actualités, informations sur les ateliers) peut être adressé aux personnes ayant transmis leurs coordonnées, sur la base de leur consentement ou de l'intérêt légitime en cas de relation commerciale préexistante. Chaque email comporte un moyen simple de se désinscrire.
         </p>
       </div>

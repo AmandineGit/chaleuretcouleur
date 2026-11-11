@@ -130,6 +130,14 @@ function initContactForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
 
+    // Anti-spam : la vérification Cloudflare Turnstile doit être terminée
+    // (le widget ajoute lui-même le champ cf-turnstile-response au formulaire)
+    const turnstileToken = new FormData(form).get('cf-turnstile-response');
+    if (!turnstileToken) {
+      formMessage.innerHTML = '<p style="color: #dc3545; font-weight: bold;">Vérification anti-spam en cours, merci de patienter quelques secondes avant de renvoyer.</p>';
+      return;
+    }
+
     // Désactiver le bouton et afficher un message de chargement
     submitBtn.disabled = true;
     submitBtn.textContent = 'Envoi en cours...';
@@ -148,7 +156,8 @@ function initContactForm() {
       message: formData.get('message'),
       // Anti-spam : champ piège + jeton d'horodatage signé, vérifiés par le proxy
       website: formData.get('website'),
-      form_token: formData.get('form_token')
+      form_token: formData.get('form_token'),
+      turnstile_token: turnstileToken
     };
 
     try {
@@ -183,6 +192,10 @@ function initContactForm() {
       // Réactiver le bouton
       submitBtn.disabled = false;
       submitBtn.textContent = originalBtnText;
+      // Un jeton Turnstile ne sert qu'une fois : en redemander un pour le prochain envoi
+      if (window.turnstile) {
+        window.turnstile.reset();
+      }
     }
   });
 }
